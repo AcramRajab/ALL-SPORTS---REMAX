@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALL Sports — REMAX | Evento Esportivo Exclusivo | 18 de Abril</title>
+  <meta name="description" content="Evento presencial exclusivo no ALL Resort Club Residence, Porto Belo — SC. Clínicas de Tênis, Padel e Beach Tennis com atletas renomados. 18 de Abril no Showroom e Sport Center.">
+  <meta name="theme-color" content="#1F2F2A">
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://remaxopenallresort.com.br">
+  <meta property="og:title" content="ALL Sports — REMAX | Evento Esportivo Exclusivo">
+  <meta property="og:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas renomados no ALL Resort Club Residence, Porto Belo — SC.">
+  <meta property="og:image" content="https://remaxopenallresort.com.br/imagens-pdf/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="ALL Sports — REMAX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ALL Sports — REMAX | Evento Esportivo Exclusivo">
+  <meta name="twitter:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas renomados no ALL Resort Club Residence, Porto Belo — SC.">
+  <meta name="twitter:image" content="https://remaxopenallresort.com.br/imagens-pdf/og-cover.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="imagens-pdf/favicon.svg">
+  <link rel="apple-touch-icon" href="imagens-pdf/apple-touch-icon.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1F2F2A',
+            'primary-foreground': '#F7F6F2',
+            secondary: '#2C3E46',
+            'secondary-foreground': '#F3F1EC',
+            background: '#F3F1EC',
+            foreground: '#2A2A2A',
+            'text-on-light': '#2A2A2A',
+            'accent-green': '#5A6F63',
+            destructive: '#E53E3E',
+          },
+          fontFamily: {
+            heading: ['Inter', 'sans-serif'],
+            paragraph: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease-in-out, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Hero parallax */
+    .hero-bg {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    @media (max-width: 768px) {
+      .hero-bg { background-attachment: scroll; }
+    }
+
+    /* Section watermark */
+    .section-watermark {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(90, 111, 99, 0.15);
+    }
+    .section-watermark .wm-left {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+    .section-watermark .wm-right {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    /* Nav styles */
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background-color: #FFFFFF;
+      transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    /* Default (hero) — WHITE bg, GREEN text */
+    .nav-bar .nav-brand { color: #1F2F2A; transition: color 0.4s ease; }
+    .nav-bar .hamburger-bar { background-color: #1F2F2A; transition: background-color 0.4s ease; }
+    .nav-bar .nav-link { color: rgba(31, 47, 42, 0.6); transition: color 0.4s ease; }
+    .nav-bar .nav-link:hover,
+    .nav-bar .nav-link.active { color: #1F2F2A; }
+    .nav-bar .nav-cta {
+      background-color: #5A6F63;
+      border: 1.5px solid #5A6F63;
+      color: #F7F6F2;
+      transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    }
+    .nav-bar .nav-cta:hover { background-color: #1F2F2A; border-color: #1F2F2A; }
+
+    /* After scroll — GREEN bg, WHITE text */
+    .nav-bar.scrolled {
+      background-color: rgba(31, 47, 42, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .nav-bar.scrolled .nav-brand { color: #F7F6F2; }
+    .nav-bar.scrolled .hamburger-bar { background-color: #F7F6F2; }
+    .nav-bar.scrolled .nav-link { color: rgba(247, 246, 242, 0.7); }
+    .nav-bar.scrolled .nav-link:hover,
+    .nav-bar.scrolled .nav-link.active { color: #F7F6F2; }
+    .nav-bar.scrolled .nav-link.active::after { background: rgba(247, 246, 242, 0.5); }
+    .nav-bar.scrolled .nav-cta {
+      background-color: transparent;
+      border-color: rgba(247, 246, 242, 0.6);
+      color: #F7F6F2;
+    }
+    .nav-bar.scrolled .nav-cta:hover { background-color: rgba(255,255,255,0.1); border-color: #F7F6F2; }
+    .nav-link {
+      position: relative;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 0;
+    }
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #5A6F63;
+      border-radius: 1px;
+      transition: background 0.4s ease;
+    }
+
+    /* Hide desktop links below lg */
+    @media (max-width: 1023px) {
+      .nav-link { display: none; }
+    }
+
+    /* Mobile menu */
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 55;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .mobile-overlay.open { opacity: 1; pointer-events: auto; }
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 280px;
+      max-width: 80vw;
+      background: #1F2F2A;
+      z-index: 60;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+    }
+    .mobile-drawer.open { transform: translateX(0); }
+    .mobile-nav-link {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: rgba(247, 246, 242, 0.75);
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(90, 111, 99, 0.2);
+      transition: color 0.2s, background 0.2s;
+    }
+    .mobile-nav-link:hover, .mobile-nav-link.active {
+      color: #F7F6F2;
+      background: rgba(90, 111, 99, 0.15);
+    }
+
+    /* Scroll offset for fixed nav */
+    section[id] { scroll-margin-top: 70px; }
+
+    /* Premium image container for two-column sections */
+    .img-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, rgba(90, 111, 99, 0.08) 0%, rgba(31, 47, 42, 0.04) 100%);
+      box-shadow: 0 4px 30px rgba(31, 47, 42, 0.08), 0 1px 3px rgba(0,0,0,0.04);
+      border: 1px solid rgba(90, 111, 99, 0.1);
+    }
+    .img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .img-frame:hover img {
+      transform: scale(1.03);
+    }
+    .img-frame--landscape { aspect-ratio: 4/3; }
+    .img-frame--portrait { aspect-ratio: 3/4; }
+    .img-frame--square { aspect-ratio: 1/1; }
+  </style>
+</head>
+<body class="bg-white text-foreground">
+
+  <!-- ============================================ -->
+  <!-- NAV MENU -->
+  <!-- ============================================ -->
+  <nav class="nav-bar" id="mainNav">
+    <div class="max-w-7xl mx-auto px-5 md:px-6 py-3 md:py-4 flex items-center justify-between">
+      <!-- Brand -->
+      <a href="#" class="nav-brand flex items-center gap-2" style="text-decoration:none;">
+        <span class="font-bold text-base md:text-lg tracking-wide" style="font-family: 'Playfair Display', serif; font-style: italic; color: inherit;">ALL</span>
+        <span class="font-heading text-[0.65rem] md:text-xs font-medium tracking-widest uppercase" style="color: inherit; opacity: 0.8;">SPORTS - REMAX</span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden lg:flex items-center gap-5">
+        <a href="#evento" class="nav-link">Evento</a>
+        <a href="#showroom" class="nav-link">Showroom</a>
+        <a href="#sport-center" class="nav-link">Sport Center</a>
+        <a href="#cronograma" class="nav-link">Cronograma</a>
+        <a href="#clinicas" class="nav-link">Clínicas</a>
+        <a href="#ativacoes" class="nav-link">Ativações</a>
+        <a href="#regras" class="nav-link">Regras</a>
+        <a href="#formulario" class="nav-cta px-5 py-2 font-heading font-semibold text-xs rounded tracking-wider uppercase">Inscreva-se</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
+        <span class="block w-6 h-0.5 hamburger-bar transition-all" id="bar1"></span>
+        <span class="block w-6 h-0.5 hamburger-bar transition-all" id="bar2"></span>
+        <span class="block w-4 h-0.5 hamburger-bar transition-all ml-auto" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="p-6 flex items-center justify-between border-b border-accent-green/20">
+      <span class="flex items-center gap-2">
+        <span class="font-bold text-base text-primary-foreground" style="font-family: 'Playfair Display', serif; font-style: italic;">ALL</span>
+        <span class="font-heading text-[0.6rem] font-medium tracking-widest uppercase text-primary-foreground/70">SPORTS - REMAX</span>
+      </span>
+      <button id="closeMenuBtn" class="text-primary-foreground/70 hover:text-primary-foreground p-2" aria-label="Fechar menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="py-4">
+      <a href="#evento" class="mobile-nav-link">Evento</a>
+      <a href="#objetivo" class="mobile-nav-link">Objetivo</a>
+      <a href="#showroom" class="mobile-nav-link">Showroom</a>
+      <a href="#sport-center" class="mobile-nav-link">Sport Center</a>
+      <a href="#cronograma" class="mobile-nav-link">Cronograma</a>
+      <a href="#clinicas" class="mobile-nav-link">Clínicas</a>
+      <a href="#ativacoes" class="mobile-nav-link">Ativações</a>
+      <a href="#regras" class="mobile-nav-link">Regras</a>
+      <div class="px-6 pt-6">
+        <a href="#formulario" class="block w-full text-center px-5 py-3 bg-accent-green text-primary-foreground font-heading font-semibold text-sm rounded-lg hover:bg-accent-green/90 transition-colors">Garantir Minha Vaga</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO 1 — HERO -->
+  <!-- ============================================ -->
+  <section class="hero-bg relative min-h-screen flex items-center justify-center" style="background-image: url('imagens-pdf/foto teste hero.png');">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-8 py-24 flex flex-col items-center text-center">
+
+      <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-1 leading-tight tracking-wide">
+        All Resort Club Residence
+      </h1>
+      <p class="text-xl md:text-2xl text-primary-foreground/90 font-light tracking-wider mb-6">
+        Porto Belo — Santa Catarina
+      </p>
+
+      <p class="text-lg md:text-xl text-primary-foreground/85 font-medium mb-6">
+        18 de Abril | Showroom ALL Resort e Sport Center
+      </p>
+
+      <p class="text-base md:text-lg text-primary-foreground/80 mb-10 max-w-2xl">
+        Evento presencial exclusivo com clínicas esportivas, tour pelo empreendimento e experiências premium. 54 convidados + acompanhantes por turno.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#formulario" class="px-8 py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg">
+          Garantir Sua Vaga
+        </a>
+        <a href="#cronograma" class="px-8 py-4 border-2 border-primary-foreground text-primary-foreground font-heading font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
+          Ver Programação ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 1: EVENTO/FORMATO -->
+  <section id="evento" class="bg-white py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Text Column -->
+        <div class="fade-up">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Evento / Formato</h2>
+          <div class="space-y-2 mb-8">
+            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Data:</strong> 18 de Abril</p>
+            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Local:</strong> Showroom ALL Resort e Sport Center</p>
+            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Público:</strong> Prospects</p>
+            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Quantidade:</strong> 54 convidados + acompanhantes</p>
+            <p class="font-paragraph text-text-on-light/60 italic">Previsão de até 100 pessoas</p>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Evento presencial, tour pelo Showroom e após, clínicas e ativações no Sport Center;</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Clínicas de Padel e Tennis com atletas renomados;</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Ativações para os acompanhantes;</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Ilha de hidratação e Snacks.</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Image Column -->
+        <div class="fade-up" style="transition-delay: 150ms;">
+          <div class="img-frame img-frame--landscape">
+            <img src="imagens-pdf/pag02_img01_1200x1800.jpeg" alt="Evento ALL Sports REMAX" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2: OBJETIVO (imagem à esquerda) -->
+  <section id="objetivo" class="bg-background py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Image Column (esquerda no desktop) -->
+        <div class="fade-up lg:order-1 order-2">
+          <div class="img-frame img-frame--landscape">
+            <img src="imagens-pdf/pag03_img01_1080x1620.jpeg" alt="Objetivo do Evento" />
+          </div>
+        </div>
+        <!-- Text Column (direita no desktop) -->
+        <div class="fade-up lg:order-2 order-1" style="transition-delay: 150ms;">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-4">Objetivo</h2>
+          <p class="font-heading text-lg md:text-xl font-semibold text-accent-green mb-6">CONEXÃO QUE CONVERTE</p>
+          <p class="font-paragraph text-lg text-text-on-light/85 mb-6">
+            Apresentar o All Resort Club Residence a um público altamente qualificado, conectado aos universos do esporte, do lifestyle e do investimento imobiliário.
+          </p>
+          <p class="font-paragraph text-lg text-text-on-light/85">
+            Mais do que uma apresentação: uma experiência imersiva que gera conexão genuína, desejo real e percepção de valor elevado.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: SHOWROOM -->
+  <section id="showroom" class="bg-white py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Text Column -->
+        <div class="fade-up">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Showroom</h2>
+          <p class="font-paragraph text-lg text-text-on-light/85 mb-6">
+            Coffee receptivo no showroom, disponível das 8h às 11h.
+          </p>
+          <p class="font-paragraph text-text-on-light/85 mb-4">Coffee padrão do comercial:</p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Quantidade: 80 pessoas (formato rotativo);</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">O fornecedor deverá deixar a mesa montada, com itens suficientes para reposição ao longo do período;</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">A reposição será realizada pela copeira interna do showroom.</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Image Column -->
+        <div class="grid grid-cols-2 gap-5 fade-up" style="transition-delay: 150ms;">
+          <div class="img-frame img-frame--portrait">
+            <img src="imagens-pdf/pag07_img01_736x1308.png" alt="Coffee Receptivo" />
+          </div>
+          <div class="img-frame img-frame--portrait">
+            <img src="imagens-pdf/pag07_img02_736x981.png" alt="Coffee Receptivo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: SPORT CENTER (imagem à esquerda) -->
+  <section id="sport-center" class="bg-background py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Image Column (esquerda no desktop) -->
+        <div class="fade-up lg:order-1 order-2">
+          <div class="img-frame img-frame--landscape">
+            <img src="imagens-pdf/pag08_img01_972x1215.png" alt="Hidratação e Snacks" />
+          </div>
+        </div>
+        <!-- Text Column (direita no desktop) -->
+        <div class="fade-up lg:order-2 order-1" style="transition-delay: 150ms;">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Sport Center</h2>
+          <p class="font-paragraph text-lg text-text-on-light/85 mb-6">
+            Durante o evento, os participantes terão acesso a uma tenda de hidratação, com opções pensadas para acompanhar a prática esportiva.
+          </p>
+          <p class="font-paragraph text-text-on-light/85 mb-4">Oferta prevista:</p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
+              <span class="font-paragraph text-text-on-light/85">Água</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
+              <span class="font-paragraph text-text-on-light/85">Bebidas isotônicas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
+              <span class="font-paragraph text-text-on-light/85">Frutas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
+              <span class="font-paragraph text-text-on-light/85">Barrinhas de cereal</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
+              <span class="font-paragraph text-text-on-light/85">Snacks leves</span>
+            </li>
+          </ul>
+          <p class="font-paragraph text-text-on-light/70 italic">O objetivo é garantir energia e bem-estar ao longo da manhã.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CRONOGRAMA - CLÍNICA 9H -->
+  <!-- ============================================ -->
+  <section id="cronograma" class="bg-white py-20 md:py-28 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-10">Cronograma — Clínica 9H</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 fade-up">
+        <!-- Coluna Esquerda -->
+        <div class="space-y-8">
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">08h00 às 08h20 – Welcome</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Check-in realizado na recepção;</p>
+              <p class="font-paragraph text-text-on-light/85">Coffee à disposição no Lounge.</p>
+              <p class="font-paragraph text-text-on-light/85">Bebida Soft - Água com e sem gás, Refri.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">08h20 às 08h50 - Tour Showroom</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Imersão;</p>
+              <p class="font-paragraph text-text-on-light/85">Maquetes;</p>
+              <p class="font-paragraph text-text-on-light/85">Decorado.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">08h50 às 09:10 - Tour Porto Belo Golf</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Tour pelo bolsão de 400 m²;</p>
+              <p class="font-paragraph text-text-on-light/85">Praça Porto Belo;</p>
+              <p class="font-paragraph text-text-on-light/85">Ponto da Proa;</p>
+              <p class="font-paragraph text-text-on-light/85">Sport Center.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Coluna Direita -->
+        <div class="space-y-8">
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h30 às 10h30 – Clínicas</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Clínicas:</p>
+              <p class="font-paragraph text-text-on-light/85">Tênis;</p>
+              <p class="font-paragraph text-text-on-light/85">Padel;</p>
+              <p class="font-paragraph text-text-on-light/85">Beach Tennis.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h30 às 11:30 - Relaxamento</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Convidados ficam à vontade para</p>
+              <p class="font-paragraph text-text-on-light/85">desfrutar do Sport Center</p>
+              <p class="font-paragraph text-text-on-light/85">Indicamos que o Restaurante Bruder</p>
+              <p class="font-paragraph text-text-on-light/85">está em funcionamento.</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <div class="bg-primary text-primary-foreground font-heading font-bold text-xs md:text-sm px-4 py-2 rounded-sm inline-block mb-3 tracking-wider uppercase">Tempos de cada ação</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85 text-sm">Recepção - 20 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Tour no showroom - 30 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Tour Carrinho - 20 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Clínica - 60 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Welness - 60 min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CRONOGRAMA - CLÍNICA 10H -->
+  <!-- ============================================ -->
+  <section class="bg-background py-20 md:py-28 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-10">Cronograma — Clínica 10H</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 fade-up">
+        <div class="space-y-8">
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h00 às 09h20 – Welcome</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Check-in realizado na recepção;</p>
+              <p class="font-paragraph text-text-on-light/85">Coffee à disposição no Lounge.</p>
+              <p class="font-paragraph text-text-on-light/85">Bebida Soft - Água com e sem gás, Refri.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h20 às 09h50 - Tour Showroom</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Imersão;</p>
+              <p class="font-paragraph text-text-on-light/85">Maquetes;</p>
+              <p class="font-paragraph text-text-on-light/85">Decorado.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h50 às 10:10 - Tour Porto Belo Golf</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Tour pelo bolsão de 400 m²;</p>
+              <p class="font-paragraph text-text-on-light/85">Praça Porto Belo;</p>
+              <p class="font-paragraph text-text-on-light/85">Ponto da Proa;</p>
+              <p class="font-paragraph text-text-on-light/85">Sport Center.</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h30 às 11h30 – Clínicas</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Clínicas:</p>
+              <p class="font-paragraph text-text-on-light/85">Tênis;</p>
+              <p class="font-paragraph text-text-on-light/85">Padel;</p>
+              <p class="font-paragraph text-text-on-light/85">Beach Tennis.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">11h30 às 12:00 - Relaxamento</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Convidados ficam à vontade para</p>
+              <p class="font-paragraph text-text-on-light/85">desfrutar do Sport Center</p>
+              <p class="font-paragraph text-text-on-light/85">Indicamos que o Restaurante Bruder</p>
+              <p class="font-paragraph text-text-on-light/85">está em funcionamento.</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <div class="bg-primary text-primary-foreground font-heading font-bold text-xs md:text-sm px-4 py-2 rounded-sm inline-block mb-3 tracking-wider uppercase">Tempos de cada ação</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85 text-sm">Recepção - 20 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Tour no showroom - 30 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Tour Carrinho - 20 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Clínica - 60 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Welness - 60 min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CRONOGRAMA - CLÍNICA 11H -->
+  <!-- ============================================ -->
+  <section class="bg-white py-20 md:py-28 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-10">Cronograma — Clínica 11H</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 fade-up">
+        <div class="space-y-8">
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h00 às 10h20 – Welcome</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Check-in realizado na recepção;</p>
+              <p class="font-paragraph text-text-on-light/85">Coffee à disposição no Lounge.</p>
+              <p class="font-paragraph text-text-on-light/85">Bebida Soft - Água com e sem gás, Refri.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h20 às 10h50 - Tour Showroom</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Imersão;</p>
+              <p class="font-paragraph text-text-on-light/85">Maquetes;</p>
+              <p class="font-paragraph text-text-on-light/85">Decorado.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h50 às 11:10 - Tour Porto Belo Golf</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Tour pelo bolsão de 400 m²;</p>
+              <p class="font-paragraph text-text-on-light/85">Praça Porto Belo;</p>
+              <p class="font-paragraph text-text-on-light/85">Ponto da Proa;</p>
+              <p class="font-paragraph text-text-on-light/85">Sport Center.</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">11h30 às 12h30 – Clínicas</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Clínicas:</p>
+              <p class="font-paragraph text-text-on-light/85">Tênis;</p>
+              <p class="font-paragraph text-text-on-light/85">Padel;</p>
+              <p class="font-paragraph text-text-on-light/85">Beach Tennis.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">12h30 às 13:30 - Relaxamento</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85">Convidados ficam à vontade para</p>
+              <p class="font-paragraph text-text-on-light/85">desfrutar do Sport Center</p>
+              <p class="font-paragraph text-text-on-light/85">Indicamos que o Restaurante Bruder</p>
+              <p class="font-paragraph text-text-on-light/85">está em funcionamento.</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <div class="bg-primary text-primary-foreground font-heading font-bold text-xs md:text-sm px-4 py-2 rounded-sm inline-block mb-3 tracking-wider uppercase">Tempos de cada ação</div>
+            <div class="border-l-2 border-accent-green/30 pl-4">
+              <p class="font-paragraph text-text-on-light/85 text-sm">Recepção - 20 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Tour no showroom - 30 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Tour Carrinho - 20 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Clínica - 60 min</p>
+              <p class="font-paragraph text-text-on-light/85 text-sm">Welness - 60 min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO — CLÍNICAS (fundo branco, layout do PDF) -->
+  <!-- ============================================ -->
+  <section id="clinicas" class="bg-primary py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-primary-foreground/50">ALL</span>
+        <span class="wm-right text-primary-foreground/40">ALL SPORTS - REMAX</span>
+      </div>
+
+      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-12">Clínicas</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+
+        <!-- Walter Gringo -->
+        <div class="fade-up text-center">
+          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">Walter Gringo</p>
+          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
+            <div class="aspect-[3/4]">
+              <img src="imagens-pdf/pag10_img02_353x490.png" alt="Walter Gringo" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="text-left">
+            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Tennis Coach</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: Quadra de Tenis</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 10 pessoas</p>
+          </div>
+        </div>
+
+        <!-- Julio Julianoti -->
+        <div class="fade-up text-center" style="transition-delay: 100ms;">
+          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">Julio Julianoti</p>
+          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
+            <div class="aspect-[3/4]">
+              <img src="imagens-pdf/pag10_img01_362x468.png" alt="Julio Julianoti" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="text-left">
+            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Atleta Padel</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: Quadra de Padel 1</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 04 pessoas</p>
+          </div>
+        </div>
+
+        <!-- JP Moraes -->
+        <div class="fade-up text-center" style="transition-delay: 200ms;">
+          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">JP Moraes</p>
+          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
+            <div class="aspect-[3/4]">
+              <img src="imagens-pdf/pag10_img03_448x520.png" alt="JP Moraes" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="text-left">
+            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Atleta Padel - Co-owner</p>
+            <p class="font-heading font-bold text-primary-foreground text-base mb-1">EQI Racket Club</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: Quadra de Padel 2</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 04 pessoas</p>
+          </div>
+        </div>
+
+        <!-- Vini Chaparro -->
+        <div class="fade-up text-center" style="transition-delay: 300ms;">
+          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">Vini Chaparro</p>
+          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
+            <div class="aspect-[3/4]">
+              <img src="imagens-pdf/pag10_img04_420x493.png" alt="Vini Chaparro" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="text-left">
+            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Beach Coach - Founder</p>
+            <p class="font-heading font-bold text-primary-foreground text-base mb-1">EQI Racket Club</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: 2 Quadras de Beach</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 04 pessoas</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO — TREINO FUNCIONAL (fundo bege, texto esq | img dir) -->
+  <!-- ============================================ -->
+  <section id="ativacoes" class="bg-background py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Text Column -->
+        <div class="fade-up">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Treino Funcional</h2>
+          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-6">
+            Mini sessão de treino Funcional ministrado para os acompanhantes.
+          </p>
+          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-6">
+            <span class="font-heading font-semibold text-text-on-light">Local:</span> Quadra de Pickleball
+          </p>
+          <p class="font-heading font-semibold text-text-on-light text-base md:text-lg mb-3">Horários:</p>
+          <div class="space-y-2">
+            <p class="font-paragraph text-text-on-light/85 text-base"><span class="font-heading font-bold text-text-on-light">1ª Turma:</span> 09h30 às 10h00</p>
+            <p class="font-paragraph text-text-on-light/85 text-base"><span class="font-heading font-bold text-text-on-light">2ª Turma:</span> 11:30 às 12:00</p>
+            <p class="font-paragraph text-text-on-light/85 text-base"><span class="font-heading font-bold text-text-on-light">3ª Turma:</span> 12:30 às 13:00</p>
+          </div>
+        </div>
+
+        <!-- Image Column -->
+        <div class="fade-up" style="transition-delay: 150ms;">
+          <div class="img-frame img-frame--landscape">
+            <img src="imagens-pdf/pag11_img02_1229x820.png" alt="Treino Funcional" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO — PICKLEBALL (fundo branco, img esq | texto dir) -->
+  <!-- ============================================ -->
+  <section class="bg-white py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Image Column (left on desktop) -->
+        <div class="fade-up lg:order-1 order-2">
+          <div class="img-frame img-frame--landscape">
+            <img src="imagens-pdf/pag12_img01_1260x840.jpeg" alt="Pickleball" />
+          </div>
+        </div>
+
+        <!-- Text Column (right on desktop) -->
+        <div class="fade-up lg:order-2 order-1" style="transition-delay: 150ms;">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Pickleball</h2>
+          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-6">
+            Aula de Pickleball para acompanhantes, primeiro contato para os que ainda não conheciam o esporte.
+          </p>
+          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-4">
+            <span class="font-heading font-semibold text-text-on-light">Local:</span> Quadra de Pickleball
+          </p>
+          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-4">
+            <span class="font-heading font-semibold text-text-on-light">Horário:</span> 09h30 às 13:00
+          </p>
+          <p class="font-paragraph text-text-on-light/75 text-base leading-relaxed">
+            Quadra rotativa, o professor vai ministrando os tempos e formatos conforme a demanda.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO — EQUIPE/MOBILIÁRIO (fundo bege, texto esq | imgs dir) -->
+  <!-- ============================================ -->
+  <section class="bg-background py-20 md:py-28 px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Text Column -->
+        <div class="fade-up">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-8">Equipe / Mobiliário</h2>
+          <ul class="space-y-3">
+            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>2 Carregadores
+            </li>
+            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>2 Promotoras
+            </li>
+            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>1 Tenda de 5x5
+            </li>
+            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>1 Tenda de 3x3
+            </li>
+            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>4 Ombrelones
+            </li>
+            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>Caixa de Gelo
+            </li>
+            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>Mesa para Snacks
+            </li>
+          </ul>
+        </div>
+
+        <!-- Images Column -->
+        <div class="fade-up" style="transition-delay: 150ms;">
+          <div class="grid grid-cols-2 gap-5">
+            <div class="img-frame img-frame--square">
+              <img src="imagens-pdf/pag13_img01_600x600.png" alt="Ombrelone" />
+            </div>
+            <div class="img-frame img-frame--square">
+              <img src="imagens-pdf/pag13_img02_640x640.png" alt="Mesa para Snacks" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO — REGRAS (fundo branco) -->
+  <!-- ============================================ -->
+  <section id="regras" class="bg-white py-24 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+
+      <div class="text-center mb-12 fade-up">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-4">Regras do Evento</h2>
+        <p class="text-text-on-light/70 text-lg">Estrutura pensada para garantir a melhor experiência para todos</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+        <!-- Card 1 -->
+        <div class="fade-up bg-white border-2 border-accent-green/40 rounded-lg p-8 md:p-10 hover:border-accent-green/70 transition-colors">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-accent-green/15 flex items-center justify-center">
+              <span class="text-xl font-bold text-accent-green">1</span>
+            </div>
+            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Inscrição por Convite</h3>
+          </div>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Participação exclusiva via lista prioritária</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Indicação de amigos com perfil alinhado</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Member get Member — curadoria real</span>
+            </li>
+          </ul>
+          <p class="font-heading text-base font-semibold text-accent-green italic border-t border-accent-green/20 pt-6">"A exclusividade começa pela seleção dos participantes."</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="fade-up bg-white border-2 border-accent-green/40 rounded-lg p-8 md:p-10 hover:border-accent-green/70 transition-colors" style="transition-delay: 100ms;">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-accent-green/15 flex items-center justify-center">
+              <span class="text-xl font-bold text-accent-green">2</span>
+            </div>
+            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Modalidades Disponíveis</h3>
+          </div>
+          <div class="bg-accent-green/5 border border-accent-green/15 rounded-lg p-4 mb-4">
+            <p class="text-text-on-light/85"><strong>Tênis, Padel e Beach Tennis</strong> — escolha sua modalidade e turno no momento da inscrição. Cada experiência tem vagas independentes e limitadas.</p>
+          </div>
+          <p class="font-heading text-sm text-text-on-light/60 italic">Clínicas conduzidas por profissionais reconhecidos no cenário esportivo.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="fade-up bg-white border-2 border-accent-green/40 rounded-lg p-8 md:p-10 hover:border-accent-green/70 transition-colors" style="transition-delay: 200ms;">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-accent-green/15 flex items-center justify-center">
+              <span class="text-xl font-bold text-accent-green">3</span>
+            </div>
+            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Estrutura e Logística</h3>
+          </div>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Local: Showroom ALL Resort e Sport Center</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Coffee receptivo disponível das 8h às 11h</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg>
+              <span class="font-paragraph text-text-on-light/85">Tenda de hidratação no Sport Center</span>
+            </li>
+          </ul>
+          <p class="font-heading text-base font-semibold text-accent-green italic border-t border-accent-green/20 pt-6">"Infraestrutura à altura do público que estamos reunindo."</p>
+        </div>
+
+        <!-- Card 4 - Política (vermelho/destructive) -->
+        <div class="fade-up bg-white border-2 border-destructive/30 rounded-lg p-8 md:p-10 hover:border-destructive/60 transition-colors" style="transition-delay: 300ms;">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center">
+              <span class="text-xl font-bold text-destructive">4</span>
+            </div>
+            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Política de Participação</h3>
+          </div>
+          <div class="bg-destructive/5 border border-destructive/15 rounded-lg p-4 mb-4">
+            <p class="text-destructive font-semibold mb-2">Atenção:</p>
+            <ul class="space-y-1">
+              <li class="flex items-start gap-2"><span class="text-destructive">•</span><span class="text-text-on-light/85">Inscrição intransferível</span></li>
+              <li class="flex items-start gap-2"><span class="text-destructive">•</span><span class="text-text-on-light/85">Cancelamento com antecedência mínima</span></li>
+              <li class="flex items-start gap-2"><span class="text-destructive">•</span><span class="text-text-on-light/85">Vaga destinada à lista de espera em caso de desistência</span></li>
+            </ul>
+          </div>
+          <p class="font-heading text-sm text-text-on-light/60 italic">Regras para garantir que todos aproveitem ao máximo.</p>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center fade-up">
+        <p class="font-paragraph text-lg text-text-on-light/80">
+          <strong>Nosso objetivo é proporcionar a melhor experiência possível.</strong> Essas regras garantem que todos aproveitem em pé de igualdade.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO 7 — STATS (fundo verde escuro) -->
+  <!-- ============================================ -->
+  <section class="bg-primary py-32 px-8">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <h2 class="fade-up font-heading text-4xl md:text-6xl font-bold text-primary-foreground mb-3">Experiência exclusiva por design</h2>
+      <p class="fade-up font-heading text-xl md:text-2xl font-semibold text-accent-green mb-12">Estrutura pensada para qualidade, não quantidade.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+
+        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default">
+          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          <div class="relative z-10">
+            <div class="font-heading text-7xl md:text-8xl font-bold text-accent-green mb-4 leading-none">54</div>
+            <div class="font-paragraph text-lg md:text-xl text-primary-foreground/90 font-medium">Convidados por turno</div>
+          </div>
+        </div>
+
+        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default" style="transition-delay: 100ms;">
+          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          <div class="relative z-10">
+            <div class="font-heading text-7xl md:text-8xl font-bold text-accent-green mb-4 leading-none">3</div>
+            <div class="font-paragraph text-lg md:text-xl text-primary-foreground/90 font-medium">Turnos de clínicas</div>
+          </div>
+        </div>
+
+        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default" style="transition-delay: 200ms;">
+          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          <div class="relative z-10">
+            <div class="font-heading text-7xl md:text-8xl font-bold text-accent-green mb-4 leading-none">4</div>
+            <div class="font-paragraph text-lg md:text-xl text-primary-foreground/90 font-medium">Instrutores profissionais</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t-2 border-accent-green/40 pt-10 md:pt-12 fade-up">
+        <p class="font-heading text-xl md:text-2xl font-bold text-accent-green">Até 100 pessoas no total. Cada detalhe foi pensado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SEÇÃO 8 — FORMULÁRIO (fundo branco) -->
+  <!-- ============================================ -->
+  <section id="formulario" class="bg-white py-24 px-8">
+    <div class="max-w-2xl mx-auto">
+      <div class="section-watermark">
+        <span class="wm-left text-text-on-light/50">ALL</span>
+        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      </div>
+
+      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6 text-center">Garantir Sua Vaga</h2>
+
+      <div class="fade-up bg-accent-green/5 border border-accent-green/20 rounded-lg p-6 md:p-8 mb-10">
+        <p class="font-paragraph text-text-on-light/85 leading-relaxed">
+          ALL Sports — REMAX | 18 de Abril. Um evento esportivo exclusivo com foco em relacionamento, negócios e experiências premium. As informações abaixo nos ajudam a organizar melhor a experiência dos participantes. Os dados são utilizados apenas de forma agregada.
+        </p>
+      </div>
+
+      <form class="space-y-6 fade-up" onsubmit="handleSubmit(event)">
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">Nome completo *</label>
+          <input type="text" required placeholder="Seu nome completo" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+        </div>
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">WhatsApp *</label>
+          <input type="tel" required placeholder="(XX) 9XXXX-XXXX" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+        </div>
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">Cidade de origem *</label>
+          <input type="text" required placeholder="Sua cidade" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+        </div>
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">Área de atuação profissional *</label>
+          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+            <option value="">Selecione uma opção</option>
+            <option value="imobiliario">Mercado Imobiliário</option>
+            <option value="empresario">Empresário(a)</option>
+            <option value="executivo">Executivo(a)</option>
+            <option value="investidor">Investidor(a)</option>
+            <option value="profissional-liberal">Profissional Liberal</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">Empresa ou organização</label>
+          <input type="text" placeholder="Nome da empresa (opcional)" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+        </div>
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">Modalidade de interesse *</label>
+          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+            <option value="">Selecione uma opção</option>
+            <option value="tenis">Tênis</option>
+            <option value="padel">Pádel</option>
+            <option value="beach-tennis">Beach Tennis</option>
+            <option value="todas">Todas as modalidades</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">Turno de preferência *</label>
+          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+            <option value="">Selecione uma opção</option>
+            <option value="turno-9h">Turno 9h (08h00–11h30)</option>
+            <option value="turno-10h">Turno 10h (09h00–12h00)</option>
+            <option value="turno-11h">Turno 11h (10h00–13h30)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-2">Como ficou sabendo do evento? *</label>
+          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+            <option value="">Selecione uma opção</option>
+            <option value="convite-direto">Convite direto</option>
+            <option value="indicacao">Indicação de participante</option>
+            <option value="redes-sociais">Redes sociais</option>
+            <option value="remax">RE/MAX</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full px-8 py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg disabled:opacity-70 disabled:cursor-not-allowed">
+          Garantir Minha Vaga
+        </button>
+
+        <p class="font-paragraph text-center text-text-on-light/60 text-sm">
+          Seus dados estão seguros conosco. Nunca compartilharemos com terceiros.
+        </p>
+      </form>
+
+      <!-- Success message (hidden by default) -->
+      <div id="success-message" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-accent-green/20 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-accent-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <h3 class="font-heading text-2xl font-bold text-text-on-light mb-2">Você está na lista!</h3>
+        <p class="font-paragraph text-text-on-light/70">Em breve você receberá mais informações sobre o ALL Sports — REMAX | 18 de Abril.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="bg-primary py-8 px-8">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="font-paragraph text-primary-foreground/60 text-sm">
+        © 2026 ALL Sports — REMAX | All Resort Club Residence, Porto Belo — SC. It's ALL.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- SCRIPTS -->
+  <!-- ============================================ -->
+  <script>
+    // Intersection Observer for fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Respect existing transition-delay from inline styles
+          const existingDelay = entry.target.style.transitionDelay;
+          if (!existingDelay) {
+            entry.target.style.transitionDelay = '0ms';
+          }
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Form submission handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      // Simulate submission (replace with actual endpoint)
+      setTimeout(() => {
+        form.style.display = 'none';
+        document.getElementById('success-message').classList.remove('hidden');
+      }, 1500);
+    }
+
+    // ---- NAV MENU ----
+    const nav = document.getElementById('mainNav');
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    // Nav: transparent on hero, solid green after scroll
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const heroH = document.querySelector('.hero-bg').offsetHeight;
+
+      if (scrollY > heroH * 0.5) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+
+      // Active section highlight
+      let current = '';
+      sections.forEach(s => {
+        if (scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+      mobileLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+    });
+
+    // Mobile menu toggle
+    function openMenu() {
+      mobileOverlay.classList.add('open');
+      mobileDrawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileOverlay.classList.remove('open');
+      mobileDrawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    menuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    mobileOverlay.addEventListener('click', closeMenu);
+    mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
+    document.querySelectorAll('.mobile-drawer a[href="#formulario"]').forEach(l => l.addEventListener('click', closeMenu));
+  </script>
+
+</body>
+</html>
