@@ -3,35 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALL Sports — REMAX | Evento Esportivo Exclusivo | 18 de Abril</title>
-  <meta name="description" content="Evento presencial exclusivo no ALL Resort Club Residence, Porto Belo — SC. Clínicas de Tênis, Padel e Beach Tennis com atletas renomados. 18 de Abril no Showroom e Sport Center.">
+  <title>ALL Sports Experience — Clínicas Esportivas com Atletas de Elite | ALL Resort</title>
+  <meta name="description" content="Uma experiência esportiva exclusiva com atletas de elite no ALL Resort Club Residence — 320 hectares em Porto Belo, SC. Tênis, Padel e Beach Tennis. 18 de Abril.">
   <meta name="theme-color" content="#1F2F2A">
 
   <!-- Open Graph / WhatsApp / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://remaxopenallresort.com.br">
-  <meta property="og:title" content="ALL Sports — REMAX | Evento Esportivo Exclusivo">
-  <meta property="og:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas renomados no ALL Resort Club Residence, Porto Belo — SC.">
-  <meta property="og:image" content="https://remaxopenallresort.com.br/imagens-pdf/og-cover.png">
+  <meta property="og:title" content="ALL Sports Experience — Atletas de Elite no ALL Resort">
+  <meta property="og:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas de elite no ALL Resort Club Residence, Porto Belo — SC.">
+  <meta property="og:image" content="imagens-pdf/favicon/og-cover.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="ALL Sports — REMAX">
+  <meta property="og:site_name" content="ALL Resort Club Residence">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ALL Sports — REMAX | Evento Esportivo Exclusivo">
-  <meta name="twitter:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas renomados no ALL Resort Club Residence, Porto Belo — SC.">
-  <meta name="twitter:image" content="https://remaxopenallresort.com.br/imagens-pdf/og-cover.png">
+  <meta name="twitter:title" content="ALL Sports Experience — Atletas de Elite no ALL Resort">
+  <meta name="twitter:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas de elite no ALL Resort Club Residence, Porto Belo — SC.">
+  <meta name="twitter:image" content="imagens-pdf/favicon/og-cover.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="imagens-pdf/favicon.svg">
-  <link rel="apple-touch-icon" href="imagens-pdf/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="imagens-pdf/favicon/favicon.svg">
+  <link rel="apple-touch-icon" href="imagens-pdf/favicon/apple-touch-icon.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -46,10 +45,12 @@
             'text-on-light': '#2A2A2A',
             'accent-green': '#5A6F63',
             destructive: '#E53E3E',
+            gold: '#C4A265',
           },
           fontFamily: {
             heading: ['Inter', 'sans-serif'],
             paragraph: ['Inter', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
           },
         },
       },
@@ -81,145 +82,36 @@
       .hero-bg { background-attachment: scroll; }
     }
 
-    /* Section watermark */
-    .section-watermark {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(90, 111, 99, 0.15);
-    }
-    .section-watermark .wm-left {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.25rem;
-      letter-spacing: 0.05em;
-    }
-    .section-watermark .wm-right {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-    }
-
-    /* Nav styles */
+    /* Nav bar */
     .nav-bar {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 50;
-      background-color: #FFFFFF;
-      transition: background-color 0.4s ease, box-shadow 0.4s ease;
-    }
-    /* Default (hero) — WHITE bg, GREEN text */
-    .nav-bar .nav-brand { color: #1F2F2A; transition: color 0.4s ease; }
-    .nav-bar .hamburger-bar { background-color: #1F2F2A; transition: background-color 0.4s ease; }
-    .nav-bar .nav-link { color: rgba(31, 47, 42, 0.6); transition: color 0.4s ease; }
-    .nav-bar .nav-link:hover,
-    .nav-bar .nav-link.active { color: #1F2F2A; }
-    .nav-bar .nav-cta {
-      background-color: #5A6F63;
-      border: 1.5px solid #5A6F63;
-      color: #F7F6F2;
-      transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
-    }
-    .nav-bar .nav-cta:hover { background-color: #1F2F2A; border-color: #1F2F2A; }
-
-    /* After scroll — GREEN bg, WHITE text */
-    .nav-bar.scrolled {
-      background-color: rgba(31, 47, 42, 0.97);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-    }
-    .nav-bar.scrolled .nav-brand { color: #F7F6F2; }
-    .nav-bar.scrolled .hamburger-bar { background-color: #F7F6F2; }
-    .nav-bar.scrolled .nav-link { color: rgba(247, 246, 242, 0.7); }
-    .nav-bar.scrolled .nav-link:hover,
-    .nav-bar.scrolled .nav-link.active { color: #F7F6F2; }
-    .nav-bar.scrolled .nav-link.active::after { background: rgba(247, 246, 242, 0.5); }
-    .nav-bar.scrolled .nav-cta {
       background-color: transparent;
-      border-color: rgba(247, 246, 242, 0.6);
-      color: #F7F6F2;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .nav-bar.scrolled .nav-cta:hover { background-color: rgba(255,255,255,0.1); border-color: #F7F6F2; }
-    .nav-link {
-      position: relative;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      padding: 0.5rem 0;
-    }
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: #5A6F63;
-      border-radius: 1px;
-      transition: background 0.4s ease;
-    }
+    .nav-bar .nav-brand { transition: opacity 0.3s ease; }
+    .nav-bar .nav-logo-white { display: block; }
+    .nav-bar .nav-logo-dark { display: none; }
+    .nav-bar .nav-link { color: #F7F6F2; transition: color 0.3s ease; }
+    .nav-bar .nav-cta { background-color: #5A6F63; color: #F7F6F2; transition: all 0.3s ease; }
 
-    /* Hide desktop links below lg */
-    @media (max-width: 1023px) {
-      .nav-link { display: none; }
-    }
+    .nav-bar.scrolled { background-color: rgba(31, 47, 42, 0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
+    .nav-bar.scrolled .nav-link { color: #F7F6F2; }
+    .nav-bar.scrolled .nav-cta { background-color: #5A6F63; color: #F7F6F2; }
 
     /* Mobile menu */
-    .mobile-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 55;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
-    }
-    .mobile-overlay.open { opacity: 1; pointer-events: auto; }
-    .mobile-drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 280px;
-      max-width: 80vw;
-      background: #1F2F2A;
-      z-index: 60;
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-      overflow-y: auto;
-    }
-    .mobile-drawer.open { transform: translateX(0); }
-    .mobile-nav-link {
-      display: block;
-      padding: 1rem 1.5rem;
-      color: rgba(247, 246, 242, 0.75);
-      font-size: 0.95rem;
-      font-weight: 500;
-      border-bottom: 1px solid rgba(90, 111, 99, 0.2);
-      transition: color 0.2s, background 0.2s;
-    }
-    .mobile-nav-link:hover, .mobile-nav-link.active {
-      color: #F7F6F2;
-      background: rgba(90, 111, 99, 0.15);
-    }
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
 
-    /* Scroll offset for fixed nav */
-    section[id] { scroll-margin-top: 70px; }
-
-    /* Premium image container for two-column sections */
+    /* Image frame component */
     .img-frame {
       position: relative;
       overflow: hidden;
       border-radius: 0.75rem;
-      background: linear-gradient(135deg, rgba(90, 111, 99, 0.08) 0%, rgba(31, 47, 42, 0.04) 100%);
-      box-shadow: 0 4px 30px rgba(31, 47, 42, 0.08), 0 1px 3px rgba(0,0,0,0.04);
-      border: 1px solid rgba(90, 111, 99, 0.1);
+      background: linear-gradient(135deg, rgba(90,111,99,0.08), rgba(31,47,42,0.04));
     }
     .img-frame img {
       width: 100%;
@@ -227,1072 +119,1382 @@
       object-fit: cover;
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .img-frame:hover img {
-      transform: scale(1.03);
+    .img-frame:hover img { transform: scale(1.05); }
+
+    /* Gold accent line */
+    .gold-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #C4A265, #D4B87A);
     }
-    .img-frame--landscape { aspect-ratio: 4/3; }
-    .img-frame--portrait { aspect-ratio: 3/4; }
-    .img-frame--square { aspect-ratio: 1/1; }
+
+    /* Custom radio cards */
+    .radio-card {
+      cursor: pointer;
+      border: 2px solid rgba(90,111,99,0.3);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .radio-card:hover { border-color: rgba(90,111,99,0.6); }
+    .radio-card.selected {
+      border-color: #5A6F63;
+      background-color: rgba(90,111,99,0.08);
+    }
+    .radio-card input[type="radio"] { display: none; }
+
+    /* Clinic slot card */
+    .slot-card {
+      cursor: pointer;
+      border: 2px solid rgba(90,111,99,0.2);
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      transition: all 0.3s ease;
+    }
+    .slot-card:hover { border-color: rgba(90,111,99,0.5); }
+    .slot-card.selected {
+      border-color: #5A6F63;
+      background-color: rgba(90,111,99,0.08);
+    }
+
+    /* Amenity badges */
+    .amenity-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(196,162,101,0.3);
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      color: #C4A265;
+      white-space: nowrap;
+    }
+
+    /* Scroll indicator */
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(6px); }
+    }
+    .scroll-indicator { animation: scrollPulse 2s ease-in-out infinite; }
   </style>
 </head>
-<body class="bg-white text-foreground">
+<body class="bg-background text-foreground">
 
-  <!-- ============================================ -->
-  <!-- NAV MENU -->
-  <!-- ============================================ -->
-  <nav class="nav-bar" id="mainNav">
-    <div class="max-w-7xl mx-auto px-5 md:px-6 py-3 md:py-4 flex items-center justify-between">
-      <!-- Brand -->
-      <a href="#" class="nav-brand flex items-center gap-2" style="text-decoration:none;">
-        <span class="font-bold text-base md:text-lg tracking-wide" style="font-family: 'Playfair Display', serif; font-style: italic; color: inherit;">ALL</span>
-        <span class="font-heading text-[0.65rem] md:text-xs font-medium tracking-widest uppercase" style="color: inherit; opacity: 0.8;">SPORTS - REMAX</span>
+  <!-- NAV BAR -->
+  <nav class="nav-bar" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="#hero" class="nav-brand">
+        <img src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-14 nav-logo-white">
+        <img src="imagens-pdf/LOGOS/Logo_ALL_Preto.png" alt="ALL Resort" class="h-14 nav-logo-dark hidden">
       </a>
 
       <!-- Desktop links -->
-      <div class="hidden lg:flex items-center gap-5">
-        <a href="#evento" class="nav-link">Evento</a>
-        <a href="#showroom" class="nav-link">Showroom</a>
-        <a href="#sport-center" class="nav-link">Sport Center</a>
-        <a href="#cronograma" class="nav-link">Cronograma</a>
-        <a href="#clinicas" class="nav-link">Clínicas</a>
-        <a href="#ativacoes" class="nav-link">Ativações</a>
-        <a href="#regras" class="nav-link">Regras</a>
-        <a href="#formulario" class="nav-cta px-5 py-2 font-heading font-semibold text-xs rounded tracking-wider uppercase">Inscreva-se</a>
+      <div class="hidden lg:flex items-center gap-6">
+        <a href="#empreendimento" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">O Resort</a>
+        <a href="#tennis" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">Tennis</a>
+        <a href="#surf" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">Surf</a>
+        <a href="#golf" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">Golf</a>
+        <a href="#park-art-design" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">Park Art</a>
+        <a href="#all-shops" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">All Shops</a>
+        <a href="#club-center" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">Club Center</a>
+        <a href="#residencias" class="nav-link font-heading text-xs font-medium tracking-wide hover:opacity-80 transition-opacity">Residências</a>
+        <a href="#formulario" class="nav-cta font-heading text-xs font-semibold px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity">Participar</a>
       </div>
 
       <!-- Mobile hamburger -->
-      <button id="menuBtn" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
-        <span class="block w-6 h-0.5 hamburger-bar transition-all" id="bar1"></span>
-        <span class="block w-6 h-0.5 hamburger-bar transition-all" id="bar2"></span>
-        <span class="block w-4 h-0.5 hamburger-bar transition-all ml-auto" id="bar3"></span>
+      <button id="menuToggle" class="lg:hidden nav-link" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
       </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu flex-col bg-primary lg:hidden border-t border-primary-foreground/10">
+      <a href="#empreendimento" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">O Resort</a>
+      <a href="#tennis" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">Tennis</a>
+      <a href="#surf" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">Surf</a>
+      <a href="#golf" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">Golf</a>
+      <a href="#park-art-design" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">Park Art Design</a>
+      <a href="#all-shops" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">All Shops</a>
+      <a href="#club-center" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">Club Center</a>
+      <a href="#residencias" class="nav-link px-6 py-3 font-heading text-sm font-medium" onclick="closeMobileMenu()">Residências</a>
+      <a href="#formulario" class="nav-link px-6 py-4 font-heading text-sm font-semibold text-gold" onclick="closeMobileMenu()">Participar</a>
     </div>
   </nav>
 
-  <!-- Mobile overlay -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Mobile drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="p-6 flex items-center justify-between border-b border-accent-green/20">
-      <span class="flex items-center gap-2">
-        <span class="font-bold text-base text-primary-foreground" style="font-family: 'Playfair Display', serif; font-style: italic;">ALL</span>
-        <span class="font-heading text-[0.6rem] font-medium tracking-widest uppercase text-primary-foreground/70">SPORTS - REMAX</span>
-      </span>
-      <button id="closeMenuBtn" class="text-primary-foreground/70 hover:text-primary-foreground p-2" aria-label="Fechar menu">
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="py-4">
-      <a href="#evento" class="mobile-nav-link">Evento</a>
-      <a href="#objetivo" class="mobile-nav-link">Objetivo</a>
-      <a href="#showroom" class="mobile-nav-link">Showroom</a>
-      <a href="#sport-center" class="mobile-nav-link">Sport Center</a>
-      <a href="#cronograma" class="mobile-nav-link">Cronograma</a>
-      <a href="#clinicas" class="mobile-nav-link">Clínicas</a>
-      <a href="#ativacoes" class="mobile-nav-link">Ativações</a>
-      <a href="#regras" class="mobile-nav-link">Regras</a>
-      <div class="px-6 pt-6">
-        <a href="#formulario" class="block w-full text-center px-5 py-3 bg-accent-green text-primary-foreground font-heading font-semibold text-sm rounded-lg hover:bg-accent-green/90 transition-colors">Garantir Minha Vaga</a>
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center hero-bg" style="background-image: url('imagens-pdf/aerea para hero.jpeg');">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-primary/70"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
+      <div class="fade-up mb-6">
+        <div class="gold-line mx-auto mb-8"></div>
+        <p class="font-heading text-primary-foreground/70 text-sm md:text-base tracking-[0.3em] uppercase mb-4">18 de Abril · Porto Belo — SC</p>
       </div>
-    </div>
-  </div>
 
-  <!-- ============================================ -->
-  <!-- SEÇÃO 1 — HERO -->
-  <!-- ============================================ -->
-  <section class="hero-bg relative min-h-screen flex items-center justify-center" style="background-image: url('imagens-pdf/foto teste hero.png');">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-8 py-24 flex flex-col items-center text-center">
-
-      <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-1 leading-tight tracking-wide">
-        All Resort Club Residence
+      <h1 class="fade-up font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight mb-6" style="transition-delay: 100ms;">
+        O esporte que você vive,<br>
+        <span class="italic">no lugar onde vai morar</span>
       </h1>
-      <p class="text-xl md:text-2xl text-primary-foreground/90 font-light tracking-wider mb-6">
-        Porto Belo — Santa Catarina
+
+      <p class="fade-up font-paragraph text-base md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-4" style="transition-delay: 200ms;">
+        Clínicas esportivas com atletas profissionais de elite em Tênis, Padel e Beach Tennis — dentro do empreendimento que está redefinindo o conceito de viver no Brasil.
       </p>
 
-      <p class="text-lg md:text-xl text-primary-foreground/85 font-medium mb-6">
-        18 de Abril | Showroom ALL Resort e Sport Center
+      <p class="fade-up font-heading text-sm text-gold tracking-widest uppercase mb-10" style="transition-delay: 300ms;">
+        ALL Resort Club Residence · 320 hectares · Porto Belo
       </p>
 
-      <p class="text-base md:text-lg text-primary-foreground/80 mb-10 max-w-2xl">
-        Evento presencial exclusivo com clínicas esportivas, tour pelo empreendimento e experiências premium. 54 convidados + acompanhantes por turno.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="fade-up flex flex-col sm:flex-row gap-4 justify-center" style="transition-delay: 400ms;">
         <a href="#formulario" class="px-8 py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg">
-          Garantir Sua Vaga
+          Quero participar
         </a>
-        <a href="#cronograma" class="px-8 py-4 border-2 border-primary-foreground text-primary-foreground font-heading font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
-          Ver Programação ↓
+        <a href="#empreendimento" class="px-8 py-4 border-2 border-primary-foreground/40 text-primary-foreground font-heading font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
+          Conhecer o Resort
         </a>
       </div>
-    </div>
-  </section>
 
-  <!-- SEÇÃO 1: EVENTO/FORMATO -->
-  <section id="evento" class="bg-white py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Text Column -->
-        <div class="fade-up">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Evento / Formato</h2>
-          <div class="space-y-2 mb-8">
-            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Data:</strong> 18 de Abril</p>
-            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Local:</strong> Showroom ALL Resort e Sport Center</p>
-            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Público:</strong> Prospects</p>
-            <p class="font-paragraph text-text-on-light/85"><strong class="text-text-on-light">Quantidade:</strong> 54 convidados + acompanhantes</p>
-            <p class="font-paragraph text-text-on-light/60 italic">Previsão de até 100 pessoas</p>
-          </div>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Evento presencial, tour pelo Showroom e após, clínicas e ativações no Sport Center;</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Clínicas de Padel e Tennis com atletas renomados;</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Ativações para os acompanhantes;</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Ilha de hidratação e Snacks.</span>
-            </li>
-          </ul>
-        </div>
-        <!-- Image Column -->
-        <div class="fade-up" style="transition-delay: 150ms;">
-          <div class="img-frame img-frame--landscape">
-            <img src="imagens-pdf/pag02_img01_1200x1800.jpeg" alt="Evento ALL Sports REMAX" />
-          </div>
-        </div>
+      <div class="scroll-indicator mt-16">
+        <svg class="w-6 h-6 mx-auto text-primary-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO 2: OBJETIVO (imagem à esquerda) -->
-  <section id="objetivo" class="bg-background py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Image Column (esquerda no desktop) -->
-        <div class="fade-up lg:order-1 order-2">
-          <div class="img-frame img-frame--landscape">
-            <img src="imagens-pdf/pag03_img01_1080x1620.jpeg" alt="Objetivo do Evento" />
-          </div>
-        </div>
-        <!-- Text Column (direita no desktop) -->
-        <div class="fade-up lg:order-2 order-1" style="transition-delay: 150ms;">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-4">Objetivo</h2>
-          <p class="font-heading text-lg md:text-xl font-semibold text-accent-green mb-6">CONEXÃO QUE CONVERTE</p>
-          <p class="font-paragraph text-lg text-text-on-light/85 mb-6">
-            Apresentar o All Resort Club Residence a um público altamente qualificado, conectado aos universos do esporte, do lifestyle e do investimento imobiliário.
-          </p>
-          <p class="font-paragraph text-lg text-text-on-light/85">
-            Mais do que uma apresentação: uma experiência imersiva que gera conexão genuína, desejo real e percepção de valor elevado.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SEÇÃO 3: SHOWROOM -->
-  <section id="showroom" class="bg-white py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Text Column -->
-        <div class="fade-up">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Showroom</h2>
-          <p class="font-paragraph text-lg text-text-on-light/85 mb-6">
-            Coffee receptivo no showroom, disponível das 8h às 11h.
-          </p>
-          <p class="font-paragraph text-text-on-light/85 mb-4">Coffee padrão do comercial:</p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Quantidade: 80 pessoas (formato rotativo);</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">O fornecedor deverá deixar a mesa montada, com itens suficientes para reposição ao longo do período;</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">A reposição será realizada pela copeira interna do showroom.</span>
-            </li>
-          </ul>
-        </div>
-        <!-- Image Column -->
-        <div class="grid grid-cols-2 gap-5 fade-up" style="transition-delay: 150ms;">
-          <div class="img-frame img-frame--portrait">
-            <img src="imagens-pdf/pag07_img01_736x1308.png" alt="Coffee Receptivo" />
-          </div>
-          <div class="img-frame img-frame--portrait">
-            <img src="imagens-pdf/pag07_img02_736x981.png" alt="Coffee Receptivo" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO 4: SPORT CENTER (imagem à esquerda) -->
-  <section id="sport-center" class="bg-background py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Image Column (esquerda no desktop) -->
-        <div class="fade-up lg:order-1 order-2">
-          <div class="img-frame img-frame--landscape">
-            <img src="imagens-pdf/pag08_img01_972x1215.png" alt="Hidratação e Snacks" />
-          </div>
-        </div>
-        <!-- Text Column (direita no desktop) -->
-        <div class="fade-up lg:order-2 order-1" style="transition-delay: 150ms;">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Sport Center</h2>
-          <p class="font-paragraph text-lg text-text-on-light/85 mb-6">
-            Durante o evento, os participantes terão acesso a uma tenda de hidratação, com opções pensadas para acompanhar a prática esportiva.
-          </p>
-          <p class="font-paragraph text-text-on-light/85 mb-4">Oferta prevista:</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
-              <span class="font-paragraph text-text-on-light/85">Água</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
-              <span class="font-paragraph text-text-on-light/85">Bebidas isotônicas</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
-              <span class="font-paragraph text-text-on-light/85">Frutas</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
-              <span class="font-paragraph text-text-on-light/85">Barrinhas de cereal</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 mt-2 rounded-full bg-accent-green flex-shrink-0"></span>
-              <span class="font-paragraph text-text-on-light/85">Snacks leves</span>
-            </li>
-          </ul>
-          <p class="font-paragraph text-text-on-light/70 italic">O objetivo é garantir energia e bem-estar ao longo da manhã.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- CRONOGRAMA - CLÍNICA 9H -->
-  <!-- ============================================ -->
-  <section id="cronograma" class="bg-white py-20 md:py-28 px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-10">Cronograma — Clínica 9H</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 fade-up">
-        <!-- Coluna Esquerda -->
-        <div class="space-y-8">
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">08h00 às 08h20 – Welcome</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Check-in realizado na recepção;</p>
-              <p class="font-paragraph text-text-on-light/85">Coffee à disposição no Lounge.</p>
-              <p class="font-paragraph text-text-on-light/85">Bebida Soft - Água com e sem gás, Refri.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">08h20 às 08h50 - Tour Showroom</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Imersão;</p>
-              <p class="font-paragraph text-text-on-light/85">Maquetes;</p>
-              <p class="font-paragraph text-text-on-light/85">Decorado.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">08h50 às 09:10 - Tour Porto Belo Golf</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Tour pelo bolsão de 400 m²;</p>
-              <p class="font-paragraph text-text-on-light/85">Praça Porto Belo;</p>
-              <p class="font-paragraph text-text-on-light/85">Ponto da Proa;</p>
-              <p class="font-paragraph text-text-on-light/85">Sport Center.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Coluna Direita -->
-        <div class="space-y-8">
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h30 às 10h30 – Clínicas</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Clínicas:</p>
-              <p class="font-paragraph text-text-on-light/85">Tênis;</p>
-              <p class="font-paragraph text-text-on-light/85">Padel;</p>
-              <p class="font-paragraph text-text-on-light/85">Beach Tennis.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h30 às 11:30 - Relaxamento</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Convidados ficam à vontade para</p>
-              <p class="font-paragraph text-text-on-light/85">desfrutar do Sport Center</p>
-              <p class="font-paragraph text-text-on-light/85">Indicamos que o Restaurante Bruder</p>
-              <p class="font-paragraph text-text-on-light/85">está em funcionamento.</p>
-            </div>
-          </div>
-          <div class="mt-4">
-            <div class="bg-primary text-primary-foreground font-heading font-bold text-xs md:text-sm px-4 py-2 rounded-sm inline-block mb-3 tracking-wider uppercase">Tempos de cada ação</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85 text-sm">Recepção - 20 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Tour no showroom - 30 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Tour Carrinho - 20 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Clínica - 60 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Welness - 60 min</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- CRONOGRAMA - CLÍNICA 10H -->
-  <!-- ============================================ -->
-  <section class="bg-background py-20 md:py-28 px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-10">Cronograma — Clínica 10H</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 fade-up">
-        <div class="space-y-8">
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h00 às 09h20 – Welcome</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Check-in realizado na recepção;</p>
-              <p class="font-paragraph text-text-on-light/85">Coffee à disposição no Lounge.</p>
-              <p class="font-paragraph text-text-on-light/85">Bebida Soft - Água com e sem gás, Refri.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h20 às 09h50 - Tour Showroom</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Imersão;</p>
-              <p class="font-paragraph text-text-on-light/85">Maquetes;</p>
-              <p class="font-paragraph text-text-on-light/85">Decorado.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">09h50 às 10:10 - Tour Porto Belo Golf</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Tour pelo bolsão de 400 m²;</p>
-              <p class="font-paragraph text-text-on-light/85">Praça Porto Belo;</p>
-              <p class="font-paragraph text-text-on-light/85">Ponto da Proa;</p>
-              <p class="font-paragraph text-text-on-light/85">Sport Center.</p>
-            </div>
-          </div>
-        </div>
-        <div class="space-y-8">
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h30 às 11h30 – Clínicas</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Clínicas:</p>
-              <p class="font-paragraph text-text-on-light/85">Tênis;</p>
-              <p class="font-paragraph text-text-on-light/85">Padel;</p>
-              <p class="font-paragraph text-text-on-light/85">Beach Tennis.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">11h30 às 12:00 - Relaxamento</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Convidados ficam à vontade para</p>
-              <p class="font-paragraph text-text-on-light/85">desfrutar do Sport Center</p>
-              <p class="font-paragraph text-text-on-light/85">Indicamos que o Restaurante Bruder</p>
-              <p class="font-paragraph text-text-on-light/85">está em funcionamento.</p>
-            </div>
-          </div>
-          <div class="mt-4">
-            <div class="bg-primary text-primary-foreground font-heading font-bold text-xs md:text-sm px-4 py-2 rounded-sm inline-block mb-3 tracking-wider uppercase">Tempos de cada ação</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85 text-sm">Recepção - 20 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Tour no showroom - 30 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Tour Carrinho - 20 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Clínica - 60 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Welness - 60 min</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- CRONOGRAMA - CLÍNICA 11H -->
-  <!-- ============================================ -->
-  <section class="bg-white py-20 md:py-28 px-8">
-    <div class="max-w-6xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-10">Cronograma — Clínica 11H</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 fade-up">
-        <div class="space-y-8">
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h00 às 10h20 – Welcome</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Check-in realizado na recepção;</p>
-              <p class="font-paragraph text-text-on-light/85">Coffee à disposição no Lounge.</p>
-              <p class="font-paragraph text-text-on-light/85">Bebida Soft - Água com e sem gás, Refri.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h20 às 10h50 - Tour Showroom</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Imersão;</p>
-              <p class="font-paragraph text-text-on-light/85">Maquetes;</p>
-              <p class="font-paragraph text-text-on-light/85">Decorado.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">10h50 às 11:10 - Tour Porto Belo Golf</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Tour pelo bolsão de 400 m²;</p>
-              <p class="font-paragraph text-text-on-light/85">Praça Porto Belo;</p>
-              <p class="font-paragraph text-text-on-light/85">Ponto da Proa;</p>
-              <p class="font-paragraph text-text-on-light/85">Sport Center.</p>
-            </div>
-          </div>
-        </div>
-        <div class="space-y-8">
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">11h30 às 12h30 – Clínicas</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Clínicas:</p>
-              <p class="font-paragraph text-text-on-light/85">Tênis;</p>
-              <p class="font-paragraph text-text-on-light/85">Padel;</p>
-              <p class="font-paragraph text-text-on-light/85">Beach Tennis.</p>
-            </div>
-          </div>
-          <div>
-            <div class="bg-primary text-primary-foreground font-heading font-semibold text-sm md:text-base px-4 py-2 rounded-sm inline-block mb-3">12h30 às 13:30 - Relaxamento</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85">Convidados ficam à vontade para</p>
-              <p class="font-paragraph text-text-on-light/85">desfrutar do Sport Center</p>
-              <p class="font-paragraph text-text-on-light/85">Indicamos que o Restaurante Bruder</p>
-              <p class="font-paragraph text-text-on-light/85">está em funcionamento.</p>
-            </div>
-          </div>
-          <div class="mt-4">
-            <div class="bg-primary text-primary-foreground font-heading font-bold text-xs md:text-sm px-4 py-2 rounded-sm inline-block mb-3 tracking-wider uppercase">Tempos de cada ação</div>
-            <div class="border-l-2 border-accent-green/30 pl-4">
-              <p class="font-paragraph text-text-on-light/85 text-sm">Recepção - 20 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Tour no showroom - 30 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Tour Carrinho - 20 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Clínica - 60 min</p>
-              <p class="font-paragraph text-text-on-light/85 text-sm">Welness - 60 min</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SEÇÃO — CLÍNICAS (fundo branco, layout do PDF) -->
-  <!-- ============================================ -->
-  <section id="clinicas" class="bg-primary py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-primary-foreground/50">ALL</span>
-        <span class="wm-right text-primary-foreground/40">ALL SPORTS - REMAX</span>
+  <!-- O EMPREENDIMENTO -->
+  <section id="empreendimento" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Por dentro do ALL Resort</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">
+          320 hectares divididos em<br class="hidden md:block">
+          <span class="italic">4 territórios exclusivos</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-text-on-light/70 max-w-3xl mx-auto">
+          O ALL Resort Club Residence é um ecossistema de esporte, lazer e sofisticação com 21 mil m² de instalações de última geração. Certificações Fitwel, SITES e LEED Platinum.
+        </p>
       </div>
 
-      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-12">Clínicas</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-
-        <!-- Walter Gringo -->
-        <div class="fade-up text-center">
-          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">Walter Gringo</p>
-          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
-            <div class="aspect-[3/4]">
-              <img src="imagens-pdf/pag10_img02_353x490.png" alt="Walter Gringo" class="w-full h-full object-cover" />
-            </div>
+      <!-- 4 Condomínios -->
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
+        <!-- Golf -->
+        <div class="fade-up group">
+          <div class="img-frame aspect-[4/3] mb-6">
+            <img src="IMAGENS/web/RST_06_GolfView_Campo_Noturno_A_P2.jpg" alt="Porto Belo Golf — 1º campo de golf iluminado da América Latina" loading="lazy">
           </div>
-          <div class="text-left">
-            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Tennis Coach</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: Quadra de Tenis</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 10 pessoas</p>
-          </div>
-        </div>
-
-        <!-- Julio Julianoti -->
-        <div class="fade-up text-center" style="transition-delay: 100ms;">
-          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">Julio Julianoti</p>
-          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
-            <div class="aspect-[3/4]">
-              <img src="imagens-pdf/pag10_img01_362x468.png" alt="Julio Julianoti" class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="text-left">
-            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Atleta Padel</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: Quadra de Padel 1</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 04 pessoas</p>
-          </div>
-        </div>
-
-        <!-- JP Moraes -->
-        <div class="fade-up text-center" style="transition-delay: 200ms;">
-          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">JP Moraes</p>
-          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
-            <div class="aspect-[3/4]">
-              <img src="imagens-pdf/pag10_img03_448x520.png" alt="JP Moraes" class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="text-left">
-            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Atleta Padel - Co-owner</p>
-            <p class="font-heading font-bold text-primary-foreground text-base mb-1">EQI Racket Club</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: Quadra de Padel 2</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 04 pessoas</p>
-          </div>
-        </div>
-
-        <!-- Vini Chaparro -->
-        <div class="fade-up text-center" style="transition-delay: 300ms;">
-          <p class="font-heading text-lg font-medium text-primary-foreground mb-4">Vini Chaparro</p>
-          <div class="w-full overflow-hidden rounded-lg mb-6 bg-background/10 border border-primary-foreground/15">
-            <div class="aspect-[3/4]">
-              <img src="imagens-pdf/pag10_img04_420x493.png" alt="Vini Chaparro" class="w-full h-full object-cover" />
-            </div>
-          </div>
-          <div class="text-left">
-            <p class="font-heading font-bold text-primary-foreground text-base mb-1">Beach Coach - Founder</p>
-            <p class="font-heading font-bold text-primary-foreground text-base mb-1">EQI Racket Club</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Duração: 1 hora</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Local: 2 Quadras de Beach</p>
-            <p class="font-paragraph text-primary-foreground/70 text-sm">Público Máx.: 04 pessoas</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SEÇÃO — TREINO FUNCIONAL (fundo bege, texto esq | img dir) -->
-  <!-- ============================================ -->
-  <section id="ativacoes" class="bg-background py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-        <!-- Text Column -->
-        <div class="fade-up">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Treino Funcional</h2>
-          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-6">
-            Mini sessão de treino Funcional ministrado para os acompanhantes.
-          </p>
-          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-6">
-            <span class="font-heading font-semibold text-text-on-light">Local:</span> Quadra de Pickleball
-          </p>
-          <p class="font-heading font-semibold text-text-on-light text-base md:text-lg mb-3">Horários:</p>
           <div class="space-y-2">
-            <p class="font-paragraph text-text-on-light/85 text-base"><span class="font-heading font-bold text-text-on-light">1ª Turma:</span> 09h30 às 10h00</p>
-            <p class="font-paragraph text-text-on-light/85 text-base"><span class="font-heading font-bold text-text-on-light">2ª Turma:</span> 11:30 às 12:00</p>
-            <p class="font-paragraph text-text-on-light/85 text-base"><span class="font-heading font-bold text-text-on-light">3ª Turma:</span> 12:30 às 13:00</p>
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Porto Belo Golf</p>
+            <h3 class="font-heading text-xl font-bold text-text-on-light">1º Campo de Golf Iluminado da América Latina</h3>
+            <p class="font-paragraph text-text-on-light/70">5º no mundo. 9 buracos projetados pelo arquiteto Erik Larsen, com a exclusividade da Academia Leadbetter — líder mundial em tecnologia de treinamento de golf.</p>
           </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
         </div>
 
-        <!-- Image Column -->
-        <div class="fade-up" style="transition-delay: 150ms;">
-          <div class="img-frame img-frame--landscape">
-            <img src="imagens-pdf/pag11_img02_1229x820.png" alt="Treino Funcional" />
+        <!-- Tennis -->
+        <div class="fade-up group" style="transition-delay: 150ms;">
+          <div class="img-frame aspect-[4/3] mb-6">
+            <img src="imagens-pdf/tennis/tennis-img2.webp" alt="Porto Belo Tennis — Rafa Nadal Tennis Academy" loading="lazy">
           </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Porto Belo Tennis</p>
+            <h3 class="font-heading text-xl font-bold text-text-on-light">Rafa Nadal Tennis Academy</h3>
+            <p class="font-paragraph text-text-on-light/70">16 quadras de tênis e uma arena para 1.500 pessoas. Sede da Rafa Nadal Tennis Academy no Brasil, com tenista internacional ancorando o projeto.</p>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
         </div>
 
+        <!-- Beach -->
+        <div class="fade-up group">
+          <div class="img-frame aspect-[4/3] mb-6">
+            <img src="imagens-pdf/imagem da praia /img praia 2.jpeg" alt="Porto Belo Beach — Praia artificial de 1km" loading="lazy">
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Porto Belo Beach</p>
+            <h3 class="font-heading text-xl font-bold text-text-on-light">Maior Praia Artificial do Brasil</h3>
+            <p class="font-paragraph text-text-on-light/70">1km de extensão com a maior piscina de ondas Wavegarden do mundo. Um ecossistema de praia com shopping, arte e gastronomia jamais visto no país.</p>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+
+        <!-- Mountain -->
+        <div class="fade-up group" style="transition-delay: 150ms;">
+          <div class="img-frame aspect-[4/3] mb-6">
+            <img src="IMAGENS/web/RST_09_GolfView_Externa_P2_V2.jpg" alt="Porto Belo Mountain — Natureza integrada" loading="lazy">
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Porto Belo Mountain</p>
+            <h3 class="font-heading text-xl font-bold text-text-on-light">Integração Total com a Natureza</h3>
+            <p class="font-paragraph text-text-on-light/70">Trilhas, wellness e a tranquilidade da Mata Atlântica preservada. Um refúgio dentro do maior complexo esportivo premium do país.</p>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div class="fade-up flex flex-wrap justify-center gap-3">
+        <span class="amenity-badge">Academia Leadbetter Golf</span>
+        <span class="amenity-badge">Rafa Nadal Tennis Academy</span>
+        <span class="amenity-badge">1º Golf Iluminado da Am. Latina</span>
+        <span class="amenity-badge">Praia Artificial de 1km</span>
+        <span class="amenity-badge">Wavegarden</span>
+        <span class="amenity-badge">LEED Platinum</span>
       </div>
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- SEÇÃO — PICKLEBALL (fundo branco, img esq | texto dir) -->
-  <!-- ============================================ -->
-  <section class="bg-white py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <!-- Image Column (left on desktop) -->
-        <div class="fade-up lg:order-1 order-2">
-          <div class="img-frame img-frame--landscape">
-            <img src="imagens-pdf/pag12_img01_1260x840.jpeg" alt="Pickleball" />
+  <!-- ALL JOURNAL / ALL TENNIS -->
+  <section id="journal" class="relative py-24 px-6 bg-primary overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-gold mb-4">ALL Journal · Edição Especial</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-6">
+          O primeiro Rafa Nadal Tennis Center<br class="hidden md:block">
+          <span class="italic">da América do Sul. It's ALL.</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-primary-foreground/70 max-w-3xl mx-auto">
+          O ALL Resort traz ao Brasil a metodologia oficial de treinamento desenvolvida por um dos maiores atletas da história do esporte. Uma parceria que nasceu em Mallorca e ganha vida em Porto Belo.
+        </p>
+      </div>
+
+      <!-- Mallorca Story -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div class="fade-up space-y-6">
+          <h3 class="font-display text-2xl md:text-3xl text-primary-foreground italic">A viagem a Mallorca</h3>
+          <p class="font-paragraph text-primary-foreground/75 leading-relaxed">
+            Antes de existir em Porto Belo, o projeto começou a tomar forma a milhares de quilômetros, na ilha de Mallorca, Espanha. Foi ali, na Rafa Nadal Academy, que a equipe do ALL liderada pelo CEO Richard Schwambach iniciou uma jornada para trazer ao Brasil uma das metodologias de treinamento mais respeitadas do tênis mundial.
+          </p>
+          <p class="font-paragraph text-primary-foreground/75 leading-relaxed">
+            O objetivo era observar, aprender e vivenciar o funcionamento real do centro criado por Rafael Nadal — entender como a filosofia do atleta se traduz em espaço, rotina e formação esportiva. Quadras ocupadas desde cedo, atletas de diferentes nacionalidades, uma rotina precisa onde cada detalhe parece ter propósito.
+          </p>
+          <p class="font-paragraph text-primary-foreground/60 text-sm italic">
+            Ali nasceu algo maior do que uma parceria. Nasceu a convicção de que o Brasil está pronto para receber uma nova forma de viver o tênis.
+          </p>
+        </div>
+        <div class="fade-up space-y-4" style="transition-delay: 150ms;">
+          <div class="img-frame aspect-[4/3]">
+            <img src="imagens-pdf/tennis/tennis-img3.webp" alt="Complexo de Tênis — ALL Resort" loading="lazy">
+          </div>
+          <p class="text-primary-foreground/40 text-xs text-center italic">Complexo de Tênis — ALL Resort Club Residence, Porto Belo</p>
+        </div>
+      </div>
+
+      <!-- Galeria de Imagens -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        <div class="fade-up img-frame aspect-[4/3]">
+          <img src="imagens-pdf/tennis/tennis-1.webp" alt="Quadras de Tênis — ALL Resort" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 100ms;">
+          <img src="imagens-pdf/tennis/tennis-img-extra.webp" alt="Complexo de Tênis" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 150ms;">
+          <img src="imagens-pdf/tennis/tennis-2.webp" alt="Quadra de Tênis" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 200ms;">
+          <img src="imagens-pdf/tennis/tennis-img.webp" alt="Tennis ALL Resort" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 250ms;">
+          <img src="imagens-pdf/tennis/tennis-3.webp" alt="Arena de Tênis" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 300ms;">
+          <img src="imagens-pdf/tennis/tennis-4.webp" alt="Infraestrutura de Tênis" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Infraestrutura Internacional -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="fade-up bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-8">
+          <div class="font-heading text-5xl font-bold text-gold mb-3">17</div>
+          <h3 class="font-heading text-lg font-semibold text-primary-foreground mb-2">Quadras de Tênis</h3>
+          <p class="font-paragraph text-primary-foreground/65 text-sm">1 arena para 1.500 pessoas, 9 outdoor e 7 indoor. Todas com iluminação profissional para jogos noturnos, preparada para torneios internacionais.</p>
+        </div>
+        <div class="fade-up bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-8" style="transition-delay: 100ms;">
+          <div class="font-heading text-5xl font-bold text-gold mb-3">8</div>
+          <h3 class="font-heading text-lg font-semibold text-primary-foreground mb-2">Quadras de Padel</h3>
+          <p class="font-paragraph text-primary-foreground/65 text-sm">Quadras cobertas com padrão internacional, preparadas para torneios e treinos de alto nível.</p>
+        </div>
+        <div class="fade-up bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-8" style="transition-delay: 200ms;">
+          <div class="font-heading text-5xl font-bold text-gold mb-3">360°</div>
+          <h3 class="font-heading text-lg font-semibold text-primary-foreground mb-2">Esporte, Natureza e Lifestyle</h3>
+          <p class="font-paragraph text-primary-foreground/65 text-sm">Academia com vista para quadras, salas de recovery, tecnologia de análise de desempenho e áreas de convivência para atletas e moradores.</p>
+        </div>
+      </div>
+
+      <!-- O Jogo Mudou -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="fade-up order-2 md:order-1">
+          <div class="img-frame aspect-[4/3]">
+            <img src="IMAGENS/web/RST_09_GolfView_Externa_P2.jpg" alt="Vista externa do Golf View — ALL Resort" loading="lazy">
           </div>
         </div>
-
-        <!-- Text Column (right on desktop) -->
-        <div class="fade-up lg:order-2 order-1" style="transition-delay: 150ms;">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6">Pickleball</h2>
-          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-6">
-            Aula de Pickleball para acompanhantes, primeiro contato para os que ainda não conheciam o esporte.
+        <div class="fade-up order-1 md:order-2 space-y-6" style="transition-delay: 150ms;">
+          <h3 class="font-display text-2xl md:text-3xl text-primary-foreground italic">O jogo mudou</h3>
+          <p class="font-paragraph text-primary-foreground/75 leading-relaxed">
+            O tênis vive um novo momento e o Brasil volta ao centro da quadra. Uma nova geração de atletas reposiciona o esporte no imaginário contemporâneo — mais dinâmico, global e acessível.
           </p>
-          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-4">
-            <span class="font-heading font-semibold text-text-on-light">Local:</span> Quadra de Pickleball
+          <p class="font-paragraph text-primary-foreground/75 leading-relaxed">
+            A estética do tênis atravessa moda, arquitetura e design. O esporte passou a dialogar com identidade, cultura e comportamento. Jogar tênis é também uma escolha de lifestyle.
           </p>
-          <p class="font-paragraph text-text-on-light/85 text-base md:text-lg leading-relaxed mb-4">
-            <span class="font-heading font-semibold text-text-on-light">Horário:</span> 09h30 às 13:00
-          </p>
-          <p class="font-paragraph text-text-on-light/75 text-base leading-relaxed">
-            Quadra rotativa, o professor vai ministrando os tempos e formatos conforme a demanda.
+          <p class="font-paragraph text-primary-foreground/75 leading-relaxed">
+            O ALL Tennis foi concebido para atender diferentes perfis de jogadores, com programas que vão da iniciação infantil ao treinamento avançado. A metodologia Rafa Nadal combina desenvolvimento técnico, preparação física e formação de valores.
           </p>
         </div>
+      </div>
 
+      <!-- Download Journal -->
+      <div class="fade-up text-center">
+        <div class="inline-flex flex-col sm:flex-row gap-4">
+          <a href="imagens-pdf/Journal Edição 01 Tennis.pdf" target="_blank" class="px-8 py-4 border-2 border-gold/40 text-gold font-heading font-semibold rounded-lg hover:bg-gold/10 transition-colors text-base inline-flex items-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            ALL Journal — Edição Tennis
+          </a>
+          <a href="imagens-pdf/ALL TENNIS.pdf" target="_blank" class="px-8 py-4 border-2 border-gold/40 text-gold font-heading font-semibold rounded-lg hover:bg-gold/10 transition-colors text-base inline-flex items-center gap-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            ALL Tennis — O Projeto
+          </a>
+        </div>
+        <p class="text-primary-foreground/40 text-xs mt-4">Conheça os detalhes do maior projeto de tênis da América do Sul</p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- SEÇÃO — EQUIPE/MOBILIÁRIO (fundo bege, texto esq | imgs dir) -->
-  <!-- ============================================ -->
-  <section class="bg-background py-20 md:py-28 px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <!-- Text Column -->
-        <div class="fade-up">
-          <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-8">Equipe / Mobiliário</h2>
-          <ul class="space-y-3">
-            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>2 Carregadores
-            </li>
-            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>2 Promotoras
-            </li>
-            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>1 Tenda de 5x5
-            </li>
-            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>1 Tenda de 3x3
-            </li>
-            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>4 Ombrelones
-            </li>
-            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>Caixa de Gelo
-            </li>
-            <li class="font-paragraph text-text-on-light/85 text-base md:text-lg flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-accent-green flex-shrink-0"></span>Mesa para Snacks
-            </li>
+  <!-- TENNIS -->
+  <section id="tennis" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Esporte de Alto Nível</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">Tennis</h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-text-on-light/80 max-w-3xl mx-auto">
+          Quadras de padrão internacional com infraestrutura completa e iluminação de última geração
+        </p>
+      </div>
+
+      <!-- Imagem destaque -->
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+        <img src="imagens-pdf/tennis/tennis-1.webp" alt="Complexo de Tênis — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+      </div>
+
+      <!-- Texto + imagem -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="fade-up space-y-6">
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            Um complexo de tênis de alto nível, projetado para proporcionar a melhor experiência para <strong class="text-text-on-light">atletas e entusiastas do esporte.</strong> Equipado com quadras de padrão internacional, o espaço conta com infraestrutura completa, incluindo iluminação de última geração.
+          </p>
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            Com um <strong class="text-text-on-light">design inovador e tecnologia de ponta</strong>, este é um espaço que combina conforto, funcionalidade e excelência esportiva, elevando o tênis a um novo patamar.
+          </p>
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/tennis/tennis-2.webp" alt="Quadra de Tênis — ALL Resort" class="w-full h-[24rem] object-cover">
+        </div>
+      </div>
+
+      <!-- Grid de imagens -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/tennis/tennis-3.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/tennis/tennis-4.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/tennis/tennis-img.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/tennis/tennis-img2.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/tennis/tennis-img3.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/tennis/tennis-img-extra.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SURF -->
+  <section id="surf" class="relative py-24 px-6 bg-primary overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Praia Artificial</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-6">Surf</h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-primary-foreground/70 max-w-3xl mx-auto">
+          Uma praia ao lado da sua casa com cerca de 1km de orla de areia dourada
+        </p>
+      </div>
+
+      <!-- Imagem destaque -->
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+        <img src="imagens-pdf/surf/surf-1.webp" alt="Surf — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+      </div>
+
+      <!-- Texto + imagem -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="fade-up space-y-6">
+          <p class="font-paragraph text-primary-foreground/80 text-lg leading-relaxed">
+            Com uma estrutura de alto nível, esta praia artificial foi projetada para proporcionar a <strong class="text-primary-foreground">experiência definitiva do surfe.</strong> Ondas perfeitas, criadas com tecnologia de ponta, garantem condições ideais para todos os níveis — desde iniciantes até atletas experientes.
+          </p>
+          <p class="font-paragraph text-primary-foreground/80 text-lg leading-relaxed">
+            Mais do que um destino, é um cenário pensado para a <strong class="text-primary-foreground">prática esportiva, lazer e conexão com a natureza.</strong> Entre sessões de surfe, beach tennis ou momentos de descanso na areia.
+          </p>
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/surf/surf-2.webp" alt="Surf ALL Resort" class="w-full h-[24rem] object-cover">
+        </div>
+      </div>
+
+      <!-- Grid de imagens -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/surf/surf-3.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/surf/surf-4.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/surf/surf-5.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- GOLF ILUMINADO -->
+  <section id="golf" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Exclusividade</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">Golf Iluminado</h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-text-on-light/80 max-w-3xl mx-auto">
+          O primeiro campo de golfe iluminado da América Latina
+        </p>
+      </div>
+
+      <!-- Imagem destaque noturna -->
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+        <img src="imagens-pdf/golf/noturno-2.jpg" alt="Campo de Golf Iluminado — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+      </div>
+
+      <!-- Texto + imagem -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="fade-up space-y-6">
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            O ALL Resort abriga o <strong class="text-text-on-light">primeiro campo de golfe iluminado da América Latina.</strong> Com nove buracos e um sistema de iluminação de última geração, o campo foi projetado por especialistas para oferecer uma experiência completa e desafiadora.
+          </p>
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            Para golfistas de todos os níveis, o campo permite jogar <strong class="text-text-on-light">mesmo após o pôr do sol</strong> — uma experiência única que transforma cada partida em um momento inesquecível sob as estrelas.
+          </p>
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/golf/noturno-1.png" alt="Golf Noturno — ALL Resort" class="w-full h-[24rem] object-cover">
+        </div>
+      </div>
+
+      <!-- Grid de imagens Golf -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/golf/golf-1.webp" alt="Campo de Golf — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/golf/golf-img-2.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/golf/golf-7.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/golf/golf-8.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/golf/golf-10.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/golf/noturno-2.jpg" alt="Golf Noturno — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PARK ART DESIGN -->
+  <section id="park-art-design" class="relative py-24 px-6 bg-background overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Arquitetura & Design</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">Park Art Design</h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-text-on-light/80 max-w-3xl mx-auto">
+          Onde arquitetura, arte e natureza se completam
+        </p>
+      </div>
+
+      <!-- Imagem destaque full-width -->
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+        <img src="IMAGENS/web/RST_09_GolfView_Externa_P2_V2.jpg" alt="Park Art Design — Vista externa ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+      </div>
+
+      <!-- Texto + imagem lado a lado -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="fade-up space-y-6">
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            Ar puro, belas paisagens, a paz e a tranquilidade que caracterizam a vida no campo. Como melhorar ainda mais estes espaços e trazer mais valor ao que já é precioso? <strong class="text-text-on-light">Arquitetura e design são a resposta.</strong> E o Park Art Design do ALL Resort é a prova disso.
+          </p>
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            Equipamentos urbanos criam ambientes mágicos ao longo de uma <strong class="text-text-on-light">pista de corrida e ciclovia de 13 km.</strong> Tendo em mente que arquitetura e design são medidas estratégicas, <strong class="text-text-on-light">Clarissa Schneider</strong>, curadora de arquitetura e design da ALL Wert, idealizou e convidou <strong class="text-text-on-light">Jader Almeida</strong> e <strong class="text-text-on-light">Giovani Bonetti</strong>, ambos arquitetos catarinenses, para criarem equipamentos urbanos que trazem ainda mais aplicabilidade e identidade a um lugar onde a natureza é a grande protagonista.
+          </p>
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="IMAGENS/web/RST_09_GolfView_Externa_P2.jpg" alt="Paisagismo e natureza — ALL Resort" class="w-full h-[24rem] object-cover">
+        </div>
+      </div>
+
+      <!-- Citação destaque -->
+      <div class="fade-up bg-primary/5 border-l-4 border-accent-green rounded-r-2xl p-8 md:p-12 mb-16 max-w-4xl mx-auto">
+        <blockquote class="font-paragraph text-text-on-light/90 text-lg md:text-xl italic leading-relaxed">
+          "O Parque Art Design possui ideias baseadas em valores éticos e princípios ambientais. Ambientes de meditação e reflexão para carregar as baterias, pontos de encontro que realçam a nossa relação com a natureza e dialogam com as nossas necessidades de bem-estar e acolhimento."
+        </blockquote>
+        <p class="font-heading text-sm tracking-[0.15em] uppercase text-accent-green mt-6">Clarissa Schneider — Curadora de Arquitetura e Design</p>
+      </div>
+
+      <!-- Grid de imagens -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/renders/render-praia-panoramica.jpg" alt="Vista panorâmica — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/renders/render-praia-sunset.jpg" alt="Sunset — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/renders/render-praia-ondas.jpg" alt="Natureza e paisagem — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+      <!-- Imagem corrida -->
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-xl">
+        <img src="imagens-pdf/park-art-design/img-corrida.webp" alt="Pista de corrida e ciclovia — ALL Resort" class="w-full object-contain rounded-2xl">
+      </div>
+
+      <!-- Texto final -->
+      <div class="fade-up text-center max-w-3xl mx-auto">
+        <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+          Na ALL Wert, arquitetura e design atuam como extensões dos próprios princípios que orientam cada projeto — <strong class="text-text-on-light">bem-estar, sustentabilidade e um modo de viver onde o lazer se integra naturalmente ao cotidiano.</strong>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ALL SHOPS -->
+  <section id="all-shops" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Gastronomia & Lifestyle</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">All Shops</h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-text-on-light/80 max-w-3xl mx-auto">
+          Um destino que une arquitetura inovadora, sustentabilidade e experiência sofisticada
+        </p>
+      </div>
+
+      <!-- Imagem destaque -->
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+        <img src="imagens-pdf/all-shops/all-shops.webp" alt="All Shops — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover object-top">
+      </div>
+
+      <!-- Texto + imagem -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="fade-up space-y-6">
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            Com <strong class="text-text-on-light">design biofílico</strong>, o All Shops oferece gastronomia, entretenimento e serviços em um ambiente vívido e sofisticado. Um marco urbano onde você encontra tudo que precisa.
+          </p>
+          <p class="font-paragraph text-text-on-light/80 text-lg leading-relaxed">
+            O All Shops é um dos <strong class="text-text-on-light">pontos de encontro e vivência</strong> do ALL Resort. Experiências para quem celebra a vida.
+          </p>
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/all-shops/all-shops-2.webp" alt="All Shops ALL Resort" class="w-full h-[24rem] object-cover object-top">
+        </div>
+      </div>
+
+      <!-- Grid de imagens -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/all-shops/all-shops-3.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/all-shops/all-shops-4.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CLUB CENTER -->
+  <section id="club-center" class="relative py-24 px-6 bg-primary overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Infraestrutura Completa</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-6">Club Center</h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-primary-foreground/70 max-w-3xl mx-auto">
+          Uma estrutura completa e de alta tecnologia com tudo que você precisa
+        </p>
+      </div>
+
+      <!-- Imagem destaque -->
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+        <img src="imagens-pdf/club-center/club-center.webp" alt="Club Center — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+      </div>
+
+      <!-- Descrição geral + imagem -->
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="fade-up space-y-6">
+          <p class="font-paragraph text-primary-foreground/80 text-lg leading-relaxed">
+            O Lagoon tem piscina com praia de areia, parque aquático térmico, piscina com raia semiolímpica e um bistrô próximo ao lago. A <strong class="text-primary-foreground">área fitness é completa</strong> com equipamentos de alto padrão, sala multiuso e espaço para pilates.
+          </p>
+          <p class="font-paragraph text-primary-foreground/80 text-lg leading-relaxed">
+            Um <strong class="text-primary-foreground">Wellness Center</strong> com estruturas de ponta: salas de massagem, saunas seca e úmida, áreas de relaxamento e SPA. Diversão garantida na <strong class="text-primary-foreground">Club House</strong> com gamers space, cinema, playroom, espaço kids e point gourmet!
+          </p>
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/club-center/club.webp" alt="Club Center ALL Resort" class="w-full h-[24rem] object-cover">
+        </div>
+      </div>
+
+      <!-- 4 áreas do Club Center -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+        <!-- Sport Center -->
+        <div class="fade-up bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <h3 class="font-display text-2xl text-primary-foreground mb-4">Sport Center</h3>
+          <ul class="font-paragraph text-primary-foreground/70 text-sm space-y-2">
+            <li>Quadras de tênis de grama sintética</li>
+            <li>Quadra de pickleball</li>
+            <li>Quadras de beach tennis</li>
+            <li>Quadras de paddle cobertas e descobertas</li>
+            <li>Quadra poliesportiva coberta e descoberta</li>
+            <li>Campo de futebol society e infantil</li>
+            <li>Playground e pista de skate</li>
+            <li>Point gourmet</li>
           </ul>
         </div>
 
-        <!-- Images Column -->
-        <div class="fade-up" style="transition-delay: 150ms;">
-          <div class="grid grid-cols-2 gap-5">
-            <div class="img-frame img-frame--square">
-              <img src="imagens-pdf/pag13_img01_600x600.png" alt="Ombrelone" />
-            </div>
-            <div class="img-frame img-frame--square">
-              <img src="imagens-pdf/pag13_img02_640x640.png" alt="Mesa para Snacks" />
-            </div>
-          </div>
+        <!-- Wellness Center -->
+        <div class="fade-up bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <h3 class="font-display text-2xl text-primary-foreground mb-4">Wellness Center</h3>
+          <ul class="font-paragraph text-primary-foreground/70 text-sm space-y-2">
+            <li>Salas de massagem e atendimento</li>
+            <li>Sauna seca e úmida com áreas de descanso</li>
+            <li>SPA</li>
+            <li>Academia, Pilates e Sala multiuso</li>
+            <li>Funcional, Dança e Artes Marciais</li>
+          </ul>
         </div>
 
+        <!-- Lagoon -->
+        <div class="fade-up bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <h3 class="font-display text-2xl text-primary-foreground mb-4">Lagoon</h3>
+          <ul class="font-paragraph text-primary-foreground/70 text-sm space-y-2">
+            <li>Piscina com Praia de Areia</li>
+            <li>Parque Aquático Térmico</li>
+            <li>Piscina com Raia Semiolímpica</li>
+            <li>Point Gourmet</li>
+            <li>Bistrô do Lago</li>
+          </ul>
+        </div>
+
+        <!-- Club House -->
+        <div class="fade-up bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <h3 class="font-display text-2xl text-primary-foreground mb-4">Club House</h3>
+          <ul class="font-paragraph text-primary-foreground/70 text-sm space-y-2">
+            <li>Gamers Space</li>
+            <li>Cinema</li>
+            <li>Playroom</li>
+            <li>Espaço Kids</li>
+            <li>Salão de Festas Infantil</li>
+            <li>Salão de Festas</li>
+            <li>Point Gourmet</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Grid de imagens -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/club-center/club-2.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/club-center/club-3.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+          <img src="imagens-pdf/club-center/club-4.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- A EXPERIÊNCIA -->
+  <section id="experiencia" class="relative py-24 px-6 bg-background overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">18 de Abril · ALL Resort</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">
+          Uma manhã com atletas<br class="hidden md:block">
+          <span class="italic">profissionais de elite</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-text-on-light/70 max-w-3xl mx-auto">
+          Uma experiência esportiva dentro do empreendimento que reúne os melhores esportes de raquete do mundo. Você joga, conhece o resort e vive o que será o seu dia a dia.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="fade-up bg-white rounded-xl p-8 border border-accent-green/15 hover:border-accent-green/40 transition-colors shadow-sm">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">3 Clínicas Esportivas</h3>
+          <p class="font-paragraph text-text-on-light/65 text-sm">Tênis, Padel e Beach Tennis com atletas reconhecidos nacional e internacionalmente.</p>
+        </div>
+
+        <div class="fade-up bg-white rounded-xl p-8 border border-accent-green/15 hover:border-accent-green/40 transition-colors shadow-sm" style="transition-delay: 100ms;">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">3 Horários</h3>
+          <p class="font-paragraph text-text-on-light/65 text-sm">Sessões das 9h às 12h. Escolha o horário e a modalidade que mais combina com você.</p>
+        </div>
+
+        <div class="fade-up bg-white rounded-xl p-8 border border-accent-green/15 hover:border-accent-green/40 transition-colors shadow-sm" style="transition-delay: 200ms;">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">Conheça o Resort</h3>
+          <p class="font-paragraph text-text-on-light/65 text-sm">Visite as instalações, conheça as residências e descubra o que significa viver dentro do ALL Resort.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- SEÇÃO — REGRAS (fundo branco) -->
-  <!-- ============================================ -->
-  <section id="regras" class="bg-white py-24 px-8">
+
+  <!-- CLÍNICAS ESPORTIVAS -->
+  <section id="clinicas" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Atletas de Elite</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">
+          Jogue com quem compete<br class="hidden md:block">
+          <span class="italic">no mais alto nível</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg text-text-on-light/70 max-w-2xl mx-auto">
+          Cada clínica foi desenhada para oferecer uma experiência real com atletas profissionais. Vagas limitadas por modalidade e horário.
+        </p>
+      </div>
+
+      <!-- Instructor cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+
+        <!-- TÊNIS — Walter Gringo -->
+        <div class="fade-up group">
+          <div class="img-frame aspect-[3/4] mb-6">
+            <img src="imagens-pdf/atletas/walter-gringo.jpg" alt="Walter Gringo — Tennis Coach" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Tênis</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">Walter Gringo</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">1 quadra · Até 10 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — Avançado</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — Intermediário</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — Iniciante</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+
+        <!-- PADEL — Julio Julianoti -->
+        <div class="fade-up group" style="transition-delay: 100ms;">
+          <div class="img-frame aspect-[3/4] mb-6">
+            <img src="imagens-pdf/atletas/julio-julianoti.jpg" alt="Julio Julianoti — Atleta de Padel" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Padel · Quadra 1</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">Julio Julianoti</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">4 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — 10h</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — 11h</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — 12h</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+
+        <!-- PADEL — JP Moraes -->
+        <div class="fade-up group" style="transition-delay: 200ms;">
+          <div class="img-frame aspect-[3/4] mb-6">
+            <img src="imagens-pdf/atletas/jp-moraes.jpg" alt="JP Moraes — Atleta de Padel" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Padel · Quadra 2</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">JP Moraes</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">4 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — 10h</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — 11h</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — 12h</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+
+        <!-- BEACH TENNIS — Vini Chaparro -->
+        <div class="fade-up group" style="transition-delay: 300ms;">
+          <div class="img-frame aspect-[3/4] mb-6">
+            <img src="imagens-pdf/atletas/vini-chaparro.jpg" alt="Vini Chaparro — Beach Tennis Coach" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Beach Tennis</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">Vini Chaparro</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">1 quadra · 5 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — 10h</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — 11h</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — 12h</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESIDÊNCIAS -->
+  <section id="residencias" class="relative py-24 px-6 bg-primary overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-gold mb-4">Residências</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-6">
+          Conheça o padrão de<br class="hidden md:block">
+          <span class="italic">quem vai viver aqui</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg text-primary-foreground/70 max-w-2xl mx-auto">
+          Design autoral, materiais nobres e acabamento premium. Cada detalhe pensado para quem valoriza sofisticação e qualidade de vida.
+        </p>
+      </div>
+
+      <!-- Renders Golf View — destaque -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div class="fade-up img-frame aspect-[16/10]">
+          <img src="IMAGENS/web/RST_10_GolfView_Living_P2.jpg" alt="Living — pé-direito duplo com vista panorâmica" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-[16/10]" style="transition-delay: 100ms;">
+          <img src="IMAGENS/web/RST_11_GolfView_Suite_P2.jpg" alt="Suíte master — iluminação indireta com vista" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Fotos reais — grid uniforme -->
+      <div class="grid grid-cols-3 md:grid-cols-4 gap-4">
+        <div class="fade-up img-frame aspect-square">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.42.jpeg" alt="Suíte master" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-square" style="transition-delay: 50ms;">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.47.jpeg" alt="Sala de jantar" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-square" style="transition-delay: 100ms;">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.48 (1).jpeg" alt="Cozinha gourmet" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-square" style="transition-delay: 150ms;">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.49.jpeg" alt="Living" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-square" style="transition-delay: 200ms;">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.45.jpeg" alt="Lavabo" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-square" style="transition-delay: 250ms;">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.49 (1).jpeg" alt="Closet" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-square" style="transition-delay: 300ms;">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.49 (2).jpeg" alt="Banheiro" loading="lazy">
+        </div>
+        <div class="fade-up img-frame aspect-square" style="transition-delay: 350ms;">
+          <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.44.jpeg" alt="Lavanderia" loading="lazy">
+        </div>
+      </div>
+
+      <p class="fade-up text-center text-primary-foreground/50 text-sm mt-8 italic">
+        Fotos reais das residências ALL Resort Club Residence — Porto Belo, SC
+      </p>
+    </div>
+  </section>
+
+
+  <!-- GALERIA PRAIA -->
+  <section class="py-24 px-6 bg-background overflow-hidden">
     <div class="max-w-6xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
+      <div class="text-center mb-12">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Porto Belo Beach</p>
+        <h2 class="fade-up font-display text-3xl md:text-4xl text-text-on-light leading-tight">
+          Um ecossistema de praia<br class="hidden md:block">
+          <span class="italic">jamais visto no Brasil</span>
+        </h2>
       </div>
 
-      <div class="text-center mb-12 fade-up">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-4">Regras do Evento</h2>
-        <p class="text-text-on-light/70 text-lg">Estrutura pensada para garantir a melhor experiência para todos</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-
-        <!-- Card 1 -->
-        <div class="fade-up bg-white border-2 border-accent-green/40 rounded-lg p-8 md:p-10 hover:border-accent-green/70 transition-colors">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-lg bg-accent-green/15 flex items-center justify-center">
-              <span class="text-xl font-bold text-accent-green">1</span>
-            </div>
-            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Inscrição por Convite</h3>
-          </div>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Participação exclusiva via lista prioritária</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Indicação de amigos com perfil alinhado</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Member get Member — curadoria real</span>
-            </li>
-          </ul>
-          <p class="font-heading text-base font-semibold text-accent-green italic border-t border-accent-green/20 pt-6">"A exclusividade começa pela seleção dos participantes."</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="fade-up img-frame aspect-[4/3]">
+          <img src="imagens-pdf/imagem da praia /img praia.jpeg" alt="Beach club — pôr do sol" loading="lazy">
         </div>
-
-        <!-- Card 2 -->
-        <div class="fade-up bg-white border-2 border-accent-green/40 rounded-lg p-8 md:p-10 hover:border-accent-green/70 transition-colors" style="transition-delay: 100ms;">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-lg bg-accent-green/15 flex items-center justify-center">
-              <span class="text-xl font-bold text-accent-green">2</span>
-            </div>
-            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Modalidades Disponíveis</h3>
-          </div>
-          <div class="bg-accent-green/5 border border-accent-green/15 rounded-lg p-4 mb-4">
-            <p class="text-text-on-light/85"><strong>Tênis, Padel e Beach Tennis</strong> — escolha sua modalidade e turno no momento da inscrição. Cada experiência tem vagas independentes e limitadas.</p>
-          </div>
-          <p class="font-heading text-sm text-text-on-light/60 italic">Clínicas conduzidas por profissionais reconhecidos no cenário esportivo.</p>
+        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 100ms;">
+          <img src="imagens-pdf/imagem da praia /img praia 2.jpeg" alt="Praia artificial com montanhas" loading="lazy">
         </div>
-
-        <!-- Card 3 -->
-        <div class="fade-up bg-white border-2 border-accent-green/40 rounded-lg p-8 md:p-10 hover:border-accent-green/70 transition-colors" style="transition-delay: 200ms;">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-lg bg-accent-green/15 flex items-center justify-center">
-              <span class="text-xl font-bold text-accent-green">3</span>
-            </div>
-            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Estrutura e Logística</h3>
-          </div>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Local: Showroom ALL Resort e Sport Center</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Coffee receptivo disponível das 8h às 11h</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 mt-0.5 text-accent-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/><line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2"/></svg>
-              <span class="font-paragraph text-text-on-light/85">Tenda de hidratação no Sport Center</span>
-            </li>
-          </ul>
-          <p class="font-heading text-base font-semibold text-accent-green italic border-t border-accent-green/20 pt-6">"Infraestrutura à altura do público que estamos reunindo."</p>
+        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 200ms;">
+          <img src="imagens-pdf/imagem da praia /img praia 3.jpeg" alt="Piscina de ondas Wavegarden" loading="lazy">
         </div>
-
-        <!-- Card 4 - Política (vermelho/destructive) -->
-        <div class="fade-up bg-white border-2 border-destructive/30 rounded-lg p-8 md:p-10 hover:border-destructive/60 transition-colors" style="transition-delay: 300ms;">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center">
-              <span class="text-xl font-bold text-destructive">4</span>
-            </div>
-            <h3 class="font-heading text-xl md:text-2xl font-semibold text-text-on-light">Política de Participação</h3>
-          </div>
-          <div class="bg-destructive/5 border border-destructive/15 rounded-lg p-4 mb-4">
-            <p class="text-destructive font-semibold mb-2">Atenção:</p>
-            <ul class="space-y-1">
-              <li class="flex items-start gap-2"><span class="text-destructive">•</span><span class="text-text-on-light/85">Inscrição intransferível</span></li>
-              <li class="flex items-start gap-2"><span class="text-destructive">•</span><span class="text-text-on-light/85">Cancelamento com antecedência mínima</span></li>
-              <li class="flex items-start gap-2"><span class="text-destructive">•</span><span class="text-text-on-light/85">Vaga destinada à lista de espera em caso de desistência</span></li>
-            </ul>
-          </div>
-          <p class="font-heading text-sm text-text-on-light/60 italic">Regras para garantir que todos aproveitem ao máximo.</p>
-        </div>
-
-      </div>
-
-      <div class="mt-12 text-center fade-up">
-        <p class="font-paragraph text-lg text-text-on-light/80">
-          <strong>Nosso objetivo é proporcionar a melhor experiência possível.</strong> Essas regras garantem que todos aproveitem em pé de igualdade.
-        </p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- SEÇÃO 7 — STATS (fundo verde escuro) -->
-  <!-- ============================================ -->
-  <section class="bg-primary py-32 px-8">
-    <div class="max-w-5xl mx-auto text-center">
 
-      <h2 class="fade-up font-heading text-4xl md:text-6xl font-bold text-primary-foreground mb-3">Experiência exclusiva por design</h2>
-      <p class="fade-up font-heading text-xl md:text-2xl font-semibold text-accent-green mb-12">Estrutura pensada para qualidade, não quantidade.</p>
+  <!-- VÍDEO DESTAQUE -->
+  <section class="relative overflow-hidden">
+    <!-- Background image fullwidth -->
+    <div class="relative hero-bg min-h-[80vh] flex flex-col items-center justify-center" style="background-image: url('IMAGENS/web/RST_06_GolfView_Campo_Noturno_A_P2.jpg');">
+      <div class="absolute inset-0 bg-black/50"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
-
-        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default">
-          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-          <div class="relative z-10">
-            <div class="font-heading text-7xl md:text-8xl font-bold text-accent-green mb-4 leading-none">54</div>
-            <div class="font-paragraph text-lg md:text-xl text-primary-foreground/90 font-medium">Convidados por turno</div>
-          </div>
-        </div>
-
-        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default" style="transition-delay: 100ms;">
-          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-          <div class="relative z-10">
-            <div class="font-heading text-7xl md:text-8xl font-bold text-accent-green mb-4 leading-none">3</div>
-            <div class="font-paragraph text-lg md:text-xl text-primary-foreground/90 font-medium">Turnos de clínicas</div>
-          </div>
-        </div>
-
-        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default" style="transition-delay: 200ms;">
-          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-          <div class="relative z-10">
-            <div class="font-heading text-7xl md:text-8xl font-bold text-accent-green mb-4 leading-none">4</div>
-            <div class="font-paragraph text-lg md:text-xl text-primary-foreground/90 font-medium">Instrutores profissionais</div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="border-t-2 border-accent-green/40 pt-10 md:pt-12 fade-up">
-        <p class="font-heading text-xl md:text-2xl font-bold text-accent-green">Até 100 pessoas no total. Cada detalhe foi pensado.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SEÇÃO 8 — FORMULÁRIO (fundo branco) -->
-  <!-- ============================================ -->
-  <section id="formulario" class="bg-white py-24 px-8">
-    <div class="max-w-2xl mx-auto">
-      <div class="section-watermark">
-        <span class="wm-left text-text-on-light/50">ALL</span>
-        <span class="wm-right text-text-on-light/40">ALL SPORTS - REMAX</span>
-      </div>
-
-      <h2 class="fade-up font-heading text-3xl md:text-4xl font-bold text-text-on-light mb-6 text-center">Garantir Sua Vaga</h2>
-
-      <div class="fade-up bg-accent-green/5 border border-accent-green/20 rounded-lg p-6 md:p-8 mb-10">
-        <p class="font-paragraph text-text-on-light/85 leading-relaxed">
-          ALL Sports — REMAX | 18 de Abril. Um evento esportivo exclusivo com foco em relacionamento, negócios e experiências premium. As informações abaixo nos ajudam a organizar melhor a experiência dos participantes. Os dados são utilizados apenas de forma agregada.
+      <!-- Logo + título sobre o fundo -->
+      <div class="relative z-10 text-center px-6 pt-20 pb-8">
+        <img src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-16 md:h-20 mx-auto mb-6 fade-up">
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-3">
+          It's <span class="italic">ALL.</span>
+        </h2>
+        <p class="fade-up font-heading text-primary-foreground/60 text-sm md:text-base tracking-widest uppercase">
+          360° de esporte, natureza e lifestyle
         </p>
       </div>
 
-      <form class="space-y-6 fade-up" onsubmit="handleSubmit(event)">
+      <!-- Vídeo centralizado sobrepondo o fundo -->
+      <div class="relative z-10 w-full max-w-4xl mx-auto px-6 pb-20 fade-up" style="transition-delay: 200ms;">
+        <div class="rounded-xl overflow-hidden shadow-2xl shadow-black/40">
+          <video controls playsinline preload="metadata" poster="imagens-pdf/aerea para hero.jpeg" class="w-full aspect-video object-cover">
+            <source src="videos/ALL_RESORT_TERRITORIOS.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
 
+    <!-- Texto abaixo -->
+    <div class="bg-primary py-12 px-6">
+      <p class="fade-up text-center font-paragraph text-primary-foreground/70 text-lg max-w-3xl mx-auto">
+        Conheça o empreendimento que reúne o primeiro campo de golf iluminado da América Latina, a Rafa Nadal Tennis Academy e a maior praia artificial do Brasil em 320 hectares.
+      </p>
+    </div>
+  </section>
+
+
+
+  <!-- FORMULÁRIO DE INSCRIÇÃO -->
+  <section id="formulario" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <div class="text-center mb-10">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">18 de Abril</p>
+        <h2 class="fade-up font-display text-3xl md:text-4xl text-text-on-light leading-tight mb-4">
+          Participe da experiência
+        </h2>
+        <p class="fade-up font-paragraph text-text-on-light/70 max-w-lg mx-auto">
+          Cadastre-se como jogador para as clínicas esportivas ou como acompanhante para conhecer o empreendimento. As vagas são limitadas por modalidade e horário.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="inscricaoForm" class="fade-up space-y-6">
+
+        <!-- Tipo de participação -->
         <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">Nome completo *</label>
-          <input type="text" required placeholder="Seu nome completo" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+          <label class="block font-heading font-semibold text-text-on-light mb-3">Como você deseja participar? *</label>
+          <div class="grid grid-cols-2 gap-4">
+            <label class="radio-card" id="card-jogador">
+              <input type="radio" name="tipo_participacao" value="jogador">
+              <div class="mb-2">
+                <svg class="w-8 h-8 mx-auto text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <p class="font-heading font-semibold text-text-on-light">Jogador</p>
+              <p class="text-xs text-text-on-light/60 mt-1">Participar das clínicas esportivas</p>
+            </label>
+            <label class="radio-card" id="card-acompanhante">
+              <input type="radio" name="tipo_participacao" value="acompanhante">
+              <div class="mb-2">
+                <svg class="w-8 h-8 mx-auto text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <p class="font-heading font-semibold text-text-on-light">Acompanhante</p>
+              <p class="text-xs text-text-on-light/60 mt-1">Conhecer o empreendimento</p>
+            </label>
+          </div>
         </div>
 
-        <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">WhatsApp *</label>
-          <input type="tel" required placeholder="(XX) 9XXXX-XXXX" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+        <!-- Dados pessoais -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">Nome completo *</label>
+            <input type="text" name="nome" required placeholder="Seu nome"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">WhatsApp *</label>
+            <input type="tel" name="telefone" required placeholder="(00) 00000-0000"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
         </div>
 
-        <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">Cidade de origem *</label>
-          <input type="text" required placeholder="Sua cidade" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">E-mail *</label>
+            <input type="email" name="email" required placeholder="seu@email.com"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">Cidade *</label>
+            <input type="text" name="cidade" required placeholder="Sua cidade"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
         </div>
 
-        <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">Área de atuação profissional *</label>
-          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
-            <option value="">Selecione uma opção</option>
-            <option value="imobiliario">Mercado Imobiliário</option>
-            <option value="empresario">Empresário(a)</option>
-            <option value="executivo">Executivo(a)</option>
-            <option value="investidor">Investidor(a)</option>
-            <option value="profissional-liberal">Profissional Liberal</option>
-            <option value="outro">Outro</option>
-          </select>
+        <!-- SEÇÃO JOGADOR: Clínica + Horário -->
+        <div id="secao-jogador" class="form-section-hidden space-y-6">
+          <div class="border-t border-accent-green/15 pt-6">
+            <label class="block font-heading font-semibold text-text-on-light mb-3">Escolha sua clínica *</label>
+            <div class="grid grid-cols-1 gap-3">
+              <label class="slot-card flex items-center gap-4" data-clinic="tenis">
+                <input type="radio" name="clinica" value="tenis" class="hidden">
+                <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <span class="text-gold font-bold text-sm">T</span>
+                </div>
+                <div class="flex-1">
+                  <p class="font-heading font-semibold text-text-on-light text-sm">Tênis — Walter Gringo</p>
+                  <p class="text-xs text-text-on-light/60">1 quadra · Máx. 10 jogadores/hora</p>
+                </div>
+              </label>
+              <label class="slot-card flex items-center gap-4" data-clinic="padel">
+                <input type="radio" name="clinica" value="padel" class="hidden">
+                <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <span class="text-gold font-bold text-sm">P</span>
+                </div>
+                <div class="flex-1">
+                  <p class="font-heading font-semibold text-text-on-light text-sm">Padel — Julio Julianoti & JP Moraes</p>
+                  <p class="text-xs text-text-on-light/60">2 quadras · 4 jogadores/hora por quadra</p>
+                </div>
+              </label>
+              <label class="slot-card flex items-center gap-4" data-clinic="beachtennis">
+                <input type="radio" name="clinica" value="beachtennis" class="hidden">
+                <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <span class="text-gold font-bold text-sm">B</span>
+                </div>
+                <div class="flex-1">
+                  <p class="font-heading font-semibold text-text-on-light text-sm">Beach Tennis — Vinícius Chaparro</p>
+                  <p class="text-xs text-text-on-light/60">1 quadra · 5 jogadores/hora</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Horário -->
+          <div id="secao-horario" class="form-section-hidden">
+            <label class="block font-heading font-semibold text-text-on-light mb-3">Escolha o horário *</label>
+            <div id="horarios-container" class="grid grid-cols-3 gap-3"></div>
+          </div>
         </div>
 
-        <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">Empresa ou organização</label>
-          <input type="text" placeholder="Nome da empresa (opcional)" class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors" />
+        <!-- SEÇÃO ACOMPANHANTE: Turno -->
+        <div id="secao-acompanhante" class="form-section-hidden">
+          <div class="border-t border-accent-green/15 pt-6">
+            <label class="block font-heading font-semibold text-text-on-light mb-3">Turno de preferência *</label>
+            <div class="grid grid-cols-3 gap-3">
+              <label class="slot-card text-center">
+                <input type="radio" name="turno_acompanhante" value="9h" class="hidden">
+                <p class="font-heading font-bold text-text-on-light text-lg">9h</p>
+                <p class="text-xs text-text-on-light/60">Manhã</p>
+              </label>
+              <label class="slot-card text-center">
+                <input type="radio" name="turno_acompanhante" value="10h" class="hidden">
+                <p class="font-heading font-bold text-text-on-light text-lg">10h</p>
+                <p class="text-xs text-text-on-light/60">Manhã</p>
+              </label>
+              <label class="slot-card text-center">
+                <input type="radio" name="turno_acompanhante" value="11h" class="hidden">
+                <p class="font-heading font-bold text-text-on-light text-lg">11h</p>
+                <p class="text-xs text-text-on-light/60">Manhã</p>
+              </label>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">Modalidade de interesse *</label>
-          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
-            <option value="">Selecione uma opção</option>
-            <option value="tenis">Tênis</option>
-            <option value="padel">Pádel</option>
-            <option value="beach-tennis">Beach Tennis</option>
-            <option value="todas">Todas as modalidades</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">Turno de preferência *</label>
-          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
-            <option value="">Selecione uma opção</option>
-            <option value="turno-9h">Turno 9h (08h00–11h30)</option>
-            <option value="turno-10h">Turno 10h (09h00–12h00)</option>
-            <option value="turno-11h">Turno 11h (10h00–13h30)</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block font-heading font-semibold text-text-on-light mb-2">Como ficou sabendo do evento? *</label>
-          <select required class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
-            <option value="">Selecione uma opção</option>
-            <option value="convite-direto">Convite direto</option>
-            <option value="indicacao">Indicação de participante</option>
-            <option value="redes-sociais">Redes sociais</option>
-            <option value="remax">RE/MAX</option>
-            <option value="outro">Outro</option>
-          </select>
-        </div>
-
-        <button type="submit" class="w-full px-8 py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg disabled:opacity-70 disabled:cursor-not-allowed">
-          Garantir Minha Vaga
+        <!-- Submit -->
+        <button type="submit" class="w-full py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg mt-4">
+          Confirmar inscrição
         </button>
 
-        <p class="font-paragraph text-center text-text-on-light/60 text-sm">
-          Seus dados estão seguros conosco. Nunca compartilharemos com terceiros.
+        <p class="text-center text-xs text-text-on-light/50 mt-3">
+          Ao se inscrever, você concorda em receber informações sobre o evento e o empreendimento ALL Resort Club Residence.
         </p>
       </form>
 
-      <!-- Success message (hidden by default) -->
-      <div id="success-message" class="hidden text-center py-12">
-        <div class="w-16 h-16 rounded-full bg-accent-green/20 flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-accent-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      <!-- Success message -->
+      <div id="formSuccess" class="hidden text-center py-12">
+        <div class="w-16 h-16 bg-accent-green/15 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
         </div>
-        <h3 class="font-heading text-2xl font-bold text-text-on-light mb-2">Você está na lista!</h3>
-        <p class="font-paragraph text-text-on-light/70">Em breve você receberá mais informações sobre o ALL Sports — REMAX | 18 de Abril.</p>
+        <h3 class="font-heading text-2xl font-bold text-text-on-light mb-3">Inscrição confirmada!</h3>
+        <p class="font-paragraph text-text-on-light/70 max-w-md mx-auto">
+          Em breve nossa equipe entrará em contato pelo WhatsApp com os detalhes da sua participação. Nos vemos no dia 18 de Abril no ALL Resort.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ============================================ -->
+
   <!-- FOOTER -->
-  <!-- ============================================ -->
-  <footer class="bg-primary py-8 px-8">
-    <div class="max-w-6xl mx-auto text-center">
-      <p class="font-paragraph text-primary-foreground/60 text-sm">
-        © 2026 ALL Sports — REMAX | All Resort Club Residence, Porto Belo — SC. It's ALL.
-      </p>
+  <footer class="bg-primary py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <!-- Logo e sobre -->
+        <div>
+          <img src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-12 mb-4 opacity-60">
+          <p class="font-paragraph text-primary-foreground/50 text-sm leading-relaxed">
+            Um empreendimento Wert. Certificações Fitwel, SITES e LEED Platinum.
+          </p>
+        </div>
+        <!-- Localização -->
+        <div>
+          <h4 class="font-heading font-semibold text-primary-foreground/70 text-sm uppercase tracking-wider mb-3">Localização</h4>
+          <p class="font-paragraph text-primary-foreground/50 text-sm leading-relaxed">
+            Porto Belo — Santa Catarina<br>
+            Costa Esmeralda<br>
+            Acesso pela BR-101<br>
+            Próximo ao Aeroporto Costa Esmeralda
+          </p>
+        </div>
+        <!-- Redes -->
+        <div>
+          <h4 class="font-heading font-semibold text-primary-foreground/70 text-sm uppercase tracking-wider mb-3">Siga o ALL Resort</h4>
+          <div class="space-y-2">
+            <a href="https://www.instagram.com/allresortportobelo" target="_blank" rel="noopener" class="flex items-center gap-2 text-primary-foreground/50 hover:text-gold transition-colors text-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              @allresortportobelo
+            </a>
+            <a href="https://www.allresort.com.br" target="_blank" rel="noopener" class="flex items-center gap-2 text-primary-foreground/50 hover:text-gold transition-colors text-sm">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+              www.allresort.com.br
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-primary-foreground/10 pt-6 text-center">
+        <p class="font-heading text-primary-foreground/30 text-xs">
+          &copy; 2026 ALL Resort Club Residence · Um empreendimento Wert
+        </p>
+      </div>
     </div>
   </footer>
 
-  <!-- ============================================ -->
-  <!-- SCRIPTS -->
-  <!-- ============================================ -->
+
+  <!-- JAVASCRIPT -->
   <script>
-    // Intersection Observer for fade-up animations
+    // NAV SCROLL
+    const navbar = document.getElementById('navbar');
+    const heroSection = document.getElementById('hero');
+
+    function updateNav() {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    }
+    window.addEventListener('scroll', updateNav);
+    updateNav();
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobileMenu() { mobileMenu.classList.remove('open'); }
+
+    // SCROLL ANIMATIONS
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Respect existing transition-delay from inline styles
-          const existingDelay = entry.target.style.transitionDelay;
-          if (!existingDelay) {
+          if (!entry.target.style.transitionDelay) {
             entry.target.style.transitionDelay = '0ms';
           }
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Form submission handler
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Enviando...';
-      btn.disabled = true;
+    // FORM LOGIC
+    const clinicSchedules = {
+      tenis: [
+        { time: '9h', label: '9h — Avançado' },
+        { time: '10h', label: '10h — Intermediário' },
+        { time: '11h', label: '11h — Iniciante' },
+      ],
+      padel: [
+        { time: '9h-10h', label: '9h — 10h' },
+        { time: '10h-11h', label: '10h — 11h' },
+        { time: '11h-12h', label: '11h — 12h' },
+      ],
+      beachtennis: [
+        { time: '9h-10h', label: '9h — 10h' },
+        { time: '10h-11h', label: '10h — 11h' },
+        { time: '11h-12h', label: '11h — 12h' },
+      ],
+    };
 
-      // Simulate submission (replace with actual endpoint)
-      setTimeout(() => {
-        form.style.display = 'none';
-        document.getElementById('success-message').classList.remove('hidden');
-      }, 1500);
-    }
+    // Tipo participação
+    document.querySelectorAll('.radio-card').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
 
-    // ---- NAV MENU ----
-    const nav = document.getElementById('mainNav');
-    const menuBtn = document.getElementById('menuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-    const sections = document.querySelectorAll('section[id]');
+        const tipo = this.querySelector('input').value;
+        const secaoJogador = document.getElementById('secao-jogador');
+        const secaoAcompanhante = document.getElementById('secao-acompanhante');
+        const secaoHorario = document.getElementById('secao-horario');
 
-    // Nav: transparent on hero, solid green after scroll
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const heroH = document.querySelector('.hero-bg').offsetHeight;
-
-      if (scrollY > heroH * 0.5) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-
-      // Active section highlight
-      let current = '';
-      sections.forEach(s => {
-        if (scrollY >= s.offsetTop - 120) current = s.id;
-      });
-      navLinks.forEach(l => {
-        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
-      });
-      mobileLinks.forEach(l => {
-        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+        if (tipo === 'jogador') {
+          secaoJogador.style.display = 'block';
+          secaoAcompanhante.style.display = 'none';
+        } else {
+          secaoJogador.style.display = 'none';
+          secaoAcompanhante.style.display = 'block';
+          secaoHorario.style.display = 'none';
+        }
       });
     });
 
-    // Mobile menu toggle
-    function openMenu() {
-      mobileOverlay.classList.add('open');
-      mobileDrawer.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
-      mobileOverlay.classList.remove('open');
-      mobileDrawer.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    menuBtn.addEventListener('click', openMenu);
-    closeMenuBtn.addEventListener('click', closeMenu);
-    mobileOverlay.addEventListener('click', closeMenu);
-    mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
-    document.querySelectorAll('.mobile-drawer a[href="#formulario"]').forEach(l => l.addEventListener('click', closeMenu));
+    // Clinic selection → show time slots
+    document.querySelectorAll('[data-clinic]').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('[data-clinic]').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+
+        const clinic = this.dataset.clinic;
+        const slots = clinicSchedules[clinic];
+        const container = document.getElementById('horarios-container');
+        const secaoHorario = document.getElementById('secao-horario');
+
+        container.innerHTML = '';
+        slots.forEach(slot => {
+          const label = document.createElement('label');
+          label.className = 'slot-card text-center';
+          label.innerHTML = `
+            <input type="radio" name="horario" value="${slot.time}" class="hidden">
+            <p class="font-heading font-bold text-text-on-light text-base">${slot.label}</p>
+          `;
+          label.addEventListener('click', function() {
+            container.querySelectorAll('.slot-card').forEach(s => s.classList.remove('selected'));
+            this.classList.add('selected');
+          });
+          container.appendChild(label);
+        });
+
+        secaoHorario.style.display = 'block';
+      });
+    });
+
+    // Acompanhante slots
+    document.querySelectorAll('#secao-acompanhante .slot-card').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('#secao-acompanhante .slot-card').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+
+    // Form submit
+    document.getElementById('inscricaoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      // Validação manual
+      if (!data.tipo_participacao) {
+        alert('Selecione como deseja participar: Jogador ou Acompanhante.');
+        return;
+      }
+      if (!data.nome || !data.telefone || !data.email || !data.cidade) {
+        alert('Preencha todos os campos obrigatórios.');
+        return;
+      }
+      if (data.tipo_participacao === 'jogador' && !data.clinica) {
+        alert('Selecione uma clínica esportiva.');
+        return;
+      }
+      if (data.tipo_participacao === 'jogador' && !data.horario) {
+        alert('Selecione o horário da clínica.');
+        return;
+      }
+      if (data.tipo_participacao === 'acompanhante' && !data.turno_acompanhante) {
+        alert('Selecione o turno de preferência.');
+        return;
+      }
+
+      console.log('Inscrição:', data);
+
+      // Simular envio (substituir por webhook real)
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        window.location.href = 'obrigado.html';
+      }, 1500);
+    });
   </script>
 
 </body>

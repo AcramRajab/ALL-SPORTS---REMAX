@@ -1,2 +1,8 @@
 .DS_Store
 _arquivo/
+
+# Arquivos grandes (>100MB) - não suportados pelo GitHub
+videos/ALL_RESORT_TERRITORIOS.mp4
+IMAGENS/*.png
+imagens-pdf/IMAGENS/
+1804 - REMAX ALL RESORT (3).pdf
