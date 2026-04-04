@@ -125,10 +125,35 @@
       }
       .mobile-carousel::-webkit-scrollbar { display: none; }
       .mobile-carousel > div {
-        flex: 0 0 75% !important;
-        min-width: 75% !important;
-        scroll-snap-align: start;
+        flex: 0 0 80% !important;
+        min-width: 80% !important;
+        scroll-snap-align: center;
       }
+    }
+    /* Carousel dots */
+    .carousel-dots {
+      display: none;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+    @media (max-width: 767px) {
+      .carousel-dots { display: flex; }
+    }
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(90, 111, 99, 0.3);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .carousel-dot.active {
+      background: #5A6F63;
+      width: 24px;
+      border-radius: 4px;
     }
 
     /* Image frame component */
@@ -1570,6 +1595,40 @@
         window.location.href = 'obrigado.html';
       }, 1500);
     });
+  </script>
+
+  <!-- Carousel dots -->
+  <script>
+    if (window.innerWidth < 768) {
+      document.querySelectorAll('.mobile-carousel').forEach(carousel => {
+        const items = carousel.children;
+        if (items.length < 2) return;
+
+        const dotsContainer = document.createElement('div');
+        dotsContainer.className = 'carousel-dots';
+
+        for (let i = 0; i < items.length; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Imagem ' + (i + 1));
+          dot.addEventListener('click', () => {
+            items[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          });
+          dotsContainer.appendChild(dot);
+        }
+
+        carousel.after(dotsContainer);
+
+        carousel.addEventListener('scroll', () => {
+          const scrollLeft = carousel.scrollLeft;
+          const itemWidth = items[0].offsetWidth + 16;
+          const active = Math.round(scrollLeft / itemWidth);
+          dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === active);
+          });
+        }, { passive: true });
+      });
+    }
   </script>
 
 </body>
