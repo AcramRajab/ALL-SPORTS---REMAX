@@ -109,6 +109,24 @@
     .mobile-menu { display: none; }
     .mobile-menu.open { display: flex; }
 
+    /* Mobile carousel */
+    @media (max-width: 767px) {
+      .mobile-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        scrollbar-width: none;
+      }
+      .mobile-carousel::-webkit-scrollbar { display: none; }
+      .mobile-carousel > div {
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+      }
+    }
+
     /* Image frame component */
     .img-frame {
       position: relative;
@@ -396,7 +414,7 @@
       </div>
 
       <!-- Galeria de Imagens -->
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+      <div class="grid md:grid-cols-3 gap-4 mb-16 mobile-carousel">
         <div class="fade-up img-frame aspect-[4/3]">
           <img src="imagens-pdf/tennis/tennis-1.webp" alt="Quadras de Tênis — ALL Resort" loading="lazy">
         </div>
@@ -510,7 +528,7 @@
       </div>
 
       <!-- Grid de imagens -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="grid md:grid-cols-3 gap-6 mb-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/tennis/tennis-img-extra.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
@@ -521,7 +539,7 @@
           <img loading="lazy" src="imagens-pdf/tennis/tennis-img.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/tennis/tennis-img2.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
@@ -572,7 +590,7 @@
       </div>
 
       <!-- Grid de imagens -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/surf/surf-3.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
@@ -623,7 +641,7 @@
       </div>
 
       <!-- Grid de imagens Golf -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="grid md:grid-cols-3 gap-6 mb-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/golf/golf-1.webp" alt="Campo de Golf — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
@@ -634,7 +652,7 @@
           <img loading="lazy" src="imagens-pdf/golf/golf-7.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/golf/golf-8.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
@@ -693,7 +711,7 @@
       </div>
 
       <!-- Grid de imagens -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div class="grid md:grid-cols-3 gap-6 mb-16 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/renders/render-praia-panoramica.jpg" alt="Vista panorâmica — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
@@ -756,7 +774,7 @@
       </div>
 
       <!-- Grid de imagens -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/all-shops/all-shops-3.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
         </div>
@@ -862,7 +880,7 @@
       </div>
 
       <!-- Grid de imagens -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <img loading="lazy" src="imagens-pdf/club-center/club-2.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
@@ -900,7 +918,7 @@
       </div>
 
       <!-- Grid de vídeos -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-6 mobile-carousel">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
           <video controls playsinline preload="metadata" class="w-full aspect-video object-cover">
             <source src="videos/video-03.mp4" type="video/mp4">
@@ -1090,7 +1108,7 @@
       </div>
 
       <!-- Fotos reais — grid uniforme -->
-      <div class="grid grid-cols-3 md:grid-cols-4 gap-4">
+      <div class="grid md:grid-cols-4 gap-4 mobile-carousel">
         <div class="fade-up img-frame aspect-square">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.42.jpeg" alt="Suíte master" loading="lazy">
         </div>
@@ -1136,7 +1154,7 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
         <div class="fade-up img-frame aspect-[4/3]">
           <img src="imagens-pdf/imagem da praia /img praia.jpeg" alt="Beach club — pôr do sol" loading="lazy">
         </div>
