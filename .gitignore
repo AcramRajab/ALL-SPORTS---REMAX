@@ -1,8 +1,10 @@
 .DS_Store
 _arquivo/
 
-# Arquivos grandes (>100MB) - não suportados pelo GitHub
+# Arquivos grandes - não suportados pelo GitHub/Cloudflare Pages
 videos/ALL_RESORT_TERRITORIOS.mp4
+videos/video-02.mp4
+videos/video-04.mp4
 IMAGENS/*.png
 imagens-pdf/IMAGENS/
 1804 - REMAX ALL RESORT (3).pdf
