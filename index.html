@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="ALL Sports Experience — Atletas de Elite no ALL Resort">
   <meta property="og:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas de elite no ALL Resort Club Residence, Porto Belo — SC.">
-  <meta property="og:image" content="imagens-pdf/favicon/og-cover.png">
+  <meta property="og:image" content="imagens-pdf/favicon/og-cover.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
@@ -21,11 +21,14 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ALL Sports Experience — Atletas de Elite no ALL Resort">
   <meta name="twitter:description" content="18 de Abril — Clínicas de Tênis, Padel e Beach Tennis com atletas de elite no ALL Resort Club Residence, Porto Belo — SC.">
-  <meta name="twitter:image" content="imagens-pdf/favicon/og-cover.png">
+  <meta name="twitter:image" content="imagens-pdf/favicon/og-cover.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="imagens-pdf/favicon/favicon.svg">
   <link rel="apple-touch-icon" href="imagens-pdf/favicon/apple-touch-icon.png">
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="imagens-pdf/aerea-hero.jpg">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -227,7 +230,7 @@
 
 
   <!-- HERO -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center hero-bg" style="background-image: url('imagens-pdf/aerea para hero.jpeg');">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center hero-bg" style="background-image: url('imagens-pdf/aerea-hero.jpg');">
     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-primary/70"></div>
 
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
@@ -284,7 +287,7 @@
 
       <!-- Fachada destaque -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        <img src="imagens-pdf/fachada.jpeg" alt="Fachada ALL Resort Club Residence" class="w-full h-[24rem] md:h-[32rem] object-cover">
+        <img loading="lazy" src="imagens-pdf/fachada-opt.jpg" alt="Fachada ALL Resort Club Residence" class="w-full h-[24rem] md:h-[32rem] object-cover">
       </div>
 
       <!-- 4 Condomínios -->
@@ -410,7 +413,7 @@
           <img src="imagens-pdf/tennis/tennis-3.webp" alt="Arena de Tênis" loading="lazy">
         </div>
         <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 300ms;">
-          <img src="imagens-pdf/tennis/tennis-4.webp" alt="Infraestrutura de Tênis" loading="lazy">
+          <img src="imagens-pdf/tennis/tennis-img2.webp" alt="Infraestrutura de Tênis" loading="lazy">
         </div>
       </div>
 
@@ -488,7 +491,7 @@
 
       <!-- Imagem destaque -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        <img src="imagens-pdf/tennis/tennis-1.webp" alt="Complexo de Tênis — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+        <img loading="lazy" src="imagens-pdf/tennis/tennis-1.webp" alt="Complexo de Tênis — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
       <!-- Texto + imagem -->
@@ -502,31 +505,31 @@
           </p>
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/tennis/tennis-2.webp" alt="Quadra de Tênis — ALL Resort" class="w-full h-[24rem] object-cover">
+          <img loading="lazy" src="imagens-pdf/tennis/tennis-2.webp" alt="Quadra de Tênis — ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
       <!-- Grid de imagens -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/tennis/tennis-3.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/tennis/tennis-3.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/tennis/tennis-4.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/tennis/tennis-4.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/tennis/tennis-img.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/tennis/tennis-img.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/tennis/tennis-img2.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/tennis/tennis-img2.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/tennis/tennis-img3.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/tennis/tennis-img3.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/tennis/tennis-img-extra.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/tennis/tennis-img-extra.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
 
@@ -550,7 +553,7 @@
 
       <!-- Imagem destaque -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        <img src="imagens-pdf/surf/surf-1.webp" alt="Surf — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+        <img loading="lazy" src="imagens-pdf/surf/surf-1.webp" alt="Surf — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
       <!-- Texto + imagem -->
@@ -564,20 +567,20 @@
           </p>
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/surf/surf-2.webp" alt="Surf ALL Resort" class="w-full h-[24rem] object-cover">
+          <img loading="lazy" src="imagens-pdf/surf/surf-2.webp" alt="Surf ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
       <!-- Grid de imagens -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/surf/surf-3.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/surf/surf-3.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/surf/surf-4.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/surf/surf-4.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/surf/surf-5.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/surf/surf-5.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
 
@@ -601,7 +604,7 @@
 
       <!-- Imagem destaque noturna -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        <img src="imagens-pdf/golf/noturno-2.jpg" alt="Campo de Golf Iluminado — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+        <img loading="lazy" src="imagens-pdf/golf/noturno-2.jpg" alt="Campo de Golf Iluminado — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
       <!-- Texto + imagem -->
@@ -615,31 +618,31 @@
           </p>
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/golf/noturno-1.png" alt="Golf Noturno — ALL Resort" class="w-full h-[24rem] object-cover">
+          <img loading="lazy" src="imagens-pdf/golf/noturno-1.jpg" alt="Golf Noturno — ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
       <!-- Grid de imagens Golf -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/golf/golf-1.webp" alt="Campo de Golf — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/golf/golf-1.webp" alt="Campo de Golf — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/golf/golf-img-2.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/golf/golf-img-2.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/golf/golf-7.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/golf/golf-7.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/golf/golf-8.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/golf/golf-8.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/golf/golf-10.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/golf/golf-10.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/golf/noturno-2.jpg" alt="Golf Noturno — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/golf/noturno-2.jpg" alt="Golf Noturno — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
 
@@ -663,7 +666,7 @@
 
       <!-- Imagem destaque full-width -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        <img src="IMAGENS/web/RST_09_GolfView_Externa_P2_V2.jpg" alt="Park Art Design — Vista externa ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+        <img loading="lazy" src="IMAGENS/web/RST_09_GolfView_Externa_P2_V2.jpg" alt="Park Art Design — Vista externa ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
       <!-- Texto + imagem lado a lado -->
@@ -677,7 +680,7 @@
           </p>
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="IMAGENS/web/RST_09_GolfView_Externa_P2.jpg" alt="Paisagismo e natureza — ALL Resort" class="w-full h-[24rem] object-cover">
+          <img loading="lazy" src="IMAGENS/web/RST_09_GolfView_Externa_P2.jpg" alt="Paisagismo e natureza — ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
@@ -692,19 +695,19 @@
       <!-- Grid de imagens -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/renders/render-praia-panoramica.jpg" alt="Vista panorâmica — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/renders/render-praia-panoramica.jpg" alt="Vista panorâmica — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/renders/render-praia-sunset.jpg" alt="Sunset — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/renders/render-praia-sunset.jpg" alt="Sunset — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/renders/render-praia-ondas.jpg" alt="Natureza e paisagem — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/renders/render-praia-ondas.jpg" alt="Natureza e paisagem — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
 
       <!-- Imagem corrida -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-xl">
-        <img src="imagens-pdf/park-art-design/img-corrida.webp" alt="Pista de corrida e ciclovia — ALL Resort" class="w-full object-contain rounded-2xl">
+        <img loading="lazy" src="imagens-pdf/park-art-design/img-corrida.webp" alt="Pista de corrida e ciclovia — ALL Resort" class="w-full object-contain rounded-2xl">
       </div>
 
       <!-- Texto final -->
@@ -734,7 +737,7 @@
 
       <!-- Imagem destaque -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        <img src="imagens-pdf/all-shops/all-shops.webp" alt="All Shops — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover object-top">
+        <img loading="lazy" src="imagens-pdf/all-shops/all-shops.webp" alt="All Shops — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover object-top">
       </div>
 
       <!-- Texto + imagem -->
@@ -748,17 +751,17 @@
           </p>
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/all-shops/all-shops-2.webp" alt="All Shops ALL Resort" class="w-full h-[24rem] object-cover object-top">
+          <img loading="lazy" src="imagens-pdf/all-shops/all-shops-2.webp" alt="All Shops ALL Resort" class="w-full h-[24rem] object-cover object-top">
         </div>
       </div>
 
       <!-- Grid de imagens -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/all-shops/all-shops-3.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/all-shops/all-shops-3.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/all-shops/all-shops-4.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/all-shops/all-shops-4.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
         </div>
       </div>
 
@@ -782,7 +785,7 @@
 
       <!-- Imagem destaque -->
       <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
-        <img src="imagens-pdf/club-center/club-center.webp" alt="Club Center — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
+        <img loading="lazy" src="imagens-pdf/club-center/club-center.webp" alt="Club Center — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
       <!-- Descrição geral + imagem -->
@@ -796,7 +799,7 @@
           </p>
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/club-center/club.webp" alt="Club Center ALL Resort" class="w-full h-[24rem] object-cover">
+          <img loading="lazy" src="imagens-pdf/club-center/club.webp" alt="Club Center ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
@@ -861,13 +864,13 @@
       <!-- Grid de imagens -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/club-center/club-2.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/club-center/club-2.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/club-center/club-3.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/club-center/club-3.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
         <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
-          <img src="imagens-pdf/club-center/club-4.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
+          <img loading="lazy" src="imagens-pdf/club-center/club-4.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
 
@@ -1156,7 +1159,7 @@
 
       <!-- Logo + título sobre o fundo -->
       <div class="relative z-10 text-center px-6 pt-20 pb-8">
-        <img src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-16 md:h-20 mx-auto mb-6 fade-up">
+        <img loading="lazy" src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-16 md:h-20 mx-auto mb-6 fade-up">
         <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-3">
           It's <span class="italic">ALL.</span>
         </h2>
@@ -1168,7 +1171,7 @@
       <!-- Vídeo centralizado sobrepondo o fundo -->
       <div class="relative z-10 w-full max-w-4xl mx-auto px-6 pb-20 fade-up" style="transition-delay: 200ms;">
         <div class="rounded-xl overflow-hidden shadow-2xl shadow-black/40">
-          <video controls playsinline preload="metadata" poster="imagens-pdf/aerea para hero.jpeg" class="w-full aspect-video object-cover">
+          <video controls playsinline preload="metadata" poster="imagens-pdf/aerea-hero.jpg" class="w-full aspect-video object-cover">
             <source src="videos/video-01.mp4" type="video/mp4">
           </video>
         </div>
@@ -1353,7 +1356,7 @@
       <div class="grid md:grid-cols-3 gap-8 mb-10">
         <!-- Logo e sobre -->
         <div>
-          <img src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-12 mb-4 opacity-60">
+          <img loading="lazy" src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-12 mb-4 opacity-60">
           <p class="font-paragraph text-primary-foreground/50 text-sm leading-relaxed">
             Um empreendimento Wert. Certificações Fitwel, SITES e LEED Platinum.
           </p>
