@@ -130,6 +130,32 @@
         scroll-snap-align: center;
       }
     }
+    /* REMAX watermark */
+    .remax-watermark {
+      position: relative;
+    }
+    .remax-watermark::after {
+      content: '';
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 60px;
+      height: 20px;
+      background-image: url('imagens-pdf/logo remax/logo remax 2.jpeg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      mix-blend-mode: screen;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .remax-watermark-dark::after {
+      background-image: url('imagens-pdf/logo remax/logo remax.jpeg');
+      mix-blend-mode: multiply;
+      opacity: 0.15;
+    }
+
     /* Carousel dots */
     .carousel-dots {
       display: none;
@@ -337,7 +363,7 @@
       </div>
 
       <!-- Fachada destaque -->
-      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
         <img loading="lazy" src="imagens-pdf/fachada-opt.jpg" alt="Fachada ALL Resort Club Residence" class="w-full h-[24rem] md:h-[32rem] object-cover">
       </div>
 
@@ -541,7 +567,7 @@
       </div>
 
       <!-- Imagem destaque -->
-      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
         <img loading="lazy" src="imagens-pdf/tennis/tennis-1.webp" alt="Complexo de Tênis — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
@@ -592,7 +618,7 @@
       </div>
 
       <!-- Imagem destaque -->
-      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
         <img loading="lazy" src="imagens-pdf/surf/surf-1.webp" alt="Surf — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
@@ -643,7 +669,7 @@
       </div>
 
       <!-- Imagem destaque noturna -->
-      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
         <img loading="lazy" src="imagens-pdf/golf/noturno-2.jpg" alt="Campo de Golf Iluminado — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
@@ -705,7 +731,7 @@
       </div>
 
       <!-- Imagem destaque full-width -->
-      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
         <img loading="lazy" src="IMAGENS/web/RST_09_GolfView_Externa_P2_V2.jpg" alt="Park Art Design — Vista externa ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
@@ -776,7 +802,7 @@
       </div>
 
       <!-- Imagem destaque -->
-      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
         <img loading="lazy" src="imagens-pdf/all-shops/all-shops.webp" alt="All Shops — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover object-top">
       </div>
 
@@ -824,7 +850,7 @@
       </div>
 
       <!-- Imagem destaque -->
-      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="fade-up mb-16 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
         <img loading="lazy" src="imagens-pdf/club-center/club-center.webp" alt="Club Center — ALL Resort" class="w-full h-[28rem] md:h-[36rem] object-cover">
       </div>
 
