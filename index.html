@@ -298,6 +298,16 @@
     </div>
   </nav>
 
+  <!-- Banner: convite VIP -->
+  <div id="conviteBanner" class="hidden fixed top-20 left-0 right-0 z-40 px-4">
+    <div class="max-w-3xl mx-auto bg-gradient-to-r from-gold/95 to-gold text-primary text-center py-3 px-6 rounded-lg shadow-2xl border border-gold/40">
+      <p class="font-heading text-sm md:text-base">
+        <span class="uppercase tracking-widest text-xs opacity-70">Convite exclusivo</span><br>
+        Você foi convidado por <strong id="conviteNome"></strong>
+      </p>
+    </div>
+  </div>
+
 
   <!-- HERO -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center hero-bg" style="background-image: url('imagens-pdf/aerea-hero.jpg');">
@@ -1584,6 +1594,30 @@
     });
 
     // Form submit
+    // Captura ?convite= e exibe banner
+    (function() {
+      try {
+        const params = new URLSearchParams(location.search);
+        const convite = params.get('convite');
+        if (convite) {
+          localStorage.setItem('allresort_convite', convite);
+          localStorage.setItem('allresort_convite_ts', Date.now().toString());
+        }
+        // Expira em 60 dias
+        const ts = parseInt(localStorage.getItem('allresort_convite_ts') || '0', 10);
+        if (ts && (Date.now() - ts) > 60 * 24 * 60 * 60 * 1000) {
+          localStorage.removeItem('allresort_convite');
+          localStorage.removeItem('allresort_convite_ts');
+        }
+        const stored = localStorage.getItem('allresort_convite');
+        if (stored) {
+          const nomeFormatado = stored.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          document.getElementById('conviteNome').textContent = nomeFormatado;
+          document.getElementById('conviteBanner').classList.remove('hidden');
+        }
+      } catch(e) {}
+    })();
+
     document.getElementById('inscricaoForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -1631,6 +1665,7 @@
           cf_open_all_resort_clinica_escolhida: data.clinica || '',
           cf_open_all_resort_horario: data.horario || '',
           cf_open_all_resort_turno_acompanhante: data.turno_acompanhante || '',
+          cf_open_all_resort_convidado_por: localStorage.getItem('allresort_convite') || '',
           traffic_source: document.referrer || 'direct'
         }
       };
@@ -1642,7 +1677,7 @@
       })
       .catch(err => console.error('RD Station error:', err))
       .finally(() => {
-        window.location.href = 'obrigado.html';
+        window.location.href = 'obrigado.html?nome=' + encodeURIComponent(data.nome || '');
       });
     });
   </script>
