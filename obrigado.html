@@ -316,11 +316,31 @@
       btn.textContent = 'Cadastrando...';
       btn.disabled = true;
 
-      // Simular envio (substituir por integração real)
-      setTimeout(() => {
+      const data = Object.fromEntries(new FormData(form).entries());
+      const rdPayload = {
+        event_type: 'CONVERSION',
+        event_family: 'CDP',
+        payload: {
+          conversion_identifier: 'Site Open All Resort - Lista Prioritária',
+          name: data.nome,
+          email: data.email,
+          mobile_phone: data.whatsapp,
+          personal_phone: data.whatsapp,
+          traffic_source: document.referrer || 'direct',
+          tags: ['site-open-all-resort', 'lista-prioritaria']
+        }
+      };
+
+      fetch('https://api.rd.services/platform/conversions?api_key=2cf52821c5dfc606b743ddde2b384730', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(rdPayload)
+      })
+      .catch(err => console.error('RD Station error:', err))
+      .finally(() => {
         form.classList.add('hidden');
         document.getElementById('proprietariaSuccess').classList.remove('hidden');
-      }, 1000);
+      });
     });
   </script>
 
