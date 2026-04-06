@@ -134,25 +134,24 @@
     .remax-watermark {
       position: relative !important;
     }
-    .remax-watermark::after {
-      content: 'RE/MAX';
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      padding: 6px 12px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      color: rgba(255, 255, 255, 0.9);
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      border-radius: 4px;
+    .remax-watermark .remax-logo {
+      position: absolute !important;
+      bottom: 12px !important;
+      right: 12px !important;
+      width: 70px !important;
+      height: auto !important;
+      mix-blend-mode: multiply;
+      opacity: 0.85;
       pointer-events: none;
       z-index: 50;
     }
-    .remax-watermark .remax-logo { display: none; }
+    @media (max-width: 768px) {
+      .remax-watermark .remax-logo {
+        width: 50px !important;
+        bottom: 8px !important;
+        right: 8px !important;
+      }
+    }
 
     /* Carousel dots */
     .carousel-dots {
@@ -473,22 +472,22 @@
 
       <!-- Galeria de Imagens -->
       <div class="grid md:grid-cols-3 gap-4 mb-16 mobile-carousel">
-        <div class="fade-up img-frame aspect-[4/3]">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]">
           <img src="imagens-pdf/tennis/tennis-1.webp" alt="Quadras de Tênis — ALL Resort" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 100ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 100ms;">
           <img src="imagens-pdf/tennis/tennis-img-extra.webp" alt="Complexo de Tênis" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 150ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 150ms;">
           <img src="imagens-pdf/tennis/tennis-2.webp" alt="Quadra de Tênis" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 200ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 200ms;">
           <img src="imagens-pdf/tennis/tennis-img.webp" alt="Tennis ALL Resort" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 250ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 250ms;">
           <img src="imagens-pdf/tennis/tennis-4.webp" alt="Arena de Tênis" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 300ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 300ms;">
           <img src="imagens-pdf/tennis/tennis-img2.webp" alt="Infraestrutura de Tênis" loading="lazy">
         </div>
       </div>
@@ -581,20 +580,20 @@
             Com um <strong class="text-text-on-light">design inovador e tecnologia de ponta</strong>, este é um espaço que combina conforto, funcionalidade e excelência esportiva, elevando o tênis a um novo patamar.
           </p>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/tennis/tennis-2.webp" alt="Quadra de Tênis — ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
       <!-- Grid de imagens -->
       <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/tennis/tennis-img.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/tennis/tennis-img2.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/tennis/tennis-img3.webp" alt="Tênis ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
@@ -633,20 +632,20 @@
             Mais do que um destino, é um cenário pensado para a <strong class="text-primary-foreground">prática esportiva, lazer e conexão com a natureza.</strong> Entre sessões de surfe, beach tennis ou momentos de descanso na areia.
           </p>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/surf/surf-2.webp" alt="Surf ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
       <!-- Grid de imagens -->
       <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/surf/surf-3.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/surf/surf-4.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/surf/surf-5.webp" alt="Surf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
@@ -685,31 +684,31 @@
             Para golfistas de todos os níveis, o campo permite jogar <strong class="text-text-on-light">mesmo após o pôr do sol</strong> — uma experiência única que transforma cada partida em um momento inesquecível sob as estrelas.
           </p>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/golf/noturno-1.jpg" alt="Golf Noturno — ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
 
       <!-- Grid de imagens Golf -->
       <div class="grid md:grid-cols-3 gap-6 mb-6 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/golf/golf-1.webp" alt="Campo de Golf — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/golf/golf-img-2.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/golf/golf-7.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
       <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/golf/golf-8.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/golf/golf-10.webp" alt="Golf ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/golf/noturno-2.jpg" alt="Golf Noturno — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
@@ -748,7 +747,7 @@
             Equipamentos urbanos criam ambientes mágicos ao longo de uma <strong class="text-text-on-light">pista de corrida e ciclovia de 13 km.</strong> Tendo em mente que arquitetura e design são medidas estratégicas, <strong class="text-text-on-light">Clarissa Schneider</strong>, curadora de arquitetura e design da ALL Wert, idealizou e convidou <strong class="text-text-on-light">Jader Almeida</strong> e <strong class="text-text-on-light">Giovani Bonetti</strong>, ambos arquitetos catarinenses, para criarem equipamentos urbanos que trazem ainda mais aplicabilidade e identidade a um lugar onde a natureza é a grande protagonista.
           </p>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="IMAGENS/web/RST_09_GolfView_Externa_P2.jpg" alt="Paisagismo e natureza — ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
@@ -763,13 +762,13 @@
 
       <!-- Grid de imagens -->
       <div class="grid md:grid-cols-3 gap-6 mb-16 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/renders/render-praia-panoramica.jpg" alt="Vista panorâmica — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/renders/render-praia-sunset.jpg" alt="Sunset — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/renders/render-praia-ondas.jpg" alt="Natureza e paisagem — ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
@@ -820,17 +819,17 @@
             O All Shops é um dos <strong class="text-text-on-light">pontos de encontro e vivência</strong> do ALL Resort. Experiências para quem celebra a vida.
           </p>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/all-shops/all-shops-2.webp" alt="All Shops ALL Resort" class="w-full h-[24rem] object-cover object-top">
         </div>
       </div>
 
       <!-- Grid de imagens -->
       <div class="grid md:grid-cols-2 gap-6 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/all-shops/all-shops-3.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/all-shops/all-shops-4.webp" alt="All Shops ALL Resort" class="w-full h-80 object-cover object-top hover:scale-105 transition-transform duration-500">
         </div>
       </div>
@@ -869,7 +868,7 @@
             Um <strong class="text-primary-foreground">Wellness Center</strong> com estruturas de ponta: salas de massagem, saunas seca e úmida, áreas de relaxamento e SPA. Diversão garantida na <strong class="text-primary-foreground">Club House</strong> com gamers space, cinema, playroom, espaço kids e point gourmet!
           </p>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/club-center/club.webp" alt="Club Center ALL Resort" class="w-full h-[24rem] object-cover">
         </div>
       </div>
@@ -934,13 +933,13 @@
 
       <!-- Grid de imagens -->
       <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/club-center/club-2.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/club-center/club-3.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <img loading="lazy" src="imagens-pdf/club-center/club-4.webp" alt="Club Center ALL Resort" class="w-full h-72 object-cover hover:scale-105 transition-transform duration-500">
         </div>
       </div>
@@ -972,17 +971,17 @@
 
       <!-- Grid de vídeos -->
       <div class="grid md:grid-cols-2 gap-6 mobile-carousel">
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <video controls playsinline preload="metadata" class="w-full aspect-video object-cover">
             <source src="videos/video-03.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <video controls playsinline preload="metadata" class="w-full aspect-video object-cover">
             <source src="videos/video-05.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="fade-up rounded-2xl overflow-hidden shadow-xl">
+        <div class="fade-up rounded-2xl overflow-hidden shadow-xl remax-watermark">
           <video controls playsinline preload="metadata" class="w-full aspect-video object-cover">
             <source src="videos/video-06.mp4" type="video/mp4">
           </video>
@@ -1153,38 +1152,38 @@
 
       <!-- Renders Golf View — destaque -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-        <div class="fade-up img-frame aspect-[16/10]">
+        <div class="fade-up img-frame remax-watermark aspect-[16/10]">
           <img src="IMAGENS/web/RST_10_GolfView_Living_P2.jpg" alt="Living — pé-direito duplo com vista panorâmica" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[16/10]" style="transition-delay: 100ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[16/10]" style="transition-delay: 100ms;">
           <img src="IMAGENS/web/RST_11_GolfView_Suite_P2.jpg" alt="Suíte master — iluminação indireta com vista" loading="lazy">
         </div>
       </div>
 
       <!-- Fotos reais — grid uniforme -->
       <div class="grid md:grid-cols-4 gap-4 mobile-carousel">
-        <div class="fade-up img-frame aspect-square">
+        <div class="fade-up img-frame remax-watermark aspect-square">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.42.jpeg" alt="Suíte master" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-square" style="transition-delay: 50ms;">
+        <div class="fade-up img-frame remax-watermark aspect-square" style="transition-delay: 50ms;">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.47.jpeg" alt="Sala de jantar" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-square" style="transition-delay: 100ms;">
+        <div class="fade-up img-frame remax-watermark aspect-square" style="transition-delay: 100ms;">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.48 (1).jpeg" alt="Cozinha gourmet" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-square" style="transition-delay: 150ms;">
+        <div class="fade-up img-frame remax-watermark aspect-square" style="transition-delay: 150ms;">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.49.jpeg" alt="Living" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-square" style="transition-delay: 200ms;">
+        <div class="fade-up img-frame remax-watermark aspect-square" style="transition-delay: 200ms;">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.45.jpeg" alt="Lavabo" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-square" style="transition-delay: 250ms;">
+        <div class="fade-up img-frame remax-watermark aspect-square" style="transition-delay: 250ms;">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.49 (1).jpeg" alt="Closet" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-square" style="transition-delay: 300ms;">
+        <div class="fade-up img-frame remax-watermark aspect-square" style="transition-delay: 300ms;">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.49 (2).jpeg" alt="Banheiro" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-square" style="transition-delay: 350ms;">
+        <div class="fade-up img-frame remax-watermark aspect-square" style="transition-delay: 350ms;">
           <img src="imagens-pdf/por dentro da casa/WhatsApp Image 2026-04-02 at 22.37.44.jpeg" alt="Lavanderia" loading="lazy">
         </div>
       </div>
@@ -1209,13 +1208,13 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 mobile-carousel">
-        <div class="fade-up img-frame aspect-[4/3]">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]">
           <img src="imagens-pdf/imagem da praia /img praia.jpeg" alt="Beach club — pôr do sol" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 100ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 100ms;">
           <img src="imagens-pdf/imagem da praia /img praia 2.jpeg" alt="Praia artificial com montanhas" loading="lazy">
         </div>
-        <div class="fade-up img-frame aspect-[4/3]" style="transition-delay: 200ms;">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 200ms;">
           <img src="imagens-pdf/imagem da praia /img praia 3.jpeg" alt="Piscina de ondas Wavegarden" loading="lazy">
         </div>
       </div>
@@ -1623,6 +1622,18 @@
       setTimeout(() => {
         window.location.href = 'obrigado.html';
       }, 1500);
+    });
+  </script>
+
+  <!-- Inject RE/MAX watermark on all image containers -->
+  <script>
+    document.querySelectorAll('.remax-watermark').forEach(el => {
+      if (el.querySelector('.remax-logo')) return;
+      const logo = document.createElement('img');
+      logo.src = 'imagens-pdf/logo remax/logo remax.jpeg';
+      logo.alt = '';
+      logo.className = 'remax-logo';
+      el.appendChild(logo);
     });
   </script>
 
