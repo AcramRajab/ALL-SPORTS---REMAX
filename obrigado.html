@@ -111,6 +111,20 @@
       border-color: #C4A265;
       outline: none;
     }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(8px); opacity: 1; }
+    }
+    .scroll-hint {
+      animation: scrollBounce 1.8s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(196, 162, 101, 0.5); }
+      50% { box-shadow: 0 0 0 10px rgba(196, 162, 101, 0); }
+    }
+    .pulse-gold {
+      animation: shimmer 2s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-primary min-h-screen flex flex-col">
@@ -182,8 +196,22 @@
       </div>
 
 
+      <!-- Scroll hint -->
+      <a href="#programa-indicacao" class="fade-up fade-up-delay-4 block text-center mb-10 group">
+        <div class="inline-flex flex-col items-center gap-3 px-6 py-4 rounded-full bg-gold/10 border border-gold/30 pulse-gold hover:bg-gold/15 transition-colors">
+          <p class="font-heading text-xs md:text-sm tracking-[0.2em] uppercase text-gold">
+            ✨ Você desbloqueou um prêmio exclusivo
+          </p>
+        </div>
+        <div class="scroll-hint mt-4 inline-flex flex-col items-center gap-1 text-gold/70">
+          <p class="font-heading text-[10px] tracking-[0.25em] uppercase">Role para ver</p>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+      </a>
+
+
       <!-- PROGRAMA DE INDICAÇÃO -->
-      <div class="fade-up fade-up-delay-4 mb-12">
+      <div id="programa-indicacao" class="fade-up fade-up-delay-4 mb-12 scroll-mt-8">
         <div class="relative rounded-2xl overflow-hidden border border-gold/30">
           <div class="absolute inset-0">
             <img src="https://www.moradadoscanyons.com/uploads/albums/2025/05/2-1-1748029893mtc0odayotg5mw.jpeg" alt="Morada dos Canyons" class="w-full h-full object-cover">
