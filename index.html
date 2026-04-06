@@ -1612,16 +1612,39 @@
         return;
       }
 
-      console.log('Inscrição:', data);
-
-      // Simular envio (substituir por webhook real)
       const btn = this.querySelector('button[type="submit"]');
       btn.textContent = 'Enviando...';
       btn.disabled = true;
 
-      setTimeout(() => {
+      // Envio para RD Station (Conversions API pública)
+      const rdPayload = {
+        event_type: 'CONVERSION',
+        event_family: 'CDP',
+        payload: {
+          conversion_identifier: 'Site Open All Resort',
+          name: data.nome,
+          email: data.email,
+          mobile_phone: data.telefone,
+          personal_phone: data.telefone,
+          city: data.cidade,
+          cf_tipo_participacao: data.tipo_participacao || '',
+          cf_clinica: data.clinica || '',
+          cf_horario: data.horario || '',
+          cf_turno_acompanhante: data.turno_acompanhante || '',
+          traffic_source: document.referrer || 'direct',
+          tags: ['site-open-all-resort', 'lp-allsports-remax']
+        }
+      };
+
+      fetch('https://api.rd.services/platform/conversions?api_key=2cf52821c5dfc606b743ddde2b384730', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(rdPayload)
+      })
+      .catch(err => console.error('RD Station error:', err))
+      .finally(() => {
         window.location.href = 'obrigado.html';
-      }, 1500);
+      });
     });
   </script>
 
