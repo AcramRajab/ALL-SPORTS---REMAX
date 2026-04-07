@@ -1581,19 +1581,19 @@
     // FORM LOGIC
     const clinicSchedules = {
       tenis: [
-        { time: '9h', label: '9h — Iniciantes' },
-        { time: '10h', label: '10h — Intermediários' },
-        { time: '11h', label: '11h — Avançados' },
+        { time: '9h', hora: '9h', nivel: 'Iniciantes' },
+        { time: '10h', hora: '10h', nivel: 'Intermediários' },
+        { time: '11h', hora: '11h', nivel: 'Avançados' },
       ],
       padel: [
-        { time: '9h', label: '9h — Iniciantes' },
-        { time: '10h', label: '10h — Intermediários' },
-        { time: '11h', label: '11h — Avançados' },
+        { time: '9h', hora: '9h', nivel: 'Iniciantes' },
+        { time: '10h', hora: '10h', nivel: 'Intermediários' },
+        { time: '11h', hora: '11h', nivel: 'Avançados' },
       ],
       beachtennis: [
-        { time: '9h', label: '9h — Iniciantes' },
-        { time: '10h', label: '10h — Intermediários' },
-        { time: '11h', label: '11h — Avançados' },
+        { time: '9h', hora: '9h', nivel: 'Iniciantes' },
+        { time: '10h', hora: '10h', nivel: 'Intermediários' },
+        { time: '11h', hora: '11h', nivel: 'Avançados' },
       ],
     };
 
@@ -1633,7 +1633,8 @@
           label.className = 'slot-card text-center';
           label.innerHTML = `
             <input type="radio" name="horario" value="${slot.time}" class="hidden">
-            <p class="font-heading font-bold text-text-on-light text-base">${slot.label}</p>
+            <p class="font-heading font-bold text-text-on-light text-lg leading-none">${slot.hora}</p>
+            <p class="text-[11px] md:text-xs text-text-on-light/60 mt-1 leading-tight">${slot.nivel}</p>
           `;
           label.addEventListener('click', function() {
             container.querySelectorAll('.slot-card').forEach(s => s.classList.remove('selected'));
