@@ -1071,7 +1071,7 @@
           <div class="text-gold text-3xl mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
           </div>
-          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">Conhecer o ALL Resort</h3>
+          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">Conheça o ALL Resort</h3>
           <p class="font-paragraph text-text-on-light/65 text-sm">Visite as instalações, conheça as residências e descubra o que significa viver dentro do ALL Resort.</p>
         </div>
       </div>
@@ -1470,30 +1470,6 @@
           </div>
         </div>
 
-        <!-- SEÇÃO ACOMPANHANTE: Turno -->
-        <div id="secao-acompanhante" class="form-section-hidden">
-          <div class="border-t border-accent-green/15 pt-6">
-            <label class="block font-heading font-semibold text-text-on-light mb-3">Turno de preferência *</label>
-            <div class="grid grid-cols-3 gap-3">
-              <label class="slot-card text-center">
-                <input type="radio" name="turno_acompanhante" value="9h" class="hidden">
-                <p class="font-heading font-bold text-text-on-light text-lg">9h</p>
-                <p class="text-xs text-text-on-light/60">Manhã</p>
-              </label>
-              <label class="slot-card text-center">
-                <input type="radio" name="turno_acompanhante" value="10h" class="hidden">
-                <p class="font-heading font-bold text-text-on-light text-lg">10h</p>
-                <p class="text-xs text-text-on-light/60">Manhã</p>
-              </label>
-              <label class="slot-card text-center">
-                <input type="radio" name="turno_acompanhante" value="11h" class="hidden">
-                <p class="font-heading font-bold text-text-on-light text-lg">11h</p>
-                <p class="text-xs text-text-on-light/60">Manhã</p>
-              </label>
-            </div>
-          </div>
-        </div>
-
         <!-- Submit -->
         <button type="submit" class="w-full py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg mt-4">
           Confirmar inscrição
@@ -1629,15 +1605,12 @@
 
         const tipo = this.querySelector('input').value;
         const secaoJogador = document.getElementById('secao-jogador');
-        const secaoAcompanhante = document.getElementById('secao-acompanhante');
         const secaoHorario = document.getElementById('secao-horario');
 
         if (tipo === 'jogador') {
           secaoJogador.style.display = 'block';
-          secaoAcompanhante.style.display = 'none';
         } else {
           secaoJogador.style.display = 'none';
-          secaoAcompanhante.style.display = 'block';
           secaoHorario.style.display = 'none';
         }
       });
@@ -1673,15 +1646,6 @@
       });
     });
 
-    // Acompanhante slots
-    document.querySelectorAll('#secao-acompanhante .slot-card').forEach(card => {
-      card.addEventListener('click', function() {
-        document.querySelectorAll('#secao-acompanhante .slot-card').forEach(c => c.classList.remove('selected'));
-        this.classList.add('selected');
-      });
-    });
-
-    // Form submit
     // Captura ?convite= e exibe banner
     (function() {
       try {
@@ -1729,10 +1693,6 @@
         alert('Selecione o horário da clínica.');
         return;
       }
-      if (data.tipo_participacao === 'acompanhante' && !data.turno_acompanhante) {
-        alert('Selecione o turno de preferência.');
-        return;
-      }
 
       const btn = this.querySelector('button[type="submit"]');
       btn.textContent = 'Enviando...';
@@ -1752,7 +1712,6 @@
           cf_open_all_resort_tipo_de_participacao: data.tipo_participacao || '',
           cf_open_all_resort_clinica_escolhida: data.clinica || '',
           cf_open_all_resort_horario: data.horario || '',
-          cf_open_all_resort_turno_acompanhante: data.turno_acompanhante || '',
           cf_open_all_resort_convidado_por: localStorage.getItem('allresort_convite') || '',
           traffic_source: document.referrer || 'direct'
         }
