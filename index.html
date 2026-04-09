@@ -61,8 +61,9 @@
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Inter', sans-serif; overflow-x: hidden; max-width: 100vw; position: relative; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; position: relative; }
 
     /* Scroll animations */
     .fade-up {
@@ -1864,8 +1865,8 @@
   </script>
 
   <!-- MODAL: Indicar um amigo -->
-  <div id="inviteModal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4" style="background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);">
-    <div class="relative bg-primary border border-gold/30 rounded-2xl max-w-lg w-full p-6 md:p-10 shadow-2xl">
+  <div id="inviteModal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 overflow-y-auto" style="background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);">
+    <div class="relative bg-primary border border-gold/30 rounded-2xl max-w-lg w-full p-5 sm:p-6 md:p-10 shadow-2xl my-auto">
       <button onclick="closeInviteModal()" class="absolute top-4 right-4 text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Fechar">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
@@ -1893,9 +1894,9 @@
       <!-- Passo 2 -->
       <div id="modalStep2" class="hidden">
         <p class="text-primary-foreground/60 text-xs text-center mb-3">Seu link pessoal de convite:</p>
-        <div class="flex gap-2 mb-4">
+        <div class="flex flex-col sm:flex-row gap-2 mb-4">
           <input type="text" id="modalShareLink" value="" readonly
-            class="flex-1 px-4 py-3 rounded-lg bg-primary-foreground/5 border border-primary-foreground/15 text-primary-foreground font-paragraph text-sm">
+            class="flex-1 min-w-0 w-full px-4 py-3 rounded-lg bg-primary-foreground/5 border border-primary-foreground/15 text-primary-foreground font-paragraph text-sm">
           <button onclick="modalCopyLink()" id="modalCopyBtn"
             class="px-5 py-3 bg-gold text-primary font-heading font-semibold text-sm rounded-lg flex items-center gap-2 hover:opacity-90 transition-opacity">
             <span id="modalCopyText">Copiar</span>
