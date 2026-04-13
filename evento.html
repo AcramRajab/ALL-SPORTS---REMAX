@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALL Sports Open RE/MAX — 18 de Abril | ALL Resort Club Residence</title>
+  <meta name="description" content="Clínicas esportivas com atletas profissionais de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence, Porto Belo — SC. 18 de Abril. Vagas limitadas.">
+  <meta name="theme-color" content="#1F2F2A">
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ALL Sports Open RE/MAX — 18 de Abril">
+  <meta property="og:description" content="Clínicas esportivas com atletas de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence, Porto Belo — SC. Vagas limitadas.">
+  <meta property="og:image" content="imagens-pdf/favicon/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="ALL Resort Club Residence">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ALL Sports Open RE/MAX — 18 de Abril">
+  <meta name="twitter:description" content="Clínicas esportivas com atletas de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence, Porto Belo — SC.">
+  <meta name="twitter:image" content="imagens-pdf/favicon/og-cover.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="imagens-pdf/favicon/favicon.svg">
+  <link rel="apple-touch-icon" href="imagens-pdf/favicon/apple-touch-icon.png">
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="imagens-pdf/aerea-hero.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1F2F2A',
+            'primary-foreground': '#F7F6F2',
+            secondary: '#2C3E46',
+            'secondary-foreground': '#F3F1EC',
+            background: '#F3F1EC',
+            foreground: '#2A2A2A',
+            'text-on-light': '#2A2A2A',
+            'accent-green': '#5A6F63',
+            destructive: '#E53E3E',
+            gold: '#C4A265',
+          },
+          fontFamily: {
+            heading: ['Inter', 'sans-serif'],
+            paragraph: ['Inter', 'sans-serif'],
+            display: ['Playfair Display', 'serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; position: relative; }
+
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease-in-out, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Hero parallax */
+    .hero-bg {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    @media (max-width: 768px) {
+      .hero-bg { background-attachment: scroll; }
+    }
+
+    /* Nav bar */
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background-color: transparent;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .nav-bar.scrolled { background-color: rgba(31, 47, 42, 0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
+
+    /* Gold accent line */
+    .gold-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #C4A265, #D4B87A);
+    }
+
+    /* Image frame component */
+    .img-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, rgba(90,111,99,0.08), rgba(31,47,42,0.04));
+    }
+    .img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .img-frame:hover img { transform: scale(1.05); }
+
+    /* Custom radio cards */
+    .radio-card {
+      cursor: pointer;
+      border: 2px solid rgba(90,111,99,0.3);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    @media (min-width: 640px) {
+      .radio-card { padding: 1.25rem; }
+    }
+    .radio-card:hover { border-color: rgba(90,111,99,0.6); }
+    .radio-card.selected {
+      border-color: #5A6F63;
+      background-color: rgba(90,111,99,0.08);
+    }
+    .radio-card input[type="radio"] { display: none; }
+
+    /* Clinic slot card */
+    .slot-card {
+      cursor: pointer;
+      border: 2px solid rgba(90,111,99,0.2);
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      transition: all 0.3s ease;
+    }
+    .slot-card:hover { border-color: rgba(90,111,99,0.5); }
+    .slot-card.selected {
+      border-color: #5A6F63;
+      background-color: rgba(90,111,99,0.08);
+    }
+
+    /* RE/MAX watermark */
+    .remax-watermark { position: relative !important; }
+    .remax-watermark .remax-logo {
+      position: absolute !important;
+      bottom: 12px !important;
+      right: 12px !important;
+      width: 70px !important;
+      height: auto !important;
+      mix-blend-mode: normal;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 50;
+    }
+    @media (max-width: 768px) {
+      .remax-watermark .remax-logo {
+        width: 50px !important;
+        bottom: 8px !important;
+        right: 8px !important;
+      }
+    }
+
+    /* Scroll indicator */
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(6px); }
+    }
+    .scroll-indicator { animation: scrollPulse 2s ease-in-out infinite; }
+
+    /* Mobile responsiveness */
+    @media (max-width: 480px) {
+      .hero-bg { min-height: 100svh; }
+      section { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+
+    /* Amenity badges */
+    .amenity-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.375rem 0.75rem;
+      border: 1px solid rgba(196,162,101,0.3);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      color: #C4A265;
+      white-space: nowrap;
+    }
+    @media (min-width: 640px) {
+      .amenity-badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Timeline */
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #C4A265;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 1.5rem;
+      width: 2px;
+      height: calc(100% - 0.5rem);
+      background: rgba(196,162,101,0.2);
+    }
+    .timeline-item:last-child::after { display: none; }
+  </style>
+</head>
+<body class="bg-background text-foreground">
+
+  <!-- NAV BAR -->
+  <nav class="nav-bar" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 md:gap-4 min-w-0">
+        <img src="imagens-pdf/LOGOS/Logo_ALL_Horizontal_Branco.png" alt="ALL Resort" class="h-7 md:h-10 shrink-0">
+        <span class="h-5 md:h-8 w-px bg-white/30 shrink-0"></span>
+        <img src="imagens-pdf/logo remax/logo_remax_2-removebg-preview.png" alt="RE/MAX" class="h-5 md:h-8 object-contain shrink-0">
+      </a>
+
+      <div class="flex items-center gap-4 md:gap-6">
+        <a href="index.html" class="hidden md:inline font-heading text-xs font-medium tracking-wide text-primary-foreground/80 hover:text-primary-foreground transition-colors">Conhecer o Resort</a>
+        <a href="#formulario" class="font-heading text-xs font-semibold px-5 py-2.5 rounded-lg bg-accent-green text-primary-foreground hover:bg-accent-green/90 transition-colors">Inscrever-se</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner: convite VIP -->
+  <div id="conviteBanner" class="hidden fixed top-16 left-0 right-0 z-40 px-4">
+    <div class="max-w-3xl mx-auto bg-gradient-to-r from-gold/95 to-gold text-primary text-center py-3 px-6 rounded-lg shadow-2xl border border-gold/40">
+      <p class="font-heading text-sm md:text-base">
+        <span class="uppercase tracking-widest text-xs opacity-70">Convite exclusivo</span><br>
+        Você foi convidado por <strong id="conviteNome"></strong>
+      </p>
+    </div>
+  </div>
+
+
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center hero-bg" style="background-image: url('imagens-pdf/aerea-hero.jpg');">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-primary/80"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
+      <div class="fade-up mb-6">
+        <div class="gold-line mx-auto mb-8"></div>
+        <p class="font-heading text-primary-foreground/60 text-xs md:text-sm tracking-[0.3em] uppercase mb-2">Uma experiência RE/MAX</p>
+        <p class="font-heading text-gold text-sm md:text-base tracking-[0.2em] uppercase mb-6">18 de Abril · Porto Belo — SC</p>
+      </div>
+
+      <h1 class="fade-up font-display text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl text-primary-foreground leading-tight mb-4 md:mb-6" style="transition-delay: 100ms;">
+        ALL Sports<br>
+        <span class="italic">Open RE/MAX</span>
+      </h1>
+
+      <p class="fade-up font-paragraph text-sm sm:text-base md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-3 md:mb-4 px-2" style="transition-delay: 200ms;">
+        Clínicas esportivas com atletas profissionais de elite em <strong class="text-primary-foreground">Tênis, Padel e Beach Tennis</strong> — dentro do empreendimento que está redefinindo o conceito de viver no Brasil.
+      </p>
+
+      <p class="fade-up font-paragraph text-xs sm:text-sm md:text-base text-primary-foreground/60 max-w-xl mx-auto mb-8 md:mb-10 px-2" style="transition-delay: 300ms;">
+        Uma manhã exclusiva no ALL Resort Club Residence. Vagas limitadas por modalidade e horário.
+      </p>
+
+      <div class="fade-up flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0" style="transition-delay: 400ms;">
+        <a href="#formulario" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-base sm:text-lg text-center">
+          Garantir minha vaga
+        </a>
+        <a href="#experiencia" class="px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-primary-foreground/40 text-primary-foreground font-heading font-semibold rounded-lg hover:bg-white/10 transition-colors text-base sm:text-lg text-center">
+          Como funciona
+        </a>
+      </div>
+
+      <div class="scroll-indicator mt-16">
+        <svg class="w-6 h-6 mx-auto text-primary-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- A EXPERIÊNCIA -->
+  <section id="experiencia" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">18 de Abril · ALL Resort</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">
+          Uma manhã com atletas<br class="hidden md:block">
+          <span class="italic">profissionais de elite</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg md:text-xl text-text-on-light/70 max-w-3xl mx-auto">
+          Uma experiência esportiva dentro do empreendimento que reúne os melhores esportes de raquete do mundo. Você joga, conhece o resort e vive o que será o seu dia a dia.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="fade-up bg-background rounded-xl p-8 border border-accent-green/15 hover:border-accent-green/40 transition-colors shadow-sm">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">3 Clínicas Esportivas</h3>
+          <p class="font-paragraph text-text-on-light/65 text-sm">Tênis, Padel e Beach Tennis com atletas reconhecidos nacional e internacionalmente.</p>
+        </div>
+
+        <div class="fade-up bg-background rounded-xl p-8 border border-accent-green/15 hover:border-accent-green/40 transition-colors shadow-sm" style="transition-delay: 100ms;">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">3 Horários</h3>
+          <p class="font-paragraph text-text-on-light/65 text-sm">Sessões das 9h às 12h. Escolha o horário e a modalidade que mais combina com você.</p>
+        </div>
+
+        <div class="fade-up bg-background rounded-xl p-8 border border-accent-green/15 hover:border-accent-green/40 transition-colors shadow-sm" style="transition-delay: 200ms;">
+          <div class="text-gold text-3xl mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+          </div>
+          <h3 class="font-heading text-lg font-semibold text-text-on-light mb-2">Conheça o ALL Resort</h3>
+          <p class="font-paragraph text-text-on-light/65 text-sm">Visite as instalações, conheça as residências e descubra o que significa viver dentro do ALL Resort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROGRAMAÇÃO DO DIA -->
+  <section id="programacao" class="relative py-24 px-6 bg-primary overflow-hidden">
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-gold mb-4">Programação</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-6">
+          O que esperar do<br class="hidden md:block">
+          <span class="italic">dia 18 de Abril</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg text-primary-foreground/70 max-w-2xl mx-auto">
+          Uma experiência completa pensada para você vivenciar o esporte, o resort e o lifestyle ALL.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+
+        <!-- Timeline -->
+        <div class="fade-up space-y-6 md:space-y-8">
+          <div class="timeline-item pb-6">
+            <p class="font-heading text-lg font-bold text-primary-foreground mb-1">9h — Recepção</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Coffee receptivo e ilha de hidratação no Showroom ALL Resort. Credenciamento e boas-vindas.</p>
+          </div>
+          <div class="timeline-item pb-6">
+            <p class="font-heading text-lg font-bold text-primary-foreground mb-1">9h às 12h — Clínicas Esportivas</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">3 turnos (9h, 10h, 11h) com Tênis, Padel e Beach Tennis. Cada clínica dura 1 hora com atletas profissionais.</p>
+          </div>
+          <div class="timeline-item pb-6">
+            <p class="font-heading text-lg font-bold text-primary-foreground mb-1">Ativações Extras</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Treino Funcional e Pickleball para quem quiser explorar mais. Aberto para todos os convidados e acompanhantes.</p>
+          </div>
+          <div class="timeline-item pb-6">
+            <p class="font-heading text-lg font-bold text-primary-foreground mb-1">Gastronomia</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Restaurante Bruder com experiência gastronômica exclusiva para os participantes do evento.</p>
+          </div>
+          <div class="timeline-item">
+            <p class="font-heading text-lg font-bold text-primary-foreground mb-1">Tour pelo Empreendimento</p>
+            <p class="font-paragraph text-primary-foreground/70 text-sm">Visita guiada pelo ALL Resort Club Residence. Conheça as instalações, quadras, residências e toda a infraestrutura.</p>
+          </div>
+        </div>
+
+        <!-- Imagens dos esportes -->
+        <div class="fade-up" style="transition-delay: 150ms;">
+          <div class="img-frame remax-watermark aspect-[4/3] mb-4">
+            <img src="imagens-pdf/tennis/tennis-1.webp" alt="Quadras de Tênis — ALL Resort" loading="lazy">
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="img-frame remax-watermark aspect-square">
+              <img src="imagens-pdf/golf/golf-1.webp" alt="Campo de Golf — ALL Resort" loading="lazy">
+            </div>
+            <div class="img-frame remax-watermark aspect-square">
+              <img src="imagens-pdf/tennis/tennis-img.webp" alt="Padel — ALL Resort" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Badges -->
+      <div class="fade-up flex flex-wrap justify-center gap-2 sm:gap-3 mt-16">
+        <span class="amenity-badge">Coffee Receptivo</span>
+        <span class="amenity-badge">Restaurante Bruder</span>
+        <span class="amenity-badge">Treino Funcional</span>
+        <span class="amenity-badge">Pickleball</span>
+        <span class="amenity-badge">Tour pelo Resort</span>
+        <span class="amenity-badge">Ilha de Hidratação</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ATLETAS DE ELITE -->
+  <section id="clinicas" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-[10px] tracking-[0.2em] uppercase text-text-on-light/30 mb-2">Uma experiência RE/MAX</p>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Atletas de Elite</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">
+          Jogue com quem compete<br class="hidden md:block">
+          <span class="italic">no mais alto nível</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg text-text-on-light/70 max-w-2xl mx-auto">
+          Cada clínica foi desenhada para oferecer uma experiência real com atletas profissionais. Vagas limitadas por modalidade e horário.
+        </p>
+      </div>
+
+      <!-- Instructor cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+
+        <!-- TÊNIS — Walter Gringo -->
+        <div class="fade-up group">
+          <div class="img-frame aspect-[3/4] mb-3 sm:mb-6">
+            <img src="imagens-pdf/atletas/walter-gringo.jpg" alt="Walter Gringo — Tennis Coach" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Tênis</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">Walter Gringo</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">1 quadra · Até 8 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — Iniciantes</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — Intermediários</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — Avançados</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+
+        <!-- PADEL — Julio Julianoti -->
+        <div class="fade-up group" style="transition-delay: 100ms;">
+          <div class="img-frame aspect-[3/4] mb-3 sm:mb-6">
+            <img src="imagens-pdf/atletas/julio-julianoti.jpg" alt="Julio Julianoti — Atleta de Padel" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Padel · Quadra 1</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">Julio Julianoti</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">4 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — Iniciantes</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — Intermediários</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — Avançados</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+
+        <!-- PADEL — JP Moraes -->
+        <div class="fade-up group" style="transition-delay: 200ms;">
+          <div class="img-frame aspect-[3/4] mb-3 sm:mb-6">
+            <img src="imagens-pdf/atletas/jp-moraes.jpg" alt="JP Moraes — Atleta de Padel" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Padel · Quadra 2</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">JP Moraes</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">4 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — Iniciantes</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — Intermediários</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — Avançados</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+
+        <!-- BEACH TENNIS — Vini Chaparro -->
+        <div class="fade-up group" style="transition-delay: 300ms;">
+          <div class="img-frame aspect-[3/4] mb-3 sm:mb-6">
+            <img src="imagens-pdf/atletas/vini-chaparro.jpg" alt="Vini Chaparro — Beach Tennis Coach" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+          <div class="space-y-2">
+            <p class="font-heading text-xs tracking-[0.2em] uppercase text-gold font-semibold">Beach Tennis</p>
+            <h3 class="font-heading text-lg md:text-xl font-bold text-text-on-light">Vini Chaparro</h3>
+            <p class="font-paragraph text-text-on-light/65 text-sm">1 quadra · 5 jogadores/hora</p>
+            <div class="space-y-1 pt-2">
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">9h</span> — Iniciantes</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">10h</span> — Intermediários</p>
+              <p class="text-sm text-text-on-light/70"><span class="font-semibold text-text-on-light">11h</span> — Avançados</p>
+            </div>
+          </div>
+          <div class="mt-4 h-1 w-12 bg-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+        </div>
+      </div>
+
+      <!-- CTA inscrição -->
+      <div class="fade-up text-center mt-16">
+        <a href="#formulario" class="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-sm sm:text-base md:text-lg shadow-lg">
+          Quero garantir minha vaga
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <p class="font-heading text-xs tracking-[0.2em] uppercase text-text-on-light/50 mt-4">
+          Vagas limitadas por modalidade e horário
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STATS / NÚMEROS -->
+  <section class="relative py-24 md:py-32 px-6 bg-primary overflow-hidden">
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-primary-foreground leading-tight mb-4">
+          Vagas <span class="italic">limitadas</span>
+        </h2>
+        <p class="fade-up font-heading text-sm md:text-base tracking-wider uppercase text-accent-green">
+          Por estrutura e qualidade da experiência
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 md:gap-6">
+        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-4 sm:p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default">
+          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          <div class="relative z-10">
+            <div class="font-heading text-4xl sm:text-6xl md:text-7xl font-bold text-accent-green mb-2 md:mb-4 leading-none">54</div>
+            <div class="font-paragraph text-sm sm:text-base md:text-lg text-primary-foreground/90 font-medium">Convidados por turno</div>
+            <p class="font-paragraph text-primary-foreground/50 text-[10px] sm:text-xs md:text-sm mt-1 md:mt-2 hidden sm:block">Até 100 pessoas com acompanhantes</p>
+          </div>
+        </div>
+
+        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-4 sm:p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default" style="transition-delay: 100ms;">
+          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          <div class="relative z-10">
+            <div class="font-heading text-4xl sm:text-6xl md:text-7xl font-bold text-accent-green mb-2 md:mb-4 leading-none">3</div>
+            <div class="font-paragraph text-sm sm:text-base md:text-lg text-primary-foreground/90 font-medium">Turnos exclusivos</div>
+            <p class="font-paragraph text-primary-foreground/50 text-[10px] sm:text-xs md:text-sm mt-1 md:mt-2 hidden sm:block">9h · 10h · 11h</p>
+          </div>
+        </div>
+
+        <div class="fade-up group relative bg-gradient-to-br from-accent-green/25 to-accent-green/10 rounded-xl p-4 sm:p-8 md:p-10 border border-accent-green/30 hover:border-accent-green/60 transition-all duration-300 cursor-default" style="transition-delay: 200ms;">
+          <div class="absolute inset-0 rounded-xl bg-accent-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          <div class="relative z-10">
+            <div class="font-heading text-4xl sm:text-6xl md:text-7xl font-bold text-accent-green mb-2 md:mb-4 leading-none">4</div>
+            <div class="font-paragraph text-sm sm:text-base md:text-lg text-primary-foreground/90 font-medium">Atletas profissionais</div>
+            <p class="font-paragraph text-primary-foreground/50 text-[10px] sm:text-xs md:text-sm mt-1 md:mt-2 hidden sm:block">Tênis · Padel · Beach Tennis</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="fade-up text-center font-heading text-sm text-primary-foreground/50 mt-12 tracking-wide">
+        As vagas são preenchidas por ordem de inscrição.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- O ALL RESORT (mini seção) -->
+  <section class="relative py-24 px-6 bg-background overflow-hidden">
+    <div class="relative z-10 max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">O Local do Evento</p>
+        <h2 class="fade-up font-display text-3xl md:text-5xl text-text-on-light leading-tight mb-6">
+          220 hectares de esporte,<br class="hidden md:block">
+          <span class="italic">natureza e lifestyle</span>
+        </h2>
+        <p class="fade-up font-paragraph text-lg text-text-on-light/70 max-w-3xl mx-auto">
+          O evento acontece dentro do ALL Resort Club Residence — o empreendimento que reúne o primeiro campo de golfe iluminado da América Latina, a Rafa Nadal Tennis Academy e a maior praia artificial do Brasil.
+        </p>
+      </div>
+
+      <div class="fade-up mb-12 rounded-2xl overflow-hidden shadow-2xl remax-watermark">
+        <img loading="lazy" src="imagens-pdf/fachada-opt.jpg" alt="Fachada ALL Resort Club Residence" class="w-full h-[14rem] sm:h-[20rem] md:h-[28rem] object-cover">
+        <img src="imagens-pdf/logo remax/logo_remax_2-removebg-preview.png" alt="" class="remax-logo">
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]">
+          <img src="IMAGENS/web/RST_06_GolfView_Campo_Noturno_A_P2.jpg" alt="Porto Belo Golf" loading="lazy">
+        </div>
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 100ms;">
+          <img src="imagens-pdf/tennis/tennis-img2.webp" alt="Porto Belo Tennis" loading="lazy">
+        </div>
+        <div class="fade-up img-frame remax-watermark aspect-[4/3]" style="transition-delay: 200ms;">
+          <img src="imagens-pdf/imagem da praia /img praia 2.jpeg" alt="Porto Belo Beach" loading="lazy">
+        </div>
+      </div>
+
+      <div class="fade-up flex flex-wrap justify-center gap-2 sm:gap-3 mt-10">
+        <span class="amenity-badge">Rafa Nadal Tennis Academy</span>
+        <span class="amenity-badge">1º Golf Iluminado da Am. Latina</span>
+        <span class="amenity-badge">Praia Artificial de 1 km</span>
+        <span class="amenity-badge">LEED Platinum</span>
+      </div>
+
+      <div class="fade-up text-center mt-10">
+        <a href="index.html" target="_blank" class="inline-flex items-center gap-2 font-heading text-sm font-semibold text-accent-green hover:text-accent-green/80 transition-colors">
+          Conhecer o empreendimento completo
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FORMULÁRIO DE INSCRIÇÃO -->
+  <section id="formulario" class="relative py-24 px-6 bg-white overflow-hidden">
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <div class="text-center mb-10">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-[10px] tracking-[0.2em] uppercase text-text-on-light/30 mb-2">Uma experiência RE/MAX</p>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Inscrição</p>
+        <h2 class="fade-up font-display text-3xl md:text-4xl text-text-on-light leading-tight mb-4">
+          Garantir minha vaga
+        </h2>
+        <p class="fade-up font-paragraph text-text-on-light/70 max-w-lg mx-auto">
+          Cadastre-se como jogador para as clínicas esportivas ou como acompanhante para conhecer o empreendimento. As vagas são limitadas por modalidade e horário.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="inscricaoForm" class="fade-up space-y-6">
+
+        <!-- Tipo de participação -->
+        <div>
+          <label class="block font-heading font-semibold text-text-on-light mb-3">Como você deseja participar? *</label>
+          <div class="grid grid-cols-2 gap-4">
+            <label class="radio-card" id="card-jogador">
+              <input type="radio" name="tipo_participacao" value="jogador">
+              <div class="mb-2">
+                <svg class="w-8 h-8 mx-auto text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <p class="font-heading font-semibold text-text-on-light">Jogador</p>
+              <p class="text-xs text-text-on-light/60 mt-1">Participar das clínicas esportivas</p>
+            </label>
+            <label class="radio-card" id="card-acompanhante">
+              <input type="radio" name="tipo_participacao" value="acompanhante">
+              <div class="mb-2">
+                <svg class="w-8 h-8 mx-auto text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <p class="font-heading font-semibold text-text-on-light">Acompanhante</p>
+              <p class="text-xs text-text-on-light/60 mt-1">Conhecer o empreendimento</p>
+            </label>
+          </div>
+        </div>
+
+        <!-- Dados pessoais -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">Nome completo *</label>
+            <input type="text" name="nome" required placeholder="Seu nome"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">WhatsApp *</label>
+            <input type="tel" name="telefone" required placeholder="(00) 00000-0000"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">E-mail *</label>
+            <input type="email" name="email" required placeholder="seu@email.com"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
+          <div>
+            <label class="block font-heading font-semibold text-text-on-light mb-2">Cidade *</label>
+            <input type="text" name="cidade" required placeholder="Sua cidade"
+              class="w-full px-4 py-3 border border-accent-green/30 rounded-lg font-paragraph text-text-on-light bg-white focus:outline-none focus:ring-2 focus:border-accent-green focus:ring-accent-green/20 transition-colors">
+          </div>
+        </div>
+
+        <!-- SEÇÃO JOGADOR: Clínica + Horário -->
+        <div id="secao-jogador" class="hidden space-y-6">
+          <div class="border-t border-accent-green/15 pt-6">
+            <label class="block font-heading font-semibold text-text-on-light mb-3">Escolha sua clínica *</label>
+            <div class="grid grid-cols-1 gap-3">
+              <label class="slot-card flex items-center gap-4" data-clinic="tenis">
+                <input type="radio" name="clinica" value="tenis" class="hidden">
+                <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <span class="text-gold font-bold text-sm">T</span>
+                </div>
+                <div class="flex-1">
+                  <p class="font-heading font-semibold text-text-on-light text-sm">Tênis — Walter Gringo</p>
+                  <p class="text-xs text-text-on-light/60">1 quadra · Máx. 8 jogadores/hora</p>
+                </div>
+              </label>
+              <label class="slot-card flex items-center gap-4" data-clinic="padel">
+                <input type="radio" name="clinica" value="padel" class="hidden">
+                <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <span class="text-gold font-bold text-sm">P</span>
+                </div>
+                <div class="flex-1">
+                  <p class="font-heading font-semibold text-text-on-light text-sm">Padel — Julio Julianoti & JP Moraes</p>
+                  <p class="text-xs text-text-on-light/60">2 quadras · 4 jogadores/hora por quadra</p>
+                </div>
+              </label>
+              <label class="slot-card flex items-center gap-4" data-clinic="beachtennis">
+                <input type="radio" name="clinica" value="beachtennis" class="hidden">
+                <div class="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                  <span class="text-gold font-bold text-sm">B</span>
+                </div>
+                <div class="flex-1">
+                  <p class="font-heading font-semibold text-text-on-light text-sm">Beach Tennis — Vinícius Chaparro</p>
+                  <p class="text-xs text-text-on-light/60">1 quadra · 5 jogadores/hora</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Horário -->
+          <div id="secao-horario" class="hidden">
+            <label class="block font-heading font-semibold text-text-on-light mb-3">Escolha o horário *</label>
+            <div id="horarios-container" class="grid grid-cols-3 gap-3"></div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="w-full py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg mt-4">
+          Confirmar inscrição
+        </button>
+
+        <p class="text-center text-xs text-text-on-light/50 mt-3">
+          Ao se inscrever, você concorda em receber informações sobre o evento e o empreendimento ALL Resort Club Residence.
+        </p>
+      </form>
+
+      <!-- Success message -->
+      <div id="formSuccess" class="hidden text-center py-12">
+        <div class="w-16 h-16 bg-accent-green/15 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h3 class="font-heading text-2xl font-bold text-text-on-light mb-3">Inscrição confirmada!</h3>
+        <p class="font-paragraph text-text-on-light/70 max-w-md mx-auto">
+          Em breve nossa equipe entrará em contato pelo WhatsApp com os detalhes da sua participação. Nos vemos no dia 18 de Abril no ALL Resort.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PATROCINADORES / REALIZAÇÃO -->
+  <section class="relative py-20 px-6 bg-primary overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary via-primary to-[#19251f]"></div>
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <div class="gold-line mx-auto mb-6 fade-up"></div>
+        <p class="fade-up font-heading text-xs md:text-sm tracking-[0.3em] uppercase text-gold mb-3">Realização</p>
+        <h2 class="fade-up font-display text-3xl md:text-4xl text-primary-foreground leading-tight">
+          Uma experiência <span class="italic">assinada</span> por
+        </h2>
+      </div>
+
+      <div class="fade-up grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-10 items-stretch">
+        <!-- ALL Resort -->
+        <div class="group relative bg-primary-foreground/[0.03] border border-gold/15 rounded-2xl p-6 sm:p-10 md:p-12 flex flex-col items-center justify-center text-center hover:border-gold/40 transition-all duration-500 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 flex flex-col items-center gap-5">
+            <div class="h-24 md:h-28 flex items-center justify-center">
+              <img src="imagens-pdf/LOGOS/Logo_ALL_Horizontal_Branco.png" alt="ALL Resort Club Residence" class="max-h-full w-auto object-contain">
+            </div>
+            <div class="w-12 h-px bg-gold/30"></div>
+            <div>
+              <p class="font-heading text-[10px] md:text-xs tracking-[0.25em] uppercase text-gold/80 mb-2">Empreendimento</p>
+              <p class="font-paragraph text-primary-foreground/70 text-sm md:text-base max-w-xs">
+                ALL Resort Club Residence — 220 hectares em Porto Belo, SC.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RE/MAX -->
+        <div class="group relative bg-primary-foreground/[0.03] border border-gold/15 rounded-2xl p-6 sm:p-10 md:p-12 flex flex-col items-center justify-center text-center hover:border-gold/40 transition-all duration-500 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 flex flex-col items-center gap-5">
+            <div class="h-24 md:h-28 flex items-center justify-center">
+              <img src="imagens-pdf/logo remax/logo_remax_2-removebg-preview.png" alt="RE/MAX" class="max-h-full w-auto object-contain">
+            </div>
+            <div class="w-12 h-px bg-gold/30"></div>
+            <div>
+              <p class="font-heading text-[10px] md:text-xs tracking-[0.25em] uppercase text-gold/80 mb-2">Comercialização</p>
+              <p class="font-paragraph text-primary-foreground/70 text-sm md:text-base max-w-xs">
+                RE/MAX — a maior rede imobiliária do mundo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="fade-up text-center font-heading text-xs tracking-[0.2em] uppercase text-primary-foreground/40 mt-12">
+        It's ALL.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#19251f] py-12 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="flex items-center justify-center gap-4 mb-6">
+        <img loading="lazy" src="imagens-pdf/LOGOS/Logo_ALL_Branco.png" alt="ALL Resort" class="h-8 opacity-50">
+        <span class="h-6 w-px bg-primary-foreground/15"></span>
+        <img loading="lazy" src="imagens-pdf/logo remax/logo_remax_2-removebg-preview.png" alt="RE/MAX" class="h-6 opacity-50">
+      </div>
+      <p class="font-paragraph text-primary-foreground/40 text-sm mb-2">
+        ALL Resort Club Residence · Porto Belo — Santa Catarina
+      </p>
+      <p class="font-heading text-primary-foreground/25 text-xs">
+        &copy; 2026 ALL Resort Club Residence · Um empreendimento Wert
+      </p>
+      <p class="font-heading text-primary-foreground/15 text-[10px] mt-1">
+        Experiência proporcionada por RE/MAX
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // NAV SCROLL
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // SCROLL ANIMATIONS
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (!entry.target.style.transitionDelay) {
+            entry.target.style.transitionDelay = '0ms';
+          }
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // FORM LOGIC
+    const clinicSchedules = {
+      tenis: [
+        { time: '9h', hora: '9h', nivel: 'Iniciantes' },
+        { time: '10h', hora: '10h', nivel: 'Intermediários' },
+        { time: '11h', hora: '11h', nivel: 'Avançados' },
+      ],
+      padel: [
+        { time: '9h', hora: '9h', nivel: 'Iniciantes' },
+        { time: '10h', hora: '10h', nivel: 'Intermediários' },
+        { time: '11h', hora: '11h', nivel: 'Avançados' },
+      ],
+      beachtennis: [
+        { time: '9h', hora: '9h', nivel: 'Iniciantes' },
+        { time: '10h', hora: '10h', nivel: 'Intermediários' },
+        { time: '11h', hora: '11h', nivel: 'Avançados' },
+      ],
+    };
+
+    // Tipo participação
+    document.querySelectorAll('.radio-card').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+
+        const tipo = this.querySelector('input').value;
+        const secaoJogador = document.getElementById('secao-jogador');
+        const secaoHorario = document.getElementById('secao-horario');
+
+        if (tipo === 'jogador') {
+          secaoJogador.style.display = 'block';
+        } else {
+          secaoJogador.style.display = 'none';
+          secaoHorario.style.display = 'none';
+        }
+      });
+    });
+
+    // Clinic selection → show time slots
+    document.querySelectorAll('[data-clinic]').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('[data-clinic]').forEach(c => c.classList.remove('selected'));
+        this.classList.add('selected');
+
+        const clinic = this.dataset.clinic;
+        const slots = clinicSchedules[clinic];
+        const container = document.getElementById('horarios-container');
+        const secaoHorario = document.getElementById('secao-horario');
+
+        container.innerHTML = '';
+        slots.forEach(slot => {
+          const label = document.createElement('label');
+          label.className = 'slot-card text-center';
+          label.innerHTML = `
+            <input type="radio" name="horario" value="${slot.time}" class="hidden">
+            <p class="font-heading font-bold text-text-on-light text-lg leading-none">${slot.hora}</p>
+            <p class="text-[11px] md:text-xs text-text-on-light/60 mt-1 leading-tight">${slot.nivel}</p>
+          `;
+          label.addEventListener('click', function() {
+            container.querySelectorAll('.slot-card').forEach(s => s.classList.remove('selected'));
+            this.classList.add('selected');
+          });
+          container.appendChild(label);
+        });
+
+        secaoHorario.style.display = 'block';
+      });
+    });
+
+    // Captura ?convite= e exibe banner
+    (function() {
+      try {
+        const params = new URLSearchParams(location.search);
+        const convite = params.get('convite');
+        if (convite) {
+          localStorage.setItem('allresort_convite', convite);
+          localStorage.setItem('allresort_convite_ts', Date.now().toString());
+        }
+        const ts = parseInt(localStorage.getItem('allresort_convite_ts') || '0', 10);
+        if (ts && (Date.now() - ts) > 60 * 24 * 60 * 60 * 1000) {
+          localStorage.removeItem('allresort_convite');
+          localStorage.removeItem('allresort_convite_ts');
+        }
+        const stored = localStorage.getItem('allresort_convite');
+        if (stored) {
+          const nomeFormatado = stored.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          document.getElementById('conviteNome').textContent = nomeFormatado;
+          document.getElementById('conviteBanner').classList.remove('hidden');
+        }
+      } catch(e) {}
+    })();
+
+    // Form submission
+    document.getElementById('inscricaoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      // Validação
+      if (!data.tipo_participacao) {
+        alert('Selecione como deseja participar: Jogador ou Acompanhante.');
+        return;
+      }
+      if (!data.nome || !data.telefone || !data.email || !data.cidade) {
+        alert('Preencha todos os campos obrigatórios.');
+        return;
+      }
+      if (data.tipo_participacao === 'jogador' && !data.clinica) {
+        alert('Selecione uma clínica esportiva.');
+        return;
+      }
+      if (data.tipo_participacao === 'jogador' && !data.horario) {
+        alert('Selecione o horário da clínica.');
+        return;
+      }
+
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      // Envio para RD Station
+      const rdPayload = {
+        event_type: 'CONVERSION',
+        event_family: 'CDP',
+        payload: {
+          conversion_identifier: 'All resort página evento',
+          name: data.nome,
+          email: data.email,
+          mobile_phone: data.telefone,
+          personal_phone: data.telefone,
+          city: data.cidade,
+          cf_open_all_resort_tipo_de_participacao: data.tipo_participacao || '',
+          cf_open_all_resort_clinica_escolhida: data.clinica || '',
+          cf_open_all_resort_horario: data.horario || '',
+          cf_open_all_resort_convidado_por: localStorage.getItem('allresort_convite') || '',
+          traffic_source: document.referrer || 'direct'
+        }
+      };
+
+      fetch('https://api.rd.services/platform/conversions?api_key=2cf52821c5dfc606b743ddde2b384730', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(rdPayload)
+      })
+      .catch(err => console.error('RD Station error:', err))
+      .finally(() => {
+        window.location.href = 'obrigado.html?nome=' + encodeURIComponent(data.nome || '');
+      });
+    });
+  </script>
+
+  <!-- Inject RE/MAX watermark -->
+  <script>
+    document.querySelectorAll('.remax-watermark').forEach(el => {
+      if (el.querySelector('.remax-logo')) return;
+      const logo = document.createElement('img');
+      logo.src = 'imagens-pdf/logo remax/logo_remax_2-removebg-preview.png';
+      logo.alt = '';
+      logo.className = 'remax-logo';
+      el.appendChild(logo);
+    });
+  </script>
+
+</body>
+</html>
