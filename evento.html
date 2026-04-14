@@ -3,25 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ALL Sports Open RE/MAX — 18 de Abril | ALL Resort Club Residence</title>
-  <meta name="description" content="Clínicas esportivas com atletas profissionais de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence, Porto Belo — SC. 18 de Abril. Vagas limitadas.">
+  <title>Sábado 18/04 em Porto Belo — SC | ALL Sports Open RE/MAX</title>
+  <meta name="description" content="Clínicas esportivas com atletas profissionais de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence, Porto Belo — SC. Sábado, 18 de Abril. Vagas limitadas.">
   <meta name="theme-color" content="#1F2F2A">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://remaxopenallresort.com.br/evento.html">
 
   <!-- Open Graph / WhatsApp / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ALL Sports Open RE/MAX — 18 de Abril">
-  <meta property="og:description" content="Clínicas esportivas com atletas de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence, Porto Belo — SC. Vagas limitadas.">
-  <meta property="og:image" content="imagens-pdf/favicon/og-cover.jpg">
+  <meta property="og:url" content="https://remaxopenallresort.com.br/evento.html">
+  <meta property="og:title" content="Sábado 18/04 em Porto Belo — SC">
+  <meta property="og:description" content="Clínicas esportivas com atletas de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence. Vagas limitadas por modalidade e horário.">
+  <meta property="og:image" content="https://remaxopenallresort.com.br/imagens-pdf/favicon/og-cover.jpg">
+  <meta property="og:image:secure_url" content="https://remaxopenallresort.com.br/imagens-pdf/favicon/og-cover.jpg">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALL Resort Club Residence — Porto Belo, SC">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="ALL Resort Club Residence">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ALL Sports Open RE/MAX — 18 de Abril">
-  <meta name="twitter:description" content="Clínicas esportivas com atletas de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence, Porto Belo — SC.">
-  <meta name="twitter:image" content="imagens-pdf/favicon/og-cover.jpg">
+  <meta name="twitter:url" content="https://remaxopenallresort.com.br/evento.html">
+  <meta name="twitter:title" content="Sábado 18/04 em Porto Belo — SC">
+  <meta name="twitter:description" content="Clínicas esportivas com atletas de elite em Tênis, Padel e Beach Tennis no ALL Resort Club Residence. Vagas limitadas.">
+  <meta name="twitter:image" content="https://remaxopenallresort.com.br/imagens-pdf/favicon/og-cover.jpg">
+  <meta name="twitter:image:alt" content="ALL Resort Club Residence — Porto Belo, SC">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="imagens-pdf/favicon/favicon.svg">
@@ -97,6 +106,42 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     .nav-bar.scrolled { background-color: rgba(31, 47, 42, 0.97); box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
+
+    /* Brand logotype */
+    .brand-all {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #F7F6F2;
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+    }
+
+    /* Mobile menu panel */
+    .mobile-menu-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      background: #1F2F2A;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 60;
+      padding: 5rem 2rem 2rem;
+      overflow-y: auto;
+    }
+    .mobile-menu-panel.open { transform: translateX(0); }
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 55;
+    }
+    .mobile-menu-overlay.open { opacity: 1; pointer-events: auto; }
 
     /* Gold accent line */
     .gold-line {
@@ -237,19 +282,49 @@
 
   <!-- NAV BAR -->
   <nav class="nav-bar" id="navbar">
-    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 md:gap-4 min-w-0">
-        <img src="imagens-pdf/LOGOS/Logo_ALL_Horizontal_Branco.png" alt="ALL Resort" class="h-7 md:h-10 shrink-0">
-        <span class="h-5 md:h-8 w-px bg-white/30 shrink-0"></span>
-        <img src="imagens-pdf/logo remax/logo_remax_2-removebg-preview.png" alt="RE/MAX" class="h-5 md:h-8 object-contain shrink-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-3 md:gap-5 min-w-0">
+        <span class="brand-all text-[2.2rem] sm:text-5xl md:text-6xl shrink-0">ALL</span>
+        <span class="flex flex-col leading-tight min-w-0">
+          <span class="font-heading text-[11px] sm:text-sm md:text-base text-primary-foreground font-medium tracking-wide truncate">Resort Club Residence</span>
+          <span class="font-heading text-[10px] sm:text-xs text-primary-foreground/60 tracking-wide truncate">Porto Belo — Santa Catarina</span>
+        </span>
       </a>
 
-      <div class="flex items-center gap-4 md:gap-6">
-        <a href="index.html" class="hidden md:inline font-heading text-xs font-medium tracking-wide text-primary-foreground/80 hover:text-primary-foreground transition-colors">Conhecer o Resort</a>
-        <a href="#formulario" class="font-heading text-xs font-semibold px-5 py-2.5 rounded-lg bg-accent-green text-primary-foreground hover:bg-accent-green/90 transition-colors">Inscrever-se</a>
+      <div class="flex items-center gap-3 md:gap-5 shrink-0">
+        <span class="hidden sm:block h-8 md:h-10 w-px bg-primary-foreground/25"></span>
+        <img src="imagens-pdf/logo remax/logo_remax_2-removebg-preview.png" alt="RE/MAX" class="h-5 sm:h-7 md:h-8 object-contain">
+        <button id="menuToggle" class="text-primary-foreground p-1" aria-label="Abrir menu">
+          <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+
+  <!-- Mobile menu panel -->
+  <aside id="mobileMenuPanel" class="mobile-menu-panel">
+    <button onclick="closeMobileMenu()" class="absolute top-4 right-5 text-primary-foreground/60 hover:text-primary-foreground transition-colors" aria-label="Fechar">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="flex flex-col gap-1">
+      <p class="font-heading text-[10px] tracking-[0.25em] uppercase text-gold mb-4">Menu</p>
+      <a href="#experiencia" onclick="closeMobileMenu()" class="font-heading text-base text-primary-foreground hover:text-gold py-2.5 border-b border-primary-foreground/10 transition-colors">A Experiência</a>
+      <a href="#indique-ganhe" onclick="closeMobileMenu()" class="font-heading text-base text-primary-foreground hover:text-gold py-2.5 border-b border-primary-foreground/10 transition-colors">Programa de Indicação</a>
+      <a href="#programacao" onclick="closeMobileMenu()" class="font-heading text-base text-primary-foreground hover:text-gold py-2.5 border-b border-primary-foreground/10 transition-colors">Programação</a>
+      <a href="#clinicas" onclick="closeMobileMenu()" class="font-heading text-base text-primary-foreground hover:text-gold py-2.5 border-b border-primary-foreground/10 transition-colors">Atletas de Elite</a>
+      <a href="index.html" class="font-heading text-base text-primary-foreground hover:text-gold py-2.5 border-b border-primary-foreground/10 transition-colors">Conhecer o Resort</a>
+      <a href="#formulario" onclick="closeMobileMenu()" class="mt-6 text-center font-heading text-sm font-semibold px-5 py-3 rounded-lg bg-accent-green text-primary-foreground hover:bg-accent-green/90 transition-colors">
+        Garantir minha vaga
+      </a>
+    </div>
+  </aside>
 
   <!-- Banner: convite VIP -->
   <div id="conviteBanner" class="hidden fixed top-16 left-0 right-0 z-40 px-4">
@@ -280,13 +355,19 @@
         Clínicas esportivas com atletas profissionais de elite em <strong class="text-primary-foreground">Tênis, Padel e Beach Tennis</strong> — dentro do empreendimento que está redefinindo o conceito de viver no Brasil.
       </p>
 
-      <div class="fade-up flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0" style="transition-delay: 400ms;">
-        <a href="#formulario" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-base sm:text-lg text-center">
+      <div class="fade-up flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 px-4 sm:px-0" style="transition-delay: 400ms;">
+        <a href="#formulario" class="px-8 sm:px-10 py-3.5 sm:py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-base sm:text-lg text-center w-full sm:w-auto">
           Garantir minha vaga
         </a>
-        <a href="#experiencia" class="px-6 sm:px-8 py-3.5 sm:py-4 border-2 border-primary-foreground/40 text-primary-foreground font-heading font-semibold rounded-lg hover:bg-white/10 transition-colors text-base sm:text-lg text-center">
-          Como funciona
-        </a>
+
+        <div class="event-lockup flex items-center gap-3">
+          <img src="imagens-pdf/logo remax/logo_remax_2-removebg-preview.png" alt="RE/MAX" class="h-8 sm:h-10 md:h-12 object-contain shrink-0">
+          <span class="h-10 sm:h-12 w-px bg-primary-foreground/30"></span>
+          <span class="flex flex-col leading-tight text-left">
+            <span class="font-heading text-[9px] sm:text-[10px] tracking-[0.3em] uppercase text-gold">Open</span>
+            <span class="font-display italic text-lg sm:text-xl md:text-2xl text-primary-foreground leading-none">All Resort</span>
+          </span>
+        </div>
       </div>
 
       <div class="scroll-indicator mt-16">
@@ -895,6 +976,25 @@
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const menuPanel = document.getElementById('mobileMenuPanel');
+    const menuOverlay = document.getElementById('mobileMenuOverlay');
+    function openMobileMenu() {
+      menuPanel.classList.add('open');
+      menuOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu() {
+      menuPanel.classList.remove('open');
+      menuOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    menuToggle.addEventListener('click', openMobileMenu);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
     });
 
     // SCROLL ANIMATIONS
