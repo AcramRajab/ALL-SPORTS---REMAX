@@ -1,0 +1,112 @@
+{
+  "name": "RD Station → Supabase (inscricoes ALL Sports) v3",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "all-resort",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "node-webhook",
+      "name": "Webhook RD Station",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 300],
+      "webhookId": "rd-all-resort-webhook"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Normaliza leads do RD Station e ordena cronologicamente.\n// Entrada: cada item tem { body: { leads: [...] } }.\n// Saída: 1 item por lead, ordenados por RD created_at ASC.\n\nconst mapModalidade = {\n  'tenis': 'tenis', 'tênis': 'tenis',\n  'padel': 'padel', 'pádel': 'padel', 'paddle': 'padel',\n  'beach tennis': 'beachtennis', 'beach tenis': 'beachtennis',\n  'beach-tennis': 'beachtennis', 'beachtennis': 'beachtennis'\n};\n\nconst mapTurno = {\n  '9h': '9h', '09h': '9h', '09:00': '9h', '9:00': '9h', '9': '9h',\n  '10h': '10h', '10:00': '10h', '10': '10h',\n  '11h': '11h', '11:00': '11h', '11': '11h'\n};\n\nconst norm = (v) => (v ?? '').toString().trim().toLowerCase();\n\nconst readCF = (cf, keys) => {\n  if (!cf) return null;\n  for (const k of keys) {\n    if (cf[k] !== undefined && cf[k] !== null && cf[k] !== '') return cf[k];\n  }\n  return null;\n};\n\nconst results = [];\n\nfor (const input of $input.all()) {\n  const data = input.json || {};\n  const leads = data?.body?.leads\n              ?? data?.leads\n              ?? (Array.isArray(data) ? data : [data]);\n\n  for (const lead of leads) {\n    if (!lead || typeof lead !== 'object') continue;\n\n    const cf = lead.custom_fields || {};\n    const convPayload = lead?.first_conversion?.content?.__cdp__original_event?.payload || {};\n\n    const modalidadeRaw = norm(\n      readCF(cf, [\n        '[Open All Resort] Clínica escolhida',\n        '[Open All Resort] Clinica escolhida',\n        'cf_open_all_resort_clinica_escolhida',\n        'modalidade'\n      ]) || convPayload.cf_open_all_resort_clinica_escolhida\n    );\n\n    const turnoRaw = norm(\n      readCF(cf, [\n        '[Open All Resort] Horário',\n        '[Open All Resort] Horario',\n        'cf_open_all_resort_horario',\n        'horario', 'turno'\n      ]) || convPayload.cf_open_all_resort_horario\n    );\n\n    const tipoRaw = norm(\n      readCF(cf, [\n        '[Open All Resort] Tipo de Participação',\n        '[Open All Resort] Tipo de Participacao',\n        'cf_open_all_resort_tipo_de_participacao',\n        'tipo_participacao'\n      ]) || convPayload.cf_open_all_resort_tipo_de_participacao || 'jogador'\n    );\n\n    const nome = (lead.name || '').trim();\n    const email = (lead.email || '').trim();\n\n    if (!nome || !email) continue;\n\n    results.push({\n      json: {\n        nome,\n        email,\n        telefone: lead.mobile_phone || lead.personal_phone || null,\n        cidade: lead.city || null,\n        area_profissional: lead.job_title || lead.bio || null,\n        tipo_participacao: tipoRaw.includes('acompanh') ? 'acompanhante' : 'jogador',\n        modalidade: mapModalidade[modalidadeRaw] || null,\n        turno: mapTurno[turnoRaw] || null,\n        rd_uuid: lead.uuid || null,\n        rd_conversion_identifier: lead?.last_conversion?.source\n                                || lead?.first_conversion?.source\n                                || 'All resort página evento',\n        origem: 'rd_station',\n        raw_payload: lead\n      }\n    });\n  }\n}\n\n// Ordena cronologicamente — quem se inscreveu primeiro no RD entra primeiro,\n// garantindo que os 8 primeiros de Tênis 9h sejam 'confirmado' e o resto 'suplente'.\nresults.sort((a, b) => {\n  const ca = a.json.raw_payload?.created_at || '';\n  const cb = b.json.raw_payload?.created_at || '';\n  return ca.localeCompare(cb);\n});\n\nreturn results;"
+      },
+      "id": "node-normalize",
+      "name": "Normalizar leads",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://plbzwswqkeozvyirzqma.supabase.co/rest/v1/inscricoes",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "on_conflict", "value": "rd_uuid" }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{ $env.SUPABASE_SERVICE_ROLE }}" },
+            { "name": "Authorization", "value": "=Bearer {{ $env.SUPABASE_SERVICE_ROLE }}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "resolution=ignore-duplicates,return=representation" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": false,
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "node-http-supabase",
+      "name": "POST Supabase /inscricoes",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-confirmado",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "confirmado",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-if-status",
+      "name": "Status = confirmado?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [960, 300]
+    }
+  ],
+  "connections": {
+    "Webhook RD Station": {
+      "main": [[{ "node": "Normalizar leads", "type": "main", "index": 0 }]]
+    },
+    "Normalizar leads": {
+      "main": [[{ "node": "POST Supabase /inscricoes", "type": "main", "index": 0 }]]
+    },
+    "POST Supabase /inscricoes": {
+      "main": [[{ "node": "Status = confirmado?", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "versionId": "2"
+}

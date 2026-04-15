@@ -204,6 +204,34 @@
       border-color: #5A6F63;
       background-color: rgba(90,111,99,0.08);
     }
+    .slot-card.suplente {
+      border-color: rgba(217,119,6,0.5);
+      background-color: rgba(217,119,6,0.05);
+    }
+    .slot-card.suplente:hover { border-color: rgba(217,119,6,0.8); }
+    .slot-card.suplente.selected {
+      border-color: #B45309;
+      background-color: rgba(217,119,6,0.1);
+    }
+    .slot-card.esgotado {
+      cursor: not-allowed;
+      opacity: 0.5;
+      border-color: rgba(107,114,128,0.3);
+      background-color: rgba(107,114,128,0.05);
+    }
+    .slot-card.esgotado:hover { border-color: rgba(107,114,128,0.3); }
+    .slot-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-top: 4px;
+      line-height: 1.1;
+    }
+    .slot-badge.aberto    { color: #5A6F63; }
+    .slot-badge.suplente  { color: #B45309; }
+    .slot-badge.esgotado  { color: #6B7280; }
 
     /* RE/MAX watermark */
     .remax-watermark { position: relative !important; }
@@ -872,6 +900,14 @@
           <div id="secao-horario" class="hidden">
             <label class="block font-heading font-semibold text-text-on-light mb-3">Escolha o horário *</label>
             <div id="horarios-container" class="grid grid-cols-3 gap-3"></div>
+
+            <!-- Aviso de suplente (aparece quando usuário seleciona horário lotado) -->
+            <div id="suplenteAviso" class="hidden mt-4 p-4 rounded-lg border-l-4 border-amber-500 bg-amber-50">
+              <p class="text-sm text-amber-900 leading-relaxed">
+                <strong class="block mb-1">Este horário está com todas as vagas preenchidas.</strong>
+                Sua inscrição será feita como <strong>suplente</strong>. Se algum confirmado não comparecer, entraremos em contato por WhatsApp para chamar você.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -1019,6 +1055,33 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+    // VAGAS — carrega do Supabase ao abrir a página.
+    // Fonte da verdade: view pública `vagas_disponiveis` (anon key, RLS só deixa ler agregados).
+    const SUPABASE_URL = 'https://plbzwswqkeozvyirzqma.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsYnp3c3dxa2VvenZ5aXJ6cW1hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyMTU5MDYsImV4cCI6MjA5MTc5MTkwNn0.tHqFdqn74ncfHhDejdRf4_3RI6hln0E0nvIJQoGB8Dw';
+    let vagasState = {};
+    let vagasLoaded = false;
+
+    async function carregarVagas() {
+      try {
+        const r = await fetch(`${SUPABASE_URL}/rest/v1/vagas_disponiveis?select=*`, {
+          headers: {
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`
+          }
+        });
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        const data = await r.json();
+        vagasState = {};
+        data.forEach(v => { vagasState[`${v.modalidade}_${v.turno}`] = v; });
+        vagasLoaded = true;
+      } catch (e) {
+        console.warn('[vagas] falha ao carregar, usando fallback neutro:', e);
+        vagasLoaded = false;
+      }
+    }
+    carregarVagas();
+
     // FORM LOGIC
     const clinicSchedules = {
       tenis: [
@@ -1069,18 +1132,52 @@
         const secaoHorario = document.getElementById('secao-horario');
 
         container.innerHTML = '';
+        document.getElementById('suplenteAviso').classList.add('hidden');
+
         slots.forEach(slot => {
+          const vaga = vagasState[`${clinic}_${slot.time}`] || {};
+          const estado = vaga.estado || 'aberto';
+          const restantes = Number.isInteger(vaga.vagas_restantes) ? vaga.vagas_restantes : null;
+
+          let badgeClass = 'aberto';
+          let badgeText  = restantes === null
+              ? ''
+              : (restantes === 0 ? '' : `${restantes} vaga${restantes !== 1 ? 's' : ''}`);
+          let extraClass = '';
+          let isSuplente = false;
+          let isEsgotado = false;
+
+          if (estado === 'desabilitado') {
+            badgeClass = 'esgotado';
+            badgeText  = 'Esgotado';
+            extraClass = 'esgotado';
+            isEsgotado = true;
+          } else if (estado === 'suplentes') {
+            badgeClass = 'suplente';
+            badgeText  = 'Suplentes';
+            extraClass = 'suplente';
+            isSuplente = true;
+          }
+
           const label = document.createElement('label');
-          label.className = 'slot-card text-center';
+          label.className = `slot-card text-center ${extraClass}`.trim();
+          label.dataset.estado = estado;
           label.innerHTML = `
-            <input type="radio" name="horario" value="${slot.time}" class="hidden">
+            <input type="radio" name="horario" value="${slot.time}" class="hidden" ${isEsgotado ? 'disabled' : ''}>
             <p class="font-heading font-bold text-text-on-light text-lg leading-none">${slot.hora}</p>
             <p class="text-[11px] md:text-xs text-text-on-light/60 mt-1 leading-tight">${slot.nivel}</p>
+            ${badgeText ? `<p class="slot-badge ${badgeClass}">${badgeText}</p>` : ''}
           `;
-          label.addEventListener('click', function() {
-            container.querySelectorAll('.slot-card').forEach(s => s.classList.remove('selected'));
-            this.classList.add('selected');
-          });
+
+          if (isEsgotado) {
+            label.addEventListener('click', e => e.preventDefault());
+          } else {
+            label.addEventListener('click', function() {
+              container.querySelectorAll('.slot-card').forEach(s => s.classList.remove('selected'));
+              this.classList.add('selected');
+              document.getElementById('suplenteAviso').classList.toggle('hidden', !isSuplente);
+            });
+          }
           container.appendChild(label);
         });
 
