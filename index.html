@@ -339,12 +339,12 @@
       </p>
 
       <p class="fade-up font-heading text-sm text-gold tracking-widest uppercase mb-10" style="transition-delay: 300ms;">
-        Entre na lista prioritária e receba acesso antecipado às inscrições
+        Inscrições encerradas — todas as vagas foram preenchidas
       </p>
 
       <div class="fade-up flex flex-col sm:flex-row gap-4 justify-center" style="transition-delay: 400ms;">
-        <a href="#formulario" class="px-8 py-4 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-lg">
-          Entrar na lista prioritária
+        <a href="#formulario" class="px-8 py-4 bg-accent-green/80 text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green transition-colors text-lg">
+          Inscrições encerradas
         </a>
         <a href="#empreendimento" class="px-8 py-4 border-2 border-primary-foreground/40 text-primary-foreground font-heading font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
           Conhecer o ALL Resort
@@ -1267,12 +1267,12 @@
 
       <!-- CTA inscrição -->
       <div class="fade-up text-center mt-16">
-        <a href="#formulario" class="inline-flex items-center gap-3 px-10 py-5 bg-accent-green text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green/90 transition-colors text-base md:text-lg shadow-lg">
-          Quero garantir minha vaga
+        <a href="#formulario" class="inline-flex items-center gap-3 px-10 py-5 bg-accent-green/80 text-primary-foreground font-heading font-semibold rounded-lg hover:bg-accent-green transition-colors text-base md:text-lg shadow-lg">
+          Inscrições encerradas
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
         <p class="font-heading text-xs tracking-[0.2em] uppercase text-text-on-light/50 mt-4">
-          Vagas limitadas por modalidade e horário
+          Todas as vagas foram preenchidas
         </p>
       </div>
     </div>
@@ -1454,17 +1454,37 @@
       <div class="text-center mb-10">
         <div class="gold-line mx-auto mb-6 fade-up"></div>
         <p class="fade-up font-heading text-[10px] tracking-[0.2em] uppercase text-text-on-light/30 mb-2">Uma experiência RE/MAX</p>
-        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Lista Prioritária</p>
+        <p class="fade-up font-heading text-sm tracking-[0.25em] uppercase text-accent-green mb-4">Inscrições encerradas</p>
         <h2 class="fade-up font-display text-3xl md:text-4xl text-text-on-light leading-tight mb-4">
-          Entrar na lista prioritária
+          Todas as vagas foram preenchidas
         </h2>
         <p class="fade-up font-paragraph text-text-on-light/70 max-w-lg mx-auto">
-          Cadastre-se como jogador para as clínicas esportivas ou como acompanhante para conhecer o empreendimento. As vagas são limitadas por modalidade e horário.
+          As inscrições para o Open ALL Resort — tanto para <strong>jogadores</strong> quanto para <strong>acompanhantes</strong> — estão encerradas. Agradecemos o enorme interesse.
         </p>
       </div>
 
-      <!-- Form -->
-      <form id="inscricaoForm" class="fade-up space-y-6">
+      <!-- AVISO DE ENCERRAMENTO -->
+      <div class="fade-up rounded-2xl border border-accent-green/20 bg-gradient-to-br from-primary to-[#19251f] p-8 md:p-10 text-center shadow-lg">
+        <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center mx-auto mb-5">
+          <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <p class="font-heading text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Aviso importante</p>
+        <h3 class="font-display text-2xl md:text-3xl text-primary-foreground leading-tight mb-4">
+          Lista de inscrições <span class="italic">encerrada</span>
+        </h3>
+        <p class="font-paragraph text-primary-foreground/75 max-w-xl mx-auto mb-6">
+          Não estamos mais recebendo novos cadastros — nem como <strong class="text-primary-foreground">jogador</strong>, nem como <strong class="text-primary-foreground">acompanhante</strong>. Se você já se inscreveu, nossa equipe entrará em contato pelo WhatsApp com os detalhes da sua participação.
+        </p>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/5 border border-primary-foreground/10">
+          <span class="w-2 h-2 rounded-full bg-gold"></span>
+          <span class="font-heading text-xs tracking-wider uppercase text-primary-foreground/80">Nos vemos dia 18/04 no ALL Resort</span>
+        </div>
+      </div>
+
+      <!-- Form (desativado — mantido oculto) -->
+      <form id="inscricaoForm" class="hidden fade-up space-y-6">
 
         <!-- Tipo de participação -->
         <div>
